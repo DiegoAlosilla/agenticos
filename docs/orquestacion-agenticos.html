@@ -1,0 +1,586 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Orquestación Agenticos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: plano de control en modo oscuro fijo. Diagrama vivo a la izquierda, consola de sesión a la derecha, fichas de rol debajo. */
+:root {
+  --bg: #0D1117; --surface: #151B23; --ink: #E6EBF1; --muted: #8B97A6; --line: #262F3B; --soft: #1C2430;
+  --disc: #3CC2B3; --arch: #949CF5; --con: #E8A955; --rev: #F27FA3; --coord: #AEBBCA; --user: #8B97A6;
+  --ok: #52C98A; --warn: #E8A955; --ask: #7AA7FF; --stop: #F27A6F; --accent: #7AA7FF; --on-accent: #0D1117;
+  --f-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: dark;
+}
+
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 28px 48px; display: grid; gap: 22px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 600; letter-spacing: -0.01em; }
+h2 { font-size: 20px; font-weight: 600; }
+.lede { color: var(--muted); max-width: 70ch; margin: 6px 0 0; }
+.eyebrow { font: 500 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+code, .mono { font-family: var(--f-mono); font-size: .9em; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tab { font: 500 13.5px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.tab[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--accent); border-color: var(--accent); }
+.btns { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.btn { font: 500 13.5px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.btn.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); min-width: 104px; font-weight: 600; }
+.btn:hover, .tab:hover { border-color: var(--muted); }
+select.btn { padding-right: 6px; }
+:focus-visible { outline: 2px solid var(--ask); outline-offset: 2px; }
+
+.stage { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 900px) { .stage { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.dia-box { overflow-x: auto; padding: 8px; }
+#dia { display: block; width: 100%; min-width: 640px; height: auto; }
+
+/* SVG */
+.edge { fill: none; stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 4 5; transition: stroke .3s; }
+.edge.on { stroke: var(--hl, var(--ink)); stroke-dasharray: none; stroke-width: 2.5; }
+.hostbox { fill: color-mix(in srgb, var(--soft) 60%, var(--surface)); stroke: var(--line); stroke-dasharray: 6 4; }
+.edge { stroke: color-mix(in srgb, var(--muted) 45%, var(--surface)); }
+.progress i { background: var(--accent) !important; }
+.svg-cap { font: 500 11px var(--f-mono); letter-spacing: .08em; fill: var(--muted); }
+.svg-sub { font: 400 12px var(--f-body); fill: var(--muted); }
+.node .box { fill: var(--surface); stroke: var(--c); stroke-width: 1.4; transition: fill .3s, stroke-width .3s; }
+.node.on .box { stroke-width: 3; fill: color-mix(in srgb, var(--c) 13%, var(--surface)); }
+.node .ring { fill: none; stroke: var(--c); stroke-width: 2; opacity: 0; }
+.node .name { font: 600 16px var(--f-display); fill: var(--ink); }
+.node .duty { font: 400 12px var(--f-body); fill: var(--muted); }
+.node .file { font: 400 11px var(--f-mono); fill: var(--muted); }
+.node .badge { fill: var(--c); }
+.node .ini { font: 600 13px var(--f-display); fill: var(--surface); text-anchor: middle; }
+.chip-svg rect { fill: var(--sc, var(--muted)); }
+.chip-svg text { font: 500 11.5px var(--f-mono); fill: var(--surface); text-anchor: middle; }
+#tok { fill: var(--tc, var(--ink)); }
+#tokHalo { fill: var(--tc, var(--ink)); opacity: .22; }
+#lbl rect { fill: var(--ink); }
+#lbl text { font: 500 12px var(--f-body); fill: var(--bg); }
+
+/* Consola */
+.side { display: grid; gap: 12px; }
+.now { padding: 16px; display: grid; gap: 8px; }
+.now-top { display: flex; justify-content: space-between; gap: 8px; align-items: center; flex-wrap: wrap; }
+.who { display: inline-flex; align-items: center; gap: 8px; font: 600 15px var(--f-display); }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--wc, var(--muted)); flex: none; }
+.msg { font: 600 17px/1.3 var(--f-display); }
+.say { color: var(--ink); margin: 0; min-height: 4.5em; }
+.progress { height: 3px; background: var(--soft); border-radius: 2px; overflow: hidden; }
+.progress i { display: block; height: 100%; width: 0; background: var(--ink); transition: width .3s; }
+.meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.meta > div { padding: 10px 12px; border-right: 1px solid var(--line); min-width: 0; }
+.meta > div:last-child { border-right: 0; }
+.meta b { display: block; font: 500 15px var(--f-mono); font-variant-numeric: tabular-nums; margin-top: 4px; }
+.term { background: var(--soft); border-radius: 10px; padding: 12px; font: 12px/1.55 var(--f-mono);
+  height: 220px; overflow-y: auto; overflow-wrap: anywhere; border: 1px solid var(--line); }
+.term div { white-space: pre-wrap; }
+.term .cmd { color: var(--ink); }
+.term .out { color: var(--muted); }
+.term .ask { color: var(--ask); }
+.term .sep { color: var(--muted); opacity: .6; }
+.revs { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px; min-height: 52px; align-items: center; }
+.rv { font: 500 11.5px var(--f-mono); border: 1px solid var(--rc); color: var(--ink); border-radius: 4px; padding: 3px 7px;
+  background: color-mix(in srgb, var(--rc) 12%, var(--surface)); animation: pop .35s ease-out; }
+.empty { color: var(--muted); font-size: 13px; }
+.panel-h { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 12px 0; gap: 8px; }
+.findings { padding: 8px 12px 12px; display: grid; gap: 6px; }
+.fd { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; font-size: 13px; padding: 8px 10px;
+  border-radius: 6px; background: var(--soft); }
+.fd .sev { font: 500 11px var(--f-mono); text-transform: uppercase; color: var(--stop); }
+.fd.closed .sev { color: var(--ok); }
+.fd.closed .t { text-decoration: line-through; color: var(--muted); }
+.policy { display: grid; gap: 8px; padding: 12px; }
+.pol { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; align-items: center; font-size: 13px; }
+.pol b { font: 500 12.5px var(--f-mono); font-variant-numeric: tabular-nums; }
+.bar { grid-column: 1 / -1; height: 5px; background: var(--soft); border-radius: 3px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--muted); transition: width .4s, background .4s; }
+.bar i.full { background: var(--stop); }
+@keyframes pop { from { transform: scale(.8); opacity: 0 } to { transform: none; opacity: 1 } }
+
+/* Estados */
+.states { display: flex; flex-wrap: wrap; gap: 6px; }
+.st { font: 500 12.5px var(--f-mono); padding: 5px 10px; border-radius: 4px; border: 1px solid var(--line); color: var(--muted); background: var(--surface); transition: all .3s; }
+.st.on { color: var(--surface); background: var(--sc); border-color: var(--sc); }
+.st small { font-family: var(--f-body); font-size: 11.5px; opacity: .85; margin-left: 6px; }
+
+/* Fichas */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+.card { padding: 16px; display: grid; gap: 8px; align-content: start; border-top: 3px solid var(--c); }
+.card h3 { font-size: 18px; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.card h3 span { font: 400 11.5px var(--f-mono); color: var(--muted); }
+.card p { margin: 0; font-size: 14px; }
+.card dl { margin: 0; display: grid; gap: 6px; font-size: 13.5px; }
+.card dt { font: 500 11px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.card dd { margin: 0; }
+.note { color: var(--muted); font-size: 13.5px; max-width: 80ch; margin: 0; }
+@media (prefers-reduced-motion: reduce) { .rv { animation: none; } * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Agenticos · skill canal-diseno</div>
+    <h1>Cómo trabajan los agentes de diseño de canal</h1>
+    <p class="lede">El host de la conversación ejecuta cuatro roles: Discovery, Architecture, Contract y Reviewer. Un coordinador en Node.js decide el siguiente turno, valida cada entrega y guarda revisiones inmutables en <code>runs/</code>. El ejemplo es un préstamo personal con contratos ficticios.</p>
+  </header>
+
+  <div class="controls">
+    <div class="tabs" role="group" aria-label="Escenario">
+      <button class="tab" id="sc-main" data-sc="main" aria-pressed="true">Recorrido principal</button>
+      <button class="tab" id="sc-fix" data-sc="fix" aria-pressed="false">Corrección técnica</button>
+      <button class="tab" id="sc-ask" data-sc="ask" aria-pressed="false">Consulta al usuario</button>
+      <button class="tab" id="sc-limit" data-sc="limit" aria-pressed="false">Límite de iteraciones</button>
+    </div>
+    <div class="btns">
+      <button class="btn primary" id="play">Pausar</button>
+      <button class="btn" id="next">Siguiente paso</button>
+      <button class="btn" id="restart">Reiniciar</button>
+      <label class="eyebrow" for="speed" style="margin-left:4px">Velocidad</label>
+      <select class="btn" id="speed"><option value="0.6">0.6×</option><option value="1" selected>1×</option><option value="1.6">1.6×</option><option value="2.5">2.5×</option></select>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="panel dia-box">
+      <svg id="dia" viewBox="0 0 900 540" role="img" aria-label="Diagrama: el desarrollador habla con el host, que ejecuta los cuatro roles; cada rol entrega al coordinador, que guarda revisiones en runs y llama a buildChannel.">
+        <g id="edges"></g>
+        <rect class="hostbox" x="200" y="38" width="340" height="482" rx="12"></rect>
+        <text class="svg-cap" x="218" y="62">HOST · AGENTE DE LA CONVERSACIÓN</text>
+        <text class="svg-sub" x="218" y="78">ejecuta el rol que devuelve next</text>
+        <g id="nodes"></g>
+        <g id="fx">
+          <circle id="tokHalo" r="14" cx="-50" cy="-50"></circle>
+          <circle id="tok" r="7" cx="-50" cy="-50"></circle>
+          <g id="lbl" transform="translate(-500,-500)"><rect rx="4" height="22"></rect><text y="15" x="8"></text></g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="side">
+      <div class="panel now" aria-live="polite">
+        <div class="now-top">
+          <span class="who" id="who"><span class="dot"></span><span id="whoName">Desarrollador</span></span>
+          <span class="eyebrow" id="stepNo">Paso 1</span>
+        </div>
+        <div class="progress"><i id="prog"></i></div>
+        <div class="msg" id="msg">Petición: préstamo personal</div>
+        <p class="say" id="say">El desarrollador describe el requerimiento. AGENTS.md activa canal-diseno; el host guarda la petición e inicia la sesión.</p>
+      </div>
+      <div class="panel meta">
+        <div><span class="eyebrow">Estado</span><b id="mState">discovery</b></div>
+        <div><span class="eyebrow">Revisión</span><b id="mRev">—</b></div>
+        <div><span class="eyebrow">Línea base</span><b id="mBase">—</b></div>
+      </div>
+      <div class="term" id="term" aria-label="Registro de comandos"><div class="sep"># runs/prestamo · registro de la sesión</div></div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="panel">
+      <div class="panel-h"><h2>Revisiones en <code>runs/prestamo/</code></h2><span class="eyebrow">una por entrega válida</span></div>
+      <div class="revs" id="revs"><span class="empty">Aún no hay entregas. Cada <code>submit</code> válido crea un directorio <code>rNNNNNN</code> con su estado y la huella de su padre.</span></div>
+      <div class="panel-h"><h2>Hallazgos del Reviewer</h2><span class="eyebrow">blocker y major impiden el cierre</span></div>
+      <div class="findings" id="finds"><span class="empty">Sin hallazgos.</span></div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h2>Política de la sesión</h2><span class="eyebrow">brief.json · policy</span></div>
+      <div class="policy">
+        <div class="pol"><span>Rondas de revisión</span><b id="pRound">0 / 3</b><div class="bar"><i id="bRound"></i></div></div>
+        <div class="pol"><span>Mismo hallazgo repetido</span><b id="pRep">0 / 2</b><div class="bar"><i id="bRep"></i></div></div>
+        <div class="pol"><span>Entregas totales</span><b id="pAtt">0 / 16</b><div class="bar"><i id="bAtt"></i></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section style="display:grid;gap:10px">
+    <h2>Estados del coordinador</h2>
+    <div class="states" id="states"></div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>Quién hace qué</h2>
+    <div class="cards">
+      <article class="panel card" style="--c:var(--disc)">
+        <h3>Discovery <span>discovery.agent.md</span></h3>
+        <p>Entrevista al desarrollador y consolida la línea base. Es el único rol que puede crear una línea base nueva.</p>
+        <dl><dt>Entrega</dt><dd>Requisitos con ID estable, criterios given/when/then, decisiones, preguntas y temas de calidad.</dd>
+        <dt>Regla</dt><dd>Rondas de hasta cuatro preguntas. Separa confirmado, supuesto, pendiente y contradictorio.</dd></dl>
+      </article>
+      <article class="panel card" style="--c:var(--arch)">
+        <h3>Architecture <span>architecture.agent.md</span></h3>
+        <p>Define servicios UX, dueño, estado, quién decide cada resultado y qué dato conecta las etapas.</p>
+        <dl><dt>Entrega</dt><dd><code>spec</code> de canal v1 y <code>traceability</code> de cada criterio a etapa y escenario.</dd>
+        <dt>Regla</dt><dd>Consulta catálogo Git y BIAN en lectura. Una decisión de negocio nueva va a Discovery con <code>handoff</code>.</dd></dl>
+      </article>
+      <article class="panel card" style="--c:var(--con)">
+        <h3>Contract <span>contract.agent.md</span></h3>
+        <p>Precisa operaciones, mapeos, componentes y seguridad. Comprueba fuente, tipo y momento de cada dato.</p>
+        <dl><dt>Entrega</dt><dd><code>spec</code> y <code>traceability</code>. El coordinador llama a <code>buildChannel</code> y genera OpenAPI y Draw.io.</dd>
+        <dt>Regla</dt><dd>Si cambia orden, escenarios o dependencias, deriva a Architecture.</dd></dl>
+      </article>
+      <article class="panel card" style="--c:var(--rev)">
+        <h3>Reviewer <span>reviewer.agent.md</span></h3>
+        <p>Revisa en un contexto separado, con la petición, las respuestas y las fuentes completas.</p>
+        <dl><dt>Entrega</dt><dd>Cobertura pass/fail por criterio, hallazgos con código estable y <code>resolutions</code>.</dd>
+        <dt>Regla</dt><dd>No modifica artefactos. Asigna lo técnico a Architecture o Contract y lo de negocio a Discovery.</dd></dl>
+      </article>
+      <article class="panel card" style="--c:var(--coord)">
+        <h3>Coordinador <span>orchestration-cli.mjs</span></h3>
+        <p>Programa Node.js sin LLM. Asigna turnos con <code>next</code>, valida con <code>submit</code> y registra respuestas con <code>answer</code>.</p>
+        <dl><dt>Garantías</dt><dd>Bloqueo de sesión, <code>--revision</code> contra trabajo obsoleto, huellas SHA-256 y límites de iteración.</dd></dl>
+      </article>
+    </div>
+    <p class="note">Esto es una explicación de la implementación, no telemetría en vivo. Los comandos y datos del préstamo son ilustrativos y los contratos son ficticios. <code>ready</code> significa diseño revisado, no despliegue.</p>
+  </section>
+</div>
+
+<script>
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const $ = (id) => document.getElementById(id);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const NODES = {
+    user:  { x: 20,  y: 238, w: 120, h: 64,  c: '--user',  name: 'Desarrollador', duty: 'decide el negocio' },
+    disc:  { x: 240, y: 92,  w: 260, h: 74,  c: '--disc',  name: 'Discovery',    duty: 'Entrevista · línea base', file: 'discovery.agent.md', ini: 'D' },
+    arch:  { x: 240, y: 202, w: 260, h: 74,  c: '--arch',  name: 'Architecture', duty: 'Límites · estado · BIAN',  file: 'architecture.agent.md', ini: 'A' },
+    con:   { x: 240, y: 312, w: 260, h: 74,  c: '--con',   name: 'Contract',     duty: 'Interfaces · mapeos',      file: 'contract.agent.md', ini: 'C' },
+    rev:   { x: 240, y: 422, w: 260, h: 74,  c: '--rev',   name: 'Reviewer',     duty: 'Revisión independiente',   file: 'reviewer.agent.md', ini: 'R' },
+    coord: { x: 640, y: 206, w: 220, h: 128, c: '--coord', name: 'Coordinador',  duty: 'next · submit · answer',   file: 'orchestration-cli.mjs' },
+    store: { x: 640, y: 62,  w: 220, h: 78,  c: '--coord', name: 'runs/prestamo/', duty: 'revisiones inmutables', file: 'r000001 · r000002 …' },
+    build: { x: 640, y: 404, w: 220, h: 78,  c: '--coord', name: 'buildChannel', duty: 'valida · OpenAPI · Draw.io', file: 'src/channel-cli.mjs' },
+  };
+  const ROLE_NAME = { user: 'Desarrollador', disc: 'Discovery', arch: 'Architecture', con: 'Contract', rev: 'Reviewer', coord: 'Coordinador', build: 'buildChannel', store: 'runs/' };
+
+  const BASE = {
+    'u>c':    [[80,238],[80,16],[884,16],[884,270],[860,270]],
+    'u>disc': [[140,270],[240,129]],
+    'c>disc': [[640,270],[500,129]],
+    'c>arch': [[640,270],[500,239]],
+    'c>con':  [[640,270],[500,349]],
+    'c>rev':  [[640,270],[500,459]],
+    'c>build':[[750,334],[750,404]],
+    'c>store':[[750,206],[750,140]],
+  };
+  const PATHS = {};
+  const EDGE_OF = {};
+  for (const [k, pts] of Object.entries(BASE)) {
+    const [a, b] = k.split('>');
+    PATHS[k] = pts; PATHS[b + '>' + a] = [...pts].reverse();
+    EDGE_OF[k] = k; EDGE_OF[b + '>' + a] = k;
+  }
+  const ALIAS = { u: 'user', c: 'coord' };
+  const who = (k) => ALIAS[k] || k;
+
+  // Draw edges
+  const edgesG = $('edges'), edgeEls = {};
+  for (const [k, pts] of Object.entries(BASE)) {
+    const pl = document.createElementNS(NS, 'polyline');
+    pl.setAttribute('points', pts.map(p => p.join(',')).join(' '));
+    pl.setAttribute('class', 'edge');
+    edgesG.appendChild(pl); edgeEls[k] = pl;
+  }
+  // Draw nodes
+  const nodesG = $('nodes'), nodeEls = {};
+  const el = (tag, attrs, parent, text) => {
+    const e = document.createElementNS(NS, tag);
+    for (const [a, v] of Object.entries(attrs)) e.setAttribute(a, v);
+    if (text != null) e.textContent = text;
+    parent.appendChild(e); return e;
+  };
+  for (const [id, n] of Object.entries(NODES)) {
+    const g = el('g', { class: 'node', style: `--c:var(${n.c})` }, nodesG);
+    el('rect', { class: 'ring', x: n.x - 6, y: n.y - 6, width: n.w + 12, height: n.h + 12, rx: 12 }, g);
+    el('rect', { class: 'box', x: n.x, y: n.y, width: n.w, height: n.h, rx: 8 }, g);
+    let tx = n.x + 14;
+    if (n.ini) {
+      el('circle', { class: 'badge', cx: n.x + 30, cy: n.y + n.h / 2, r: 16 }, g);
+      el('text', { class: 'ini', x: n.x + 30, y: n.y + n.h / 2 + 4.5 }, g, n.ini);
+      tx = n.x + 58;
+    }
+    el('text', { class: 'name', x: tx, y: n.y + 26 }, g, n.name);
+    el('text', { class: 'duty', x: tx, y: n.y + 45 }, g, n.duty);
+    if (n.file) el('text', { class: 'file', x: tx, y: n.y + 62 }, g, n.file);
+    nodeEls[id] = g;
+  }
+  // State chip inside coordinator
+  const chip = el('g', { class: 'chip-svg' }, nodeEls.coord);
+  const chipR = el('rect', { x: 654, y: 290, width: 192, height: 26, rx: 4 }, chip);
+  const chipT = el('text', { x: 750, y: 307.5 }, chip, 'discovery');
+  const storeLast = nodeEls.store.querySelector('.file');
+
+  // States strip
+  const STATES = [
+    ['discovery', '--disc', 'entrevistar'], ['architecture', '--arch', 'diseñar el modelo'], ['contract', '--con', 'precisar y generar'],
+    ['reviewer', '--rev', 'revisar huellas'], ['awaiting_user', '--ask', 'decisión real'], ['needs_attention', '--stop', 'detenido por límite'],
+    ['draft', '--warn', 'bosquejo con pendientes'], ['ready', '--ok', 'diseño revisado'],
+  ];
+  const stEls = {};
+  for (const [s, c, d] of STATES) {
+    const b = document.createElement('span');
+    b.className = 'st'; b.style.setProperty('--sc', `var(${c})`);
+    b.innerHTML = `${s}<small>${d}</small>`;
+    $('states').appendChild(b); stEls[s] = b;
+  }
+  const stColor = Object.fromEntries(STATES.map(([s, c]) => [s, c]));
+
+  // ---------- Scenarios ----------
+  const intro = [
+    { p: 'u>c', m: 'Petición: préstamo personal', say: 'El desarrollador describe el requerimiento. AGENTS.md activa canal-diseno; el host guarda la petición en brief.json e inicia la sesión.',
+      log: ['$ npm run orchestrate -- init --session runs/prestamo --input runs/brief.json', '→ sesión creada · estado discovery'], st: 'discovery' },
+    { p: 'c>disc', m: 'next → discovery', say: 'El coordinador asigna el turno. El host lee agents/discovery.agent.md y ejecuta el rol.',
+      log: ['$ npm run orchestrate -- next --session runs/prestamo', '→ {"role":"discovery","revision":{n}}'] },
+    { p: 'disc>u', m: 'Ronda 1 · cuatro preguntas', say: 'Discovery entrevista por rondas de hasta cuatro preguntas y prioriza las que cambian límites, dependencias o propiedad de datos.',
+      log: ['? ¿Qué dato de identidad entrega la app?', '? ¿Quién conserva el estado entre simular y confirmar?', '? ¿A qué cuenta se abona el préstamo?', '? ¿Cómo se trata un desembolso repetido?'] },
+    { p: 'u>disc', m: 'Respuestas reales', say: 'Las respuestas quedan como decisiones confirmadas. Discovery no inventa decisiones de negocio ni pide reconfirmar lo ya autorizado.',
+      log: ['← customerId del token · el UX guarda simulationId', '← abono en cuenta propia · Idempotency-Key en desembolso'] },
+    { p: 'disc>c', m: 'submit discovery · línea base v1', say: 'Entrega requisitos con ID estable, criterios given/when/then y temas de calidad: seguridad, idempotencia, timeouts, fallo parcial.',
+      log: ['$ npm run orchestrate -- submit --role discovery --revision {n} --input runs/discovery.json', '→ REQ-001…REQ-004 · AC-001…AC-006 · línea base v1'], rev: 'disc', st: 'architecture', base: 1 },
+  ];
+  const archTurn = [
+    { p: 'c>arch', m: 'next → architecture', say: 'Architecture recibe la línea base y diseña límites, responsabilidades, estado y escenarios.',
+      log: ['$ npm run orchestrate -- next', '→ {"role":"architecture","revision":{n}}'] },
+    { self: 'arch', m: 'Catálogo Git y BIAN, solo lectura', say: 'Busca operaciones existentes y referencias BIAN. Conserva commit, archivo, método, ruta y SHA-256 de cada operación reutilizada.',
+      log: ['$ npm run channel -- search --query "desembolso préstamo"', '$ npm run channel -- bian --query "desembolso" --action Execute', '→ ConsumerLoan / Execute · loans-business.yaml (ficticio)'] },
+  ];
+  const archSubmit = { p: 'arch>c', m: 'submit architecture · spec + traceability', say: 'Un UX de préstamos con tres etapas: simular, confirmar y desembolsar. Cada criterio apunta a una etapa y un escenario.',
+    log: ['$ npm run orchestrate -- submit --role architecture --revision {n}', '→ 1 UX · 3 etapas · 3 escenarios · 6 criterios trazados'], rev: 'arch', st: 'contract' };
+  const contractTurn = (digest, note) => [
+    { p: 'c>con', m: note ? 'next → contract · ' + note : 'next → contract', say: note ? 'El hallazgo vuelve a su dueño. Contract corrige el modelo, no el XML generado.' : 'Contract comprueba que cada dato requerido tenga fuente, tipo compatible y momento de disponibilidad coherente.',
+      log: ['$ npm run orchestrate -- next', '→ {"role":"contract","revision":{n}' + (note ? ',"findings":["' + note + '"]' : '') + '}'] },
+    { p: 'con>c', m: 'submit contract', say: 'Precisa operaciones, mapeos, componentes y seguridad sin cambiar responsabilidades acordadas.',
+      log: ['$ npm run orchestrate -- submit --role contract --revision {n}'] },
+    { p: 'c>build', m: 'buildChannel · validación síncrona', say: 'La validación ocurre dentro de la entrega de Contract. Si falla, el hallazgo automático se conserva y el estado sigue en contract.',
+      log: ['→ buildChannel: validando contratos y referencias…'] },
+    { p: 'build>c', m: 'OpenAPI + .drawio · nueva huella', say: 'Spec, OpenAPI y Draw.io salen de la misma spec y quedan congelados en artifacts/ con su artifactDigest.',
+      log: ['→ artifacts/: spec.md · openapi-prestamos-ux.yaml · flujo.drawio', '→ artifactDigest sha256:' + digest], rev: 'con', st: 'reviewer' },
+  ];
+  const reviewOpen = (digest) => ({ p: 'c>rev', m: 'next → reviewer', say: 'Reviewer trabaja en un contexto separado con la petición, las respuestas, la línea base y las fuentes, no solo con la conclusión del autor.',
+    log: ['$ npm run orchestrate -- next', '→ {"role":"reviewer","revision":{n},"artifactDigest":"sha256:' + digest + '"}'] });
+  const reviewPass = (digest, resolve) => [
+    reviewOpen(digest),
+    { self: 'rev', m: 'Contrasta cada criterio', say: 'Marca pass o fail una sola vez por criterio, con evidencia concreta de ruta, campo o escenario.',
+      log: ['AC-001 pass · POST /loans/simulations → 201 con simulationId', 'AC-004 pass · desembolso exige Idempotency-Key', 'AC-006 pass · escenario resultado incierto → consulta de estado'] },
+    { p: 'rev>c', m: resolve ? 'submit reviewer · ' + resolve + ' resuelto' : 'submit reviewer · 6/6 pass', say: resolve ? 'Declara el cierre de ' + resolve + ' en resolutions con evidencia. Sin bloqueantes, el coordinador cierra la sesión.' : 'Sin bloqueantes ni pendientes. El coordinador decide el cierre.',
+      log: ['$ npm run orchestrate -- submit --role reviewer --revision {n}', resolve ? '→ resolutions: ' + resolve + ' · 6/6 pass' : '→ 6/6 criterios pass · 0 bloqueantes'], rev: 'rev', st: 'ready', resolve, round: true },
+    { p: 'c>u', m: 'ready · entrega al desarrollador', say: 'El host entrega spec, OpenAPI y Draw.io de esta revisión y abre el diagrama en el editor. ready significa diseño revisado, no despliegue.',
+      log: ['→ estado ready · artifacts de la revisión {r}'], end: true },
+  ];
+
+  const D1 = '7c4e…a19f', D2 = 'b21d…04e6', D3 = '5f90…c3d2';
+  const SCENARIOS = {
+    main: [...intro, ...archTurn, archSubmit, ...contractTurn(D1), ...reviewPass(D1)],
+    fix: [...intro, ...archTurn, archSubmit, ...contractTurn(D1),
+      reviewOpen(D1),
+      { self: 'rev', m: 'AC-002 falla', say: 'La respuesta 201 de la simulación no declara simulationId, que AC-002 exige para confirmar.',
+        log: ['AC-001 pass · POST /loans/simulations', 'AC-002 fail · 201 sin simulationId → REV-001'] },
+      { p: 'rev>c', m: 'submit reviewer · REV-001 major', say: 'Un criterio fallido exige un hallazgo blocker o major, con código estable, responsable y condición de cierre verificable.',
+        log: ['$ npm run orchestrate -- submit --role reviewer --revision {n}', '→ REV-001 MISSING_RESULT_ID · major · owner contract'], rev: 'rev', st: 'contract', round: true,
+        find: { id: 'REV-001', code: 'MISSING_RESULT_ID', sev: 'major', owner: 'contract', t: 'La respuesta 201 debe declarar simulationId' } },
+      ...contractTurn(D2, 'REV-001'), ...reviewPass(D2, 'REV-001')],
+    ask: [...intro, ...archTurn,
+      { self: 'arch', m: 'Decisión de negocio abierta', say: 'El catálogo muestra que el desembolso responde 202 asíncrono. Qué ve el cliente si no hay confirmación a tiempo es una decisión de negocio.',
+        log: ['→ POST /disbursements → 202 Accepted (sin resultado final)'] },
+      { p: 'arch>c', m: 'handoff → discovery', say: 'Architecture no decide reglas de negocio: entrega un handoff a Discovery y el coordinador pasa a awaiting_user.',
+        log: ['$ npm run orchestrate -- submit --role architecture --revision {n}', '→ {"handoff":{"target":"discovery","reason":"resultado incierto del desembolso"}}'], st: 'awaiting_user' },
+      { p: 'c>u', m: 'Pregunta al desarrollador', say: 'El host presenta la pregunta y espera una respuesta real. Nunca simula la respuesta ni toma el silencio como aprobación.',
+        log: ['? Si el desembolso no confirma en 30 s, ¿qué ve el cliente?'] },
+      { p: 'u>c', m: 'answer · respuesta real', say: 'La respuesta se registra con answer. Discovery vuelve a consolidar la línea base y el flujo de diseño se repite.',
+        log: ['← "Mostrar en proceso y consultar el estado"', '$ npm run orchestrate -- answer --revision {n} --input runs/respuesta.json'], st: 'discovery' },
+      { p: 'c>disc', m: 'next → discovery · reapertura', say: 'Una reapertura conserva la historia y explica qué cambió.',
+        log: ['$ npm run orchestrate -- next', '→ {"role":"discovery","revision":{n}}'] },
+      { p: 'disc>c', m: 'submit discovery · línea base v2', say: 'Añade REQ-005 y el criterio AC-007 para el resultado incierto. Los acuerdos anteriores siguen vigentes.',
+        log: ['$ npm run orchestrate -- submit --role discovery --revision {n}', '→ + REQ-005 · + AC-007 · línea base v2'], rev: 'disc', st: 'architecture', base: 2 },
+      { p: 'c>arch', m: 'next → architecture', say: 'Architecture rediseña sobre la línea base v2: añade la etapa de consulta de estado.',
+        log: ['$ npm run orchestrate -- next', '→ {"role":"architecture","revision":{n}}'] },
+      { ...archSubmit, say: 'Ahora son cuatro etapas: simular, confirmar, desembolsar y consultar estado.', log: ['$ npm run orchestrate -- submit --role architecture --revision {n}', '→ 1 UX · 4 etapas · 4 escenarios · 7 criterios trazados'] },
+      ...contractTurn(D3), ...reviewPass(D3)],
+    limit: [...intro, ...archTurn, archSubmit, ...contractTurn(D1),
+      reviewOpen(D1),
+      { p: 'rev>c', m: 'submit reviewer · REV-002 blocker', say: 'El desembolso no exige Idempotency-Key en la operación reutilizada, aunque AC-004 lo requiere.',
+        log: ['$ npm run orchestrate -- submit --role reviewer --revision {n}', '→ REV-002 MISSING_IDEMPOTENCY_KEY · blocker · owner contract'], rev: 'rev', st: 'contract', round: true, repeat: 1,
+        find: { id: 'REV-002', code: 'MISSING_IDEMPOTENCY_KEY', sev: 'blocker', owner: 'contract', t: 'El desembolso debe exigir Idempotency-Key' } },
+      ...contractTurn(D2, 'REV-002'),
+      reviewOpen(D2),
+      { self: 'rev', m: 'REV-002 persiste', say: 'La operación del catálogo sigue sin la cabecera. Contract no puede añadirla sin cambiar un contrato existente.',
+        log: ['AC-004 fail · mismo código MISSING_IDEMPOTENCY_KEY'] },
+      { p: 'rev>c', m: 'submit reviewer · REV-002 otra vez', say: 'El mismo código aparece por segunda vez y alcanza maxRepeatedFindings = 2. El coordinador detiene las correcciones automáticas.',
+        log: ['$ npm run orchestrate -- submit --role reviewer --revision {n}', '→ REV-002 repetido 2/2 · estado needs_attention'], rev: 'rev', st: 'needs_attention', round: true, repeat: 2 },
+      { p: 'c>u', m: 'needs_attention · causa y evidencias', say: 'El host muestra la causa y las evidencias y espera una decisión antes de reabrir con answer. Las revisiones anteriores quedan intactas.',
+        log: ['→ detenido: REV-002 repetido · decide el desarrollador'], end: true },
+    ],
+  };
+
+  // ---------- Runtime ----------
+  let scenario = 'main', runId = 0, paused = reduce, skip = false, speed = 1, running = false;
+  let S;
+  const resetState = () => {
+    S = { rev: 0, base: null, att: 0, round: 0, repeat: 0, finds: {} };
+    $('revs').innerHTML = '<span class="empty">Aún no hay entregas. Cada <code>submit</code> válido crea un directorio <code>rNNNNNN</code> con su estado y la huella de su padre.</span>';
+    $('finds').innerHTML = '<span class="empty">Sin hallazgos.</span>';
+    $('term').innerHTML = '<div class="sep"># runs/prestamo · ' + document.querySelector(`[data-sc="${scenario}"]`).textContent.toLowerCase() + '</div>';
+    $('mRev').textContent = '—'; $('mBase').textContent = '—';
+    storeLast.textContent = 'r000001 · r000002 …';
+    setState('discovery'); updPolicy();
+    Object.values(nodeEls).forEach(g => g.classList.remove('on'));
+    Object.values(edgeEls).forEach(e => e.classList.remove('on'));
+  };
+  const rname = (n) => 'r' + String(n).padStart(6, '0');
+  function setState(s) {
+    $('mState').textContent = s;
+    chipT.textContent = s;
+    chip.style.setProperty('--sc', `var(${stColor[s]})`);
+    for (const [k, b] of Object.entries(stEls)) b.classList.toggle('on', k === s);
+  }
+  function updPolicy() {
+    const set = (id, bar, v, max) => { $(id).textContent = `${v} / ${max}`; const i = $(bar); i.style.width = Math.min(100, v / max * 100) + '%'; i.classList.toggle('full', v >= max); };
+    set('pRound', 'bRound', S.round, 3); set('pRep', 'bRep', S.repeat, 2); set('pAtt', 'bAtt', S.att, 16);
+  }
+  function log(lines) {
+    const t = $('term');
+    for (const line of lines) {
+      const d = document.createElement('div');
+      d.className = line.startsWith('$') ? 'cmd' : line.startsWith('?') ? 'ask' : 'out';
+      d.textContent = line; t.appendChild(d);
+    }
+    while (t.children.length > 80) t.removeChild(t.firstChild);
+    t.scrollTop = t.scrollHeight;
+  }
+  function renderFinds() {
+    const f = Object.values(S.finds); const box = $('finds');
+    if (!f.length) { box.innerHTML = '<span class="empty">Sin hallazgos.</span>'; return; }
+    box.innerHTML = '';
+    for (const x of f) {
+      const d = document.createElement('div'); d.className = 'fd' + (x.closed ? ' closed' : '');
+      d.innerHTML = `<span class="sev">${x.closed ? 'cerrado' : x.sev}</span><span class="t"><b class="mono">${x.id}</b> ${x.code}</span><span></span><span class="t">${x.t} · responsable ${x.owner}</span>`;
+      box.appendChild(d);
+    }
+  }
+
+  const wait = (ms, onFrame) => {
+    const my = runId;
+    return new Promise((res, rej) => {
+      let t = 0, last = performance.now();
+      const f = (now) => {
+        if (my !== runId) return rej('cancel');
+        const dt = now - last; last = now;
+        if (!paused) t += dt * speed;
+        if (skip) t = ms;
+        const p = ms <= 0 ? 1 : Math.min(1, t / ms);
+        onFrame && onFrame(p);
+        p >= 1 ? res() : requestAnimationFrame(f);
+      };
+      requestAnimationFrame(f);
+    });
+  };
+
+  const tok = $('tok'), halo = $('tokHalo'), lbl = $('lbl'), lblT = lbl.querySelector('text'), lblR = lbl.querySelector('rect');
+  function pointAt(pts, p) {
+    const seg = []; let L = 0;
+    for (let i = 1; i < pts.length; i++) { const l = Math.hypot(pts[i][0] - pts[i-1][0], pts[i][1] - pts[i-1][1]); seg.push(l); L += l; }
+    let d = p * L;
+    for (let i = 0; i < seg.length; i++) {
+      if (d <= seg[i] || i === seg.length - 1) { const r = seg[i] ? Math.min(1, d / seg[i]) : 1; return [pts[i][0] + (pts[i+1][0] - pts[i][0]) * r, pts[i][1] + (pts[i+1][1] - pts[i][1]) * r]; }
+      d -= seg[i];
+    }
+  }
+  function placeTok(x, y) {
+    tok.setAttribute('cx', x); tok.setAttribute('cy', y); halo.setAttribute('cx', x); halo.setAttribute('cy', y);
+    const w = lblR.getAttribute('width') * 1;
+    const lx = Math.max(4, Math.min(896 - w, x - w / 2)), ly = Math.max(2, y - 36);
+    lbl.setAttribute('transform', `translate(${lx},${ly})`);
+  }
+  function setLabel(text) {
+    lblT.textContent = text;
+    let w = 8 * text.length; try { w = lblT.getComputedTextLength() + 16; } catch (e) {}
+    lblR.setAttribute('width', w);
+  }
+  const ease = (p) => p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+
+  async function doStep(s, i, total) {
+    skip = false;
+    const actor = s.self || who(s.p.split('>')[0]);
+    const n = S.rev + 1;
+    const color = `var(${NODES[actor].c})`;
+    $('who').style.setProperty('--wc', color);
+    $('whoName').textContent = ROLE_NAME[actor];
+    $('stepNo').textContent = `Paso ${i + 1} de ${total}`;
+    $('prog').style.width = ((i + 1) / total * 100) + '%';
+    $('msg').textContent = s.m; $('say').textContent = s.say;
+    log(s.log.map(l => l.replace('{n}', n).replace('{r}', rname(S.rev))));
+    Object.values(nodeEls).forEach(g => g.classList.remove('on'));
+    Object.values(edgeEls).forEach(e => e.classList.remove('on'));
+    nodeEls[actor].classList.add('on');
+    document.querySelector('#fx').style.setProperty('--tc', color);
+    setLabel(s.m);
+    if (s.p) {
+      const pts = PATHS[s.p], to = who(s.p.split('>')[1]);
+      const e = edgeEls[EDGE_OF[s.p]]; e.style.setProperty('--hl', color); e.classList.add('on');
+      const dur = reduce ? 0 : (s.p.includes('u>c') || s.p.includes('c>u') ? 1700 : 1100);
+      await wait(dur, (p) => { const [x, y] = pointAt(pts, ease(p)); placeTok(x, y); });
+      nodeEls[to].classList.add('on');
+    } else {
+      const n0 = NODES[s.self]; placeTok(n0.x + n0.w - 24, n0.y + n0.h / 2);
+      const ring = nodeEls[s.self].querySelector('.ring');
+      await wait(reduce ? 0 : 1100, (p) => ring.style.opacity = String(Math.sin(p * Math.PI) * .9));
+      ring.style.opacity = '0';
+    }
+    // efectos
+    if (s.rev) {
+      S.rev++; S.att++;
+      const c = document.createElement('span'); c.className = 'rv'; c.style.setProperty('--rc', `var(${NODES[s.rev].c})`);
+      c.textContent = `${rname(S.rev)} · ${ROLE_NAME[s.rev].toLowerCase()}`;
+      const box = $('revs'); box.querySelector('.empty')?.remove(); box.appendChild(c);
+      $('mRev').textContent = rname(S.rev);
+      storeLast.textContent = 'última: ' + rname(S.rev);
+      nodeEls.store.classList.add('on'); edgeEls['c>store'].style.setProperty('--hl', 'var(--coord)'); edgeEls['c>store'].classList.add('on');
+    }
+    if (s.base) $('mBase').textContent = 'v' + s.base;
+    if (s.round) S.round++;
+    if (s.repeat) S.repeat = s.repeat;
+    if (s.find) S.finds[s.find.id] = { ...s.find };
+    if (s.resolve && S.finds[s.resolve]) S.finds[s.resolve].closed = true;
+    if (s.find || s.resolve) renderFinds();
+    if (s.st) setState(s.st);
+    updPolicy();
+    await wait(1100 + s.say.length * 16);
+  }
+
+  async function play() {
+    const id = ++runId; running = true; resetState();
+    const steps = SCENARIOS[scenario];
+    try {
+      for (let i = 0; i < steps.length; i++) await doStep(steps[i], i, steps.length);
+      if (id === runId) { running = false; $('play').textContent = 'Repetir'; }
+    } catch (e) { if (e !== 'cancel') throw e; }
+  }
+  const syncPlay = () => { $('play').textContent = paused ? 'Reproducir' : 'Pausar'; };
+
+  $('play').addEventListener('click', () => {
+    if (!running) { paused = false; syncPlay(); play(); return; }
+    paused = !paused; syncPlay();
+  });
+  $('next').addEventListener('click', () => { if (running) skip = true; });
+  $('restart').addEventListener('click', () => { syncPlay(); play(); });
+  $('speed').addEventListener('change', (e) => { speed = parseFloat(e.target.value) || 1; });
+  document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => {
+    scenario = b.dataset.sc;
+    document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    syncPlay(); play();
+  }));
+
+  syncPlay();
+  play();
+})();
+</script>
+
+</body></html>

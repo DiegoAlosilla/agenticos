@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b33">
+  <title>Arquitectura de canal | Beneficio de la automatización</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f3f6fc;
+      --muted: #aab7ca;
+      --navy: #101b33;
+      --panel: #182743;
+      --panel-2: #203453;
+      --line: #334866;
+      --cyan: #66d9e8;
+      --lime: #c4f06b;
+      --amber: #ffcb75;
+      --rose: #ff8e9b;
+      --shadow: 0 24px 70px #07101f99;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 82% 8%, #294b6b66, transparent 34rem),
+        radial-gradient(ellipse at 6% 96%, #21435366, transparent 30rem),
+        #091323;
+    }
+
+    button { font: inherit; }
+
+    .deck {
+      width: min(100%, 1440px);
+      min-height: 100vh;
+      margin: auto;
+      padding: 28px clamp(18px, 4vw, 64px) 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar, .controls, .control-group, .eyebrow, .metric, .legend, .agent-title, .slide-head {
+      display: flex;
+      align-items: center;
+    }
+
+    .topbar, .controls { justify-content: space-between; gap: 16px; }
+    .topbar { color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 750; color: var(--ink); }
+    .brand-mark { width: 10px; height: 10px; border-radius: 3px; background: var(--lime); box-shadow: 0 0 20px #c4f06b88; }
+    .slide-count { font-variant-numeric: tabular-nums; }
+
+    main { flex: 1; display: grid; align-items: center; padding: 26px 0; }
+    .slide {
+      display: none;
+      width: 100%;
+      min-height: min(77vh, 760px);
+      animation: enter .28s ease-out;
+    }
+    .slide.active { display: flex; flex-direction: column; justify-content: center; }
+    @keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .eyebrow { gap: 9px; color: var(--cyan); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 930px; margin-bottom: 20px; font-size: clamp(42px, 7vw, 88px); line-height: .98; letter-spacing: -.055em; }
+    h2 { margin: 10px 0 14px; font-size: clamp(30px, 4vw, 52px); line-height: 1.05; letter-spacing: -.04em; }
+    h3 { margin-bottom: 8px; font-size: 16px; }
+    .lead { max-width: 830px; color: var(--muted); font-size: clamp(17px, 2vw, 22px); line-height: 1.55; }
+    .accent { color: var(--lime); }
+    .cyan { color: var(--cyan); }
+    .muted { color: var(--muted); }
+    .small { color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .75fr); align-items: center; gap: clamp(28px, 6vw, 90px); }
+    .hero-stat { padding: clamp(24px, 4vw, 42px); border: 1px solid #58708c; border-radius: 22px; background: linear-gradient(145deg, #1d3351, #14233b); box-shadow: var(--shadow); }
+    .hero-stat .big { display: block; margin: 5px 0 10px; color: var(--lime); font-size: clamp(52px, 7vw, 86px); font-weight: 850; line-height: 1; letter-spacing: -.07em; font-variant-numeric: tabular-nums; }
+    .hero-stat .descriptor { color: var(--muted); font-size: 16px; line-height: 1.5; }
+    .hero-stat .divider { height: 1px; margin: 22px 0; background: var(--line); }
+    .metric { gap: 10px; color: var(--muted); font-size: 13px; }
+    .metric strong { color: var(--ink); }
+    .metric-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    .card { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(145deg, #1b2b47, #15233a); }
+    .card-top { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
+    .complexity { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .days { margin: 12px 0 18px; font-size: 32px; font-weight: 800; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+    .days span { color: var(--muted); font-size: 14px; font-weight: 500; letter-spacing: 0; }
+    .spec-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .spec-list li { display: grid; grid-template-columns: 19px 1fr; gap: 8px; color: #d7e0ed; font-size: 13px; line-height: 1.35; }
+    .spec-list li::before { content: "↳"; color: var(--cyan); font-weight: 800; }
+    .footnote { margin: 18px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .comparison { display: grid; gap: 14px; margin-top: 22px; }
+    .compare-row { display: grid; grid-template-columns: 130px 1fr 120px; align-items: center; gap: 18px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: #14223a; }
+    .compare-label { font-size: 14px; font-weight: 750; }
+    .bars { display: grid; gap: 8px; }
+    .bar-line { display: grid; grid-template-columns: 82px 1fr 80px; gap: 10px; align-items: center; color: var(--muted); font-size: 11px; }
+    .track { height: 9px; overflow: hidden; border-radius: 99px; background: #293a55; }
+    .bar { height: 100%; border-radius: inherit; }
+    .bar.manual { background: linear-gradient(90deg, #ffcb75, #ff9a72); }
+    .bar.target { min-width: 8px; background: linear-gradient(90deg, #66d9e8, #c4f06b); }
+    .percent { color: var(--lime); font-size: 24px; font-weight: 850; text-align: right; font-variant-numeric: tabular-nums; }
+    .percent span { display: block; color: var(--muted); font-size: 10px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+    .legend { gap: 16px; margin-top: 15px; color: var(--muted); font-size: 12px; }
+    .legend-item { display: inline-flex; align-items: center; gap: 7px; }
+    .swatch { width: 10px; height: 10px; border-radius: 3px; background: var(--amber); }
+    .swatch.target { background: var(--cyan); }
+
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; margin-top: 18px; padding: 16px 18px; border: 1px solid #526b87; border-radius: 12px; background: #172942; color: #d8e2ee; font-size: 13px; line-height: 1.5; }
+    .callout strong { color: var(--amber); }
+    .callout .symbol { font-size: 18px; }
+
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 34px 0 20px; }
+    .flow-node { position: relative; min-height: 153px; padding: 18px 15px; border: 1px solid #49617e; border-radius: 15px; background: linear-gradient(155deg, #203653, #15243b); }
+    .flow-node:not(:last-child)::after { content: "→"; position: absolute; z-index: 1; top: 50%; right: -17px; color: var(--cyan); font-size: 22px; font-weight: 800; transform: translate(50%, -50%); }
+    .step-num { display: inline-grid; place-items: center; width: 24px; height: 24px; margin-bottom: 15px; border-radius: 7px; background: #315170; color: var(--cyan); font-size: 11px; font-weight: 850; }
+    .flow-node h3 { font-size: 14px; }
+    .flow-node p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .flow-node.orchestrator { border-color: #9abf60; background: linear-gradient(155deg, #304a3d, #1b332f); }
+    .flow-node.orchestrator .step-num { background: #456447; color: var(--lime); }
+    .flow-node.reviewer { border-color: #6a75a4; }
+    .review-loop { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 0 auto; padding: 10px 18px; border: 1px dashed #7e91ae; border-radius: 99px; color: #d9e1ed; font-size: 12px; }
+    .review-loop span { color: var(--rose); font-weight: 800; }
+    .approval { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px; margin-top: 18px; }
+    .approval-line { height: 1px; background: var(--line); }
+    .approval-pill { padding: 12px 17px; border: 1px solid #78924f; border-radius: 99px; background: #253b33; color: var(--lime); font-size: 13px; font-weight: 750; text-align: center; }
+
+    .sim-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 0; }
+    .sim-total { padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: #172640; }
+    .sim-total span { display: block; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .sim-total strong { display: block; margin-top: 5px; color: var(--ink); font-size: 20px; font-variant-numeric: tabular-nums; }
+    .sim-total.average { border-color: #8ca65b; background: #22352f; }
+    .sim-total.average strong { color: var(--lime); }
+    .sim-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 12px; }
+    .sim-toolbar .nav-button[aria-pressed="true"] { border-color: var(--lime); background: #2a3a31; color: var(--lime); }
+    .sim-toolbar .nav-button.sim-run { margin-left: auto; border-color: #809d55; background: #293d32; color: var(--lime); font-weight: 750; }
+    .sim-toolbar .nav-button.sim-run:disabled { opacity: .7; }
+    .sim-readout { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 12px; color: var(--muted); font-size: 12px; }
+    .sim-readout strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+    .sim-track { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 9px; }
+    .sim-step { position: relative; min-height: 132px; padding: 13px 11px; border: 1px solid #3b506e; border-radius: 12px; background: #15243b; transition: background .2s, border-color .2s, transform .2s, box-shadow .2s; }
+    .sim-step:not(:last-child)::after { content: "›"; position: absolute; z-index: 1; top: 46%; right: -9px; color: #71859f; font-size: 20px; font-weight: 850; transform: translateX(50%); }
+    .sim-step.is-current { border-color: var(--cyan); background: #1d3b50; box-shadow: 0 0 20px #66d9e833; transform: translateY(-4px); }
+    .sim-step.is-done { border-color: #7f9d55; background: #22372f; }
+    .sim-step.is-done .sim-index { background: #48613a; color: var(--lime); }
+    .sim-index { display: grid; place-items: center; width: 23px; height: 23px; margin-bottom: 11px; border-radius: 7px; background: #2c4562; color: var(--cyan); font-size: 10px; font-weight: 850; }
+    .sim-step h3 { min-height: 31px; margin-bottom: 8px; font-size: 11px; line-height: 1.25; }
+    .sim-step p { min-height: 28px; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.4; }
+    .sim-step .sim-duration { display: block; margin-top: 9px; color: var(--cyan); font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .sim-step.is-done .sim-duration { color: var(--lime); }
+    .sim-footnote { margin: 12px 0 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
+
+    .finance-summary { display: grid; grid-template-columns: .8fr 1.2fr; gap: 12px; margin: 18px 0; }
+    .finance-kpi { padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #172640; }
+    .finance-kpi span { display: block; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .finance-kpi strong { display: block; margin-top: 7px; color: var(--cyan); font-size: 26px; font-variant-numeric: tabular-nums; }
+    .finance-kpi.average { border-color: #8ca65b; background: #22352f; }
+    .finance-kpi.average strong { color: var(--lime); }
+    .allocation-control { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(160px, .7fr) 64px; align-items: center; gap: 14px; margin: 14px 0; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: #14223a; }
+    .allocation-control label { color: #d7e0ed; font-size: 12px; line-height: 1.45; }
+    .allocation-control input { width: 100%; accent-color: var(--lime); }
+    .allocation-value { color: var(--lime); font-size: 15px; font-weight: 800; text-align: right; }
+    .finance-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 13px; }
+    .finance-table { width: 100%; border-collapse: collapse; background: #14223a; font-size: 12px; text-align: left; }
+    .finance-table th, .finance-table td { padding: 13px 14px; border-bottom: 1px solid #2d405d; vertical-align: top; }
+    .finance-table th { color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+    .finance-table tbody tr:last-child td { border-bottom: 0; }
+    .finance-table td:first-child { color: var(--ink); font-weight: 800; }
+    .finance-table td:last-child { color: var(--lime); font-weight: 800; font-variant-numeric: tabular-nums; }
+    .finance-table td span { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 500; }
+    .finance-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+    .finance-notes p { margin: 0; padding: 13px 15px; border: 1px solid #526b87; border-radius: 11px; background: #172942; color: #d8e2ee; font-size: 11px; line-height: 1.5; }
+    .finance-notes strong { color: var(--amber); }
+    .annual-inputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0 14px; }
+    .annual-input { display: grid; grid-template-columns: 1fr 74px; gap: 10px; align-items: center; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: #14223a; }
+    .annual-input span { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .annual-input input { width: 100%; padding: 7px 8px; border: 1px solid #415774; border-radius: 7px; background: #0f1b30; color: var(--ink); font: inherit; text-align: center; }
+    .annual-summary { display: grid; grid-template-columns: .8fr 1fr 1.2fr; gap: 10px; margin: 14px 0; }
+    .annual-kpi { padding: 15px; border: 1px solid var(--line); border-radius: 13px; background: #172640; }
+    .annual-kpi span { display: block; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .annual-kpi strong { display: block; margin-top: 6px; color: var(--cyan); font-size: 23px; font-variant-numeric: tabular-nums; }
+    .annual-kpi em { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; font-style: normal; }
+    .annual-kpi.highlight { border-color: #8ca65b; background: #22352f; }
+    .annual-kpi.highlight strong { color: var(--lime); }
+    .annual-table { width: 100%; border-collapse: collapse; background: #14223a; font-size: 11px; text-align: left; }
+    .annual-table th, .annual-table td { padding: 11px 13px; border-bottom: 1px solid #2d405d; vertical-align: top; }
+    .annual-table th { color: var(--muted); font-size: 9px; letter-spacing: .07em; text-transform: uppercase; }
+    .annual-table tbody tr:last-child td { border-bottom: 0; }
+    .annual-table td:first-child { color: var(--ink); font-weight: 800; }
+    .annual-table td:last-child { color: var(--lime); font-weight: 750; font-variant-numeric: tabular-nums; }
+    .annual-table td span { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; font-weight: 500; }
+
+    .roles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 22px; }
+    .role { padding: 17px; border: 1px solid var(--line); border-radius: 14px; background: #172640; }
+    .role .agent-title { min-height: 38px; gap: 9px; margin-bottom: 10px; font-size: 13px; font-weight: 800; }
+    .role-icon { display: grid; place-items: center; width: 27px; height: 27px; flex: 0 0 auto; border-radius: 8px; background: #2a4962; color: var(--cyan); font-size: 13px; }
+    .role p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .accountability-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; margin-top: 22px; }
+    .accountability { display: grid; gap: 10px; }
+    .accountability-item { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 12px; background: #172640; }
+    .accountability-item .check { color: var(--lime); font-weight: 900; }
+    .accountability-item strong { display: block; margin-bottom: 3px; font-size: 13px; }
+    .accountability-item span:last-child { color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .guardrail { padding: 19px; border: 1px solid #826e4a; border-radius: 14px; background: linear-gradient(145deg, #403a2d, #282b32); }
+    .guardrail h3 { color: var(--amber); }
+    .guardrail p, .guardrail li { color: #e3dccd; font-size: 13px; line-height: 1.5; }
+    .guardrail ul { margin: 10px 0 0; padding-left: 18px; }
+    .guardrail li + li { margin-top: 7px; }
+
+    .closing-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; margin-top: 25px; }
+    .outcomes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .outcome { padding: 17px; border: 1px solid var(--line); border-radius: 14px; background: #172640; }
+    .outcome strong { display: block; margin-bottom: 7px; color: var(--cyan); font-size: 14px; }
+    .outcome p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .decision { display: flex; flex-direction: column; justify-content: space-between; padding: 24px; border: 1px solid #7d9951; border-radius: 16px; background: linear-gradient(145deg, #2d4537, #1c302f); }
+    .decision .big { color: var(--lime); font-size: 45px; font-weight: 850; letter-spacing: -.06em; }
+    .decision p { margin-bottom: 0; color: #dce8d9; font-size: 14px; line-height: 1.5; }
+
+    .controls { padding-top: 16px; border-top: 1px solid #263752; }
+    .control-group { gap: 9px; }
+    .nav-button { min-width: 42px; height: 40px; padding: 0 13px; border: 1px solid #415774; border-radius: 10px; background: #172640; color: var(--ink); cursor: pointer; }
+    .nav-button:hover:not(:disabled) { border-color: var(--cyan); color: var(--cyan); }
+    .nav-button:disabled { opacity: .4; cursor: not-allowed; }
+    .progress { height: 3px; flex: 1; max-width: 180px; overflow: hidden; border-radius: 99px; background: #293a55; }
+    .progress-bar { height: 100%; width: 0; background: var(--lime); transition: width .2s ease; }
+    .keyboard-hint { color: #8190a6; font-size: 11px; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .closing-grid, .accountability-grid { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; margin-top: 22px; }
+      .flow-node { min-height: auto; }
+      .flow-node:not(:last-child)::after { top: auto; right: 50%; bottom: -19px; transform: translate(50%, 50%) rotate(90deg); }
+      .flow-node .step-num { margin-bottom: 8px; }
+      .roles { grid-template-columns: repeat(2, 1fr); }
+      .role:last-child { grid-column: span 2; }
+      .slide { min-height: auto; }
+      .sim-track { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .sim-step:nth-child(4)::after, .sim-step:nth-child(8)::after { display: none; }
+    }
+
+    @media (max-width: 650px) {
+      .deck { padding: 18px 16px 14px; }
+      main { align-items: start; }
+      .slide.active { justify-content: start; }
+      .grid-3, .roles, .outcomes { grid-template-columns: 1fr; }
+      .role:last-child { grid-column: auto; }
+      .compare-row { grid-template-columns: 1fr auto; gap: 8px; }
+      .bars { grid-column: 1 / -1; grid-row: 2; }
+      .percent { grid-column: 2; grid-row: 1; }
+      .bar-line { grid-template-columns: 75px 1fr 75px; }
+      .keyboard-hint { display: none; }
+      .topbar { font-size: 10px; }
+      .callout { grid-template-columns: 1fr; gap: 4px; }
+      .sim-summary, .finance-summary { grid-template-columns: repeat(2, 1fr); }
+      .finance-notes { grid-template-columns: 1fr; }
+      .annual-inputs { grid-template-columns: 1fr; }
+      .annual-summary { grid-template-columns: 1fr; }
+      .sim-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sim-step:nth-child(2n)::after { display: none; }
+      .sim-toolbar .nav-button.sim-run { margin-left: 0; }
+      .sim-readout { flex-direction: column; gap: 4px; }
+      .allocation-control { grid-template-columns: 1fr 64px; }
+      .allocation-control input { grid-column: 1; grid-row: 2; }
+      .allocation-value { grid-column: 2; grid-row: 1 / span 2; }
+      .finance-table, .annual-table { min-width: 650px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+
+    @media print {
+      :root { color-scheme: light; }
+      body { background: white; }
+      .deck { display: block; width: auto; padding: 0; }
+      .topbar, .controls { display: none !important; }
+      main { display: block; padding: 0; }
+      .slide, .slide.active { display: flex !important; min-height: 100vh; padding: 18mm 16mm; break-after: page; color: #14213a; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .slide:last-child { break-after: auto; }
+      .card, .flow-node, .sim-step, .role, .accountability-item, .compare-row, .finance-table tr, .finance-kpi { break-inside: avoid; }
+      h1, h2, h3, .compare-label { color: #14213a; }
+      .lead, .small, .muted, .footnote, .spec-list li, .flow-node p, .role p, .accountability-item span:last-child { color: #475569; }
+      .hero-stat, .card, .flow-node, .role, .accountability-item, .compare-row, .outcome { box-shadow: none; border-color: #9aacc2; background: #f2f6fb; }
+      .guardrail, .decision { background: #f8f4e9; border-color: #b6a16c; }
+      .guardrail p, .guardrail li, .decision p { color: #384152; }
+      .approval-pill { background: #f1f7e9; }
+      .flow-node.orchestrator { background: #edf5e8; }
+      .flow-node.reviewer { background: #f2f1f8; }
+      .sim-total, .sim-step, .annual-kpi { color: #14213a; background: #f2f6fb; border-color: #9aacc2; }
+      .sim-total strong, .sim-step h3 { color: #14213a; }
+      .sim-step p, .sim-step .sim-duration { color: #475569; }
+      .finance-kpi, .finance-table, .allocation-control, .finance-notes p { color: #14213a; background: #f2f6fb; border-color: #9aacc2; }
+      .finance-kpi strong, .finance-table td:last-child, .allocation-value { color: #375622; }
+      .finance-table th, .finance-table td span, .allocation-control label { color: #475569; }
+      .annual-input, .annual-table { color: #14213a; background: #f2f6fb; border-color: #9aacc2; }
+      .annual-input input { color: #14213a; background: #fff; border-color: #9aacc2; }
+      .annual-table th, .annual-table td span, .annual-kpi em { color: #475569; }
+      .annual-kpi strong, .annual-table td:last-child { color: #375622; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span> Arquitectura de canal</div>
+      <div class="slide-count" id="slideCount" aria-live="polite">01 / 09</div>
+    </header>
+
+    <main>
+      <section class="slide active" aria-label="Resumen ejecutivo">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Caso de negocio · Solución agéntica</div>
+            <h1>De días de diseño a <span class="accent">horas para decidir.</span></h1>
+            <p class="lead">Automatizar la preparación y revisión de diagramas de arquitectura de capa canal reduce el ciclo de entrega y devuelve capacidad de arquitectura al equipo.</p>
+            <div class="metric"><span class="metric-dot" aria-hidden="true"></span><span>Meta estimada: <strong>resultado en 2–4 horas</strong>, incluida la revisión del flujo propuesto.</span></div>
+          </div>
+          <aside class="hero-stat" aria-label="Comparativo de tiempo">
+            <div class="complexity">Hoy · según complejidad</div>
+            <span class="big">3–20 días</span>
+            <div class="descriptor">Preparar y entregar un diagrama de arquitectura de canal.</div>
+            <div class="divider"></div>
+            <div class="metric"><span class="metric-dot" aria-hidden="true"></span><span>Con agentes: <strong>2–4 horas estimadas</strong></span></div>
+          </aside>
+        </div>
+        <p class="footnote">Propuesta para acelerar el diseño, la documentación y la revisión; el diseño final y su aprobación siguen bajo responsabilidad humana.</p>
+      </section>
+
+      <section class="slide" aria-label="Alcance por complejidad">
+        <div class="eyebrow">01 · Alcance y línea base</div>
+        <h2>Más integraciones, mayor costo de coordinación.</h2>
+        <p class="lead">La línea base crece con el número de contratos, endpoints y relaciones que el equipo debe identificar, representar y validar.</p>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-top"><span class="complexity">Complejidad baja</span><span class="cyan">01</span></div>
+            <div class="days">3–5 <span>días</span></div>
+            <ul class="spec-list">
+              <li>1 API UX · 1 microservicio UX</li>
+              <li>1–2 endpoints</li>
+              <li>1 base de datos: Redis, SQL Server o Cosmos DB</li>
+              <li>1 servicio de capa producto</li>
+              <li>Tópico de auditoría · Vault de secretos y certificados</li>
+              <li>Aprobación por autonomía: líder técnico + arquitecto</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-top"><span class="complexity">Complejidad media</span><span class="cyan">02</span></div>
+            <div class="days">7–10 <span>días</span></div>
+            <ul class="spec-list">
+              <li>2 APIs UX · 2–3 microservicios UX</li>
+              <li>2–3 endpoints por microservicio (4–9 aprox.)</li>
+              <li>1 base de datos: Redis, SQL Server o Cosmos DB</li>
+              <li>2–5 servicios de capa producto</li>
+              <li>Tópico de auditoría · Vault de secretos y certificados</li>
+              <li>Aprobación por autonomía: líder técnico + arquitecto</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-top"><span class="complexity">Complejidad alta</span><span class="cyan">03</span></div>
+            <div class="days">12–20 <span>días</span></div>
+            <ul class="spec-list">
+              <li>3–6 APIs UX · 3–6 microservicios UX</li>
+              <li>3–4 endpoints por microservicio (9–24 aprox.)</li>
+              <li>1 base de datos: Redis, SQL Server o Cosmos DB</li>
+              <li>2–5 servicios de capa producto</li>
+              <li>Tópico de auditoría · Vault de secretos y certificados</li>
+              <li>Aprobación por autonomía: líder técnico + arquitecto</li>
+            </ul>
+          </article>
+        </div>
+        <p class="footnote">Interpretación del insumo: “2 o 2 APIs UX” se presenta como 2; “3 o 6 microservicios UX” como un rango de 3–6. Los totales de endpoints son aproximados.</p>
+      </section>
+
+      <section class="slide" aria-label="Beneficio de tiempo estimado">
+        <div class="eyebrow">02 · Beneficio esperado</div>
+        <h2>El ahorro crece con la complejidad.</h2>
+        <p class="lead">Una meta de 2–4 horas cambia el costo de producir una primera propuesta revisable, especialmente cuando se multiplican las dependencias.</p>
+        <div class="comparison">
+          <div class="compare-row">
+            <div class="compare-label">Baja</div>
+            <div class="bars">
+              <div class="bar-line"><span>Actual</span><div class="track"><div class="bar manual" style="width:25%"></div></div><span>24–40 h</span></div>
+              <div class="bar-line"><span>Con agentes</span><div class="track"><div class="bar target" style="width:1.46%"></div></div><span>2 h 20 min</span></div>
+            </div>
+            <div class="percent">90.3%<span>reducción estimada</span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Media</div>
+            <div class="bars">
+              <div class="bar-line"><span>Actual</span><div class="track"><div class="bar manual" style="width:50%"></div></div><span>56–80 h</span></div>
+              <div class="bar-line"><span>Con agentes</span><div class="track"><div class="bar target" style="width:2.14%"></div></div><span>3 h 25 min</span></div>
+            </div>
+            <div class="percent">93.9%<span>reducción estimada</span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Alta</div>
+            <div class="bars">
+              <div class="bar-line"><span>Actual</span><div class="track"><div class="bar manual" style="width:100%"></div></div><span>96–160 h</span></div>
+              <div class="bar-line"><span>Con agentes</span><div class="track"><div class="bar target" style="width:2.29%"></div></div><span>3 h 40 min</span></div>
+            </div>
+            <div class="percent">96.2%<span>reducción estimada</span></div>
+          </div>
+        </div>
+        <div class="legend">
+          <span class="legend-item"><span class="swatch" aria-hidden="true"></span>Tiempo actual estimado</span>
+          <span class="legend-item"><span class="swatch target" aria-hidden="true"></span>Meta con agentes</span>
+        </div>
+        <div class="callout"><span class="symbol" aria-hidden="true">ⓘ</span><span><strong>Simulación de referencia:</strong> conversión de días hábiles a 8 horas y comparación del mínimo actual con el tiempo simulado por nivel. Ahorro estimado: 21 h 40 min–37 h 40 min (baja), 52 h 35 min–76 h 35 min (media) y 92 h 20 min–156 h 20 min (alta). No son resultados medidos; las esperas externas deben validarse por separado.</span></div>
+      </section>
+
+      <section class="slide" aria-label="Flujo de los agentes">
+        <div class="eyebrow">03 · Flujo objetivo de agentes</div>
+        <h2>Un flujo coordinado, con revisión y retorno.</h2>
+        <p class="lead">Orchestration-agent enruta el trabajo, mantiene el contexto y coordina las iteraciones hasta tener una propuesta lista para aprobación.</p>
+        <div class="flow" role="list" aria-label="Pasos del flujo agéntico">
+          <article class="flow-node orchestrator" role="listitem">
+            <span class="step-num">01</span>
+            <h3>orchestration-agent</h3>
+            <p>Coordina next / submit / answer, persiste revisiones y controla límites.</p>
+          </article>
+          <article class="flow-node" role="listitem">
+            <span class="step-num">02</span>
+            <h3>discovery-agent</h3>
+            <p>Identifica actores, alcance, reglas, sistemas y decisiones pendientes.</p>
+          </article>
+          <article class="flow-node" role="listitem">
+            <span class="step-num">03</span>
+            <h3>architect-agent</h3>
+            <p>Define UX, responsabilidades, estado, escenarios y trazabilidad.</p>
+          </article>
+          <article class="flow-node" role="listitem">
+            <span class="step-num">04</span>
+            <h3>contract-agent</h3>
+            <p>Valida contratos y mapeos; genera OpenAPI y Draw.io con buildChannel.</p>
+          </article>
+          <article class="flow-node reviewer" role="listitem">
+            <span class="step-num">05</span>
+            <h3>review-agent</h3>
+            <p>Revisa completitud, consistencia, estándares y evidencia de contratos.</p>
+          </article>
+        </div>
+        <div class="review-loop"><span>↶</span> Si hay hallazgos, orchestration-agent devuelve observaciones al agente responsable para corregir y revisar de nuevo.</div>
+        <div class="approval"><span class="approval-line" aria-hidden="true"></span><div class="approval-pill">Líder técnico + arquitecto · aprobación por flujo de autonomía</div><span class="approval-line" aria-hidden="true"></span></div>
+        <p class="footnote">Basado en <a href="orquestacion-agenticos.html" target="_blank" rel="noopener">docs/orquestacion-agenticos.html: abrir el recorrido dinámico</a>. Su coordinador determinístico registra revisiones inmutables en runs/, limita iteraciones y espera decisiones reales; ready significa diseño revisado, no despliegue.</p>
+      </section>
+
+      <section class="slide" data-simulation-slide="true" aria-label="Simulación dinámica por complejidad">
+        <div class="eyebrow">04 · Simulación por complejidad</div>
+        <h2>Un flujo, tres tiempos estimados.</h2>
+        <p class="lead">Selecciona un escenario y reproduce el recorrido. El tiempo de cada etapa cambia con el alcance del diagrama.</p>
+        <div class="sim-summary" aria-label="Totales estimados por escenario y promedio">
+          <div class="sim-total"><span>Baja</span><strong>2 h 20 min</strong></div>
+          <div class="sim-total"><span>Media</span><strong>3 h 25 min</strong></div>
+          <div class="sim-total"><span>Alta</span><strong>3 h 40 min</strong></div>
+          <div class="sim-total average"><span>Promedio simple</span><strong>≈3 h 08 min</strong></div>
+        </div>
+        <div class="sim-toolbar" role="group" aria-label="Seleccionar complejidad">
+          <button class="nav-button sim-choice" type="button" data-sim="baja" aria-pressed="true">Baja</button>
+          <button class="nav-button sim-choice" type="button" data-sim="media" aria-pressed="false">Media</button>
+          <button class="nav-button sim-choice" type="button" data-sim="alta" aria-pressed="false">Alta</button>
+          <button class="nav-button sim-run" id="simPlay" type="button">▶ Simular ejecución</button>
+          <button class="nav-button" id="simReset" type="button">Reiniciar</button>
+        </div>
+        <div class="sim-readout">
+          <span id="simStatus" aria-live="polite">Escenario bajo listo para simular.</span>
+          <span>Progreso simulado: <strong id="simElapsed">0 min</strong> / <strong id="simTotal">2 h 20 min</strong></span>
+        </div>
+        <div class="sim-track" role="list" aria-label="Etapas simuladas">
+          <article class="sim-step" role="listitem" data-sim-step="0">
+            <span class="sim-index">01</span><h3>orchestration-agent</h3><p>Enruta y consolida.</p><span class="sim-duration">5 min</span>
+          </article>
+          <article class="sim-step" role="listitem" data-sim-step="1">
+            <span class="sim-index">02</span><h3>discovery-agent</h3><p>Define alcance y necesidades.</p><span class="sim-duration">15 min</span>
+          </article>
+          <article class="sim-step" role="listitem" data-sim-step="2">
+            <span class="sim-index">03</span><h3>architect-agent</h3><p>Define servicios, estado y trazabilidad.</p><span class="sim-duration">25 min</span>
+          </article>
+          <article class="sim-step" role="listitem" data-sim-step="3">
+            <span class="sim-index">04</span><h3>contract-agent + buildChannel</h3><p>Valida contratos y crea artefactos.</p><span class="sim-duration">20 min</span>
+          </article>
+          <article class="sim-step" role="listitem" data-sim-step="4">
+            <span class="sim-index">05</span><h3>review-agent</h3><p>Valida estándares y completitud.</p><span class="sim-duration">15 min</span>
+          </article>
+          <article class="sim-step" role="listitem" data-sim-step="5">
+            <span class="sim-index">06</span><h3>Iteración de ajuste</h3><p>Una vuelta por hallazgos.</p><span class="sim-duration">15 min</span>
+          </article>
+          <article class="sim-step" role="listitem" data-sim-step="6">
+            <span class="sim-index">07</span><h3>Líder técnico</h3><p>Revisión y conformidad técnica.</p><span class="sim-duration">20 min</span>
+          </article>
+          <article class="sim-step" role="listitem" data-sim-step="7">
+            <span class="sim-index">08</span><h3>Arquitecto</h3><p>Aprobación por autonomía.</p><span class="sim-duration">25 min</span>
+          </article>
+        </div>
+        <p class="sim-footnote">La animación es una reproducción acelerada del flujo; los tiempos son estimaciones, no telemetría ni benchmarks. El promedio simple es ≈3 h 08 min. Incluye una iteración corregida, revisión del líder técnico y aprobación del arquitecto; nuevas rondas, preguntas de negocio o esperas externas amplían el ciclo.</p>
+      </section>
+
+      <section class="slide" aria-label="Accountabilities y responsabilidades">
+        <div class="eyebrow">05 · Accountability de TI</div>
+        <h2>Automatizar el trabajo repetible; mantener clara la responsabilidad.</h2>
+        <div class="roles">
+          <article class="role"><div class="agent-title"><span class="role-icon">O</span>orchestration-agent</div><p>Coordina next / submit / answer, persiste revisiones inmutables y aplica límites: 3 rondas, 2 repeticiones y 16 entregas.</p></article>
+          <article class="role"><div class="agent-title"><span class="role-icon">D</span>discovery-agent</div><p>Entrevista y establece la línea base; escala decisiones de negocio al usuario.</p></article>
+          <article class="role"><div class="agent-title"><span class="role-icon">C</span>contract-agent</div><p>Valida operaciones, mapeos y seguridad; solicita generar OpenAPI y Draw.io.</p></article>
+          <article class="role"><div class="agent-title"><span class="role-icon">A</span>architect-agent</div><p>Define servicios UX, responsabilidades, estado, escenarios y trazabilidad.</p></article>
+          <article class="role"><div class="agent-title"><span class="role-icon">R</span>review-agent</div><p>Revisa en contexto independiente y asigna hallazgos con evidencia y criterio de cierre.</p></article>
+        </div>
+        <div class="accountability-grid">
+          <div class="accountability">
+            <div class="accountability-item"><span class="check">✓</span><span><strong>Tiempo de ciclo y capacidad</strong><span>Medir solicitud → propuesta revisable; liberar horas de arquitectura para decisiones de mayor valor.</span></span></div>
+            <div class="accountability-item"><span class="check">✓</span><span><strong>Calidad y consistencia</strong><span>Aplicar criterios comunes de representación, contratos e integraciones en los tres niveles.</span></span></div>
+            <div class="accountability-item"><span class="check">✓</span><span><strong>Gobierno y trazabilidad</strong><span>Registrar fuentes, decisiones, pendientes, hallazgos y responsable de aprobación.</span></span></div>
+            <div class="accountability-item"><span class="check">✓</span><span><strong>Gestión de riesgo</strong><span>Hacer visibles datos, auditoría, secretos, certificados y dependencias antes de construir.</span></span></div>
+          </div>
+          <aside class="guardrail">
+            <h3>Control que no se delega</h3>
+            <p>Los agentes aceleran análisis, armado y validaciones repetibles; no sustituyen la responsabilidad del arquitecto ni la decisión de gobierno.</p>
+            <ul>
+              <li>La autoridad humana aprueba y acepta excepciones.</li>
+              <li>Las decisiones inciertas se escalan; no se inventan contratos.</li>
+              <li>La calidad se demuestra con métricas y muestreo de entregables.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="slide" aria-label="Beneficio monetario estimado">
+        <div class="eyebrow">06 · Valor económico del tiempo</div>
+        <h2>Cuantificar capacidad recuperada, no prometer ahorro en caja.</h2>
+        <p class="lead">Con las tarifas entregadas, una hora conjunta del líder técnico y el arquitecto equivale a <strong>S/ 220</strong>. El modelo estima el valor de horas de ambos roles que podrían volver a diseño y entrega.</p>
+        <div class="finance-summary">
+          <div class="finance-kpi"><span>Tarifa conjunta · 1 líder + 1 arquitecto</span><strong>S/ 220 / hora</strong></div>
+          <div class="finance-kpi average"><span>Valor medio modelado por diagrama · 3 complejidades</span><strong id="financeAverage">S/ 16,618</strong></div>
+        </div>
+        <div class="allocation-control">
+          <label for="allocation">Supuesto de dedicación promedio de ambos roles durante los días actuales (escenario de referencia).</label>
+          <input id="allocation" type="range" min="10" max="100" step="10" value="100" aria-label="Porcentaje de dedicación de ambos roles">
+          <output class="allocation-value" id="allocationValue" for="allocation">100%</output>
+        </div>
+        <div class="finance-table-wrap">
+          <table class="finance-table">
+            <thead>
+              <tr><th>Complejidad</th><th>Costo laboral actual modelado*</th><th>Revisión y aprobación humana</th><th>Valor de capacidad liberada**</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Baja</td>
+                <td id="financeCurrent-baja">S/ 5,280–8,800<span>Punto medio: S/ 7,040</span></td>
+                <td id="financeApproval-baja">S/ 83<span>Líder 20 min + arquitecto 25 min</span></td>
+                <td id="financeReleased-baja">S/ 5,197–8,717<span>Punto medio: S/ 6,957</span></td>
+              </tr>
+              <tr>
+                <td>Media</td>
+                <td id="financeCurrent-media">S/ 12,320–17,600<span>Punto medio: S/ 14,960</span></td>
+                <td id="financeApproval-media">S/ 102<span>Líder 25 min + arquitecto 30 min</span></td>
+                <td id="financeReleased-media">S/ 12,218–17,498<span>Punto medio: S/ 14,858</span></td>
+              </tr>
+              <tr>
+                <td>Alta</td>
+                <td id="financeCurrent-alta">S/ 21,120–35,200<span>Punto medio: S/ 28,160</span></td>
+                <td id="financeApproval-alta">S/ 120<span>Líder 30 min + arquitecto 35 min</span></td>
+                <td id="financeReleased-alta">S/ 21,000–35,080<span>Punto medio: S/ 28,040</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="finance-notes">
+          <p><strong>* Supuesto visible:</strong> los días se convierten a 8 h/día; participa 1 líder técnico a S/ 100/h y 1 arquitecto a S/ 120/h. El control permite ajustar la dedicación atribuible al diagrama; al 100% representa el techo teórico, no un costo observado.</p>
+          <p><strong>** Método:</strong> costo actual modelado menos costo de revisión/aprobación humana del flujo. El beneficio representa capacidad laboral valorizada, no reducción automática de planilla ni ROI neto; excluye costos de plataforma, cómputo y operación de agentes.</p>
+        </div>
+      </section>
+
+      <section class="slide" aria-label="Resumen anualizado del ahorro">
+        <div class="eyebrow">07 · Proyección anual</div>
+        <h2>El volumen convierte horas liberadas en capacidad anual.</h2>
+        <p class="lead">Como no se indicó cuántos diagramas se producen al año, el escenario inicial usa 4 por complejidad (12 en total). Edita las cantidades para reflejar el portafolio real.</p>
+        <div class="annual-inputs" role="group" aria-label="Diagramas anuales por complejidad">
+          <label class="annual-input"><span>Complejidad baja · / año</span><input id="annualCountInput-baja" class="annual-count" data-annual-level="baja" type="number" min="0" step="1" value="4" aria-label="Cantidad anual de diagramas de complejidad baja"></label>
+          <label class="annual-input"><span>Complejidad media · / año</span><input id="annualCountInput-media" class="annual-count" data-annual-level="media" type="number" min="0" step="1" value="4" aria-label="Cantidad anual de diagramas de complejidad media"></label>
+          <label class="annual-input"><span>Complejidad alta · / año</span><input id="annualCountInput-alta" class="annual-count" data-annual-level="alta" type="number" min="0" step="1" value="4" aria-label="Cantidad anual de diagramas de complejidad alta"></label>
+        </div>
+        <div class="annual-summary" aria-label="Beneficio anual estimado">
+          <div class="annual-kpi"><span>Diagramas al año</span><strong id="annualVolumeTotal">12</strong></div>
+          <div class="annual-kpi"><span>Capacidad de ambos roles liberada</span><strong id="annualHoursTotal">1,813 h</strong><em id="annualHoursRange">Rango modelado: 1,397–2,229 h/año</em></div>
+          <div class="annual-kpi highlight"><span>Valor anualizado estimado</span><strong id="annualSavingsTotal">S/ 199,420</strong><em id="annualSavingsRange">Rango modelado: S/ 153,660–245,180/año</em></div>
+        </div>
+        <div class="finance-table-wrap">
+          <table class="annual-table">
+            <thead><tr><th>Complejidad</th><th>Diagramas / año</th><th>Horas de capacidad liberadas</th><th>Valor anualizado</th></tr></thead>
+            <tbody>
+              <tr><td>Baja</td><td id="annualCount-baja">4</td><td id="annualHours-baja">189–317 h/año</td><td id="annualValue-baja">S/ 20,787–34,867<span>Punto medio: S/ 27,827</span></td></tr>
+              <tr><td>Media</td><td id="annualCount-media">4</td><td id="annualHours-media">444–636 h/año</td><td id="annualValue-media">S/ 48,873–69,993<span>Punto medio: S/ 59,433</span></td></tr>
+              <tr><td>Alta</td><td id="annualCount-alta">4</td><td id="annualHours-alta">764–1,276 h/año</td><td id="annualValue-alta">S/ 84,000–140,320<span>Punto medio: S/ 112,160</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sim-footnote">La proyección usa la misma dedicación ajustable y los supuestos salariales de la diapositiva anterior. Es valor de capacidad potencial, no ahorro en caja; valida el volumen anual y las horas efectivas con datos del piloto.</p>
+      </section>
+
+      <section class="slide" aria-label="Resultado y plan de medición">
+        <div class="eyebrow">08 · Resultado para la gerencia</div>
+        <h2>Más velocidad sin perder gobierno arquitectónico.</h2>
+        <p class="lead">La ganancia no es solo dibujar antes: es convertir una práctica artesanal en un proceso repetible, auditable y medible.</p>
+        <div class="closing-grid">
+          <div class="outcomes">
+            <article class="outcome"><strong>Mayor throughput</strong><p>Atender más iniciativas con la misma capacidad de arquitectura.</p></article>
+            <article class="outcome"><strong>Menos espera</strong><p>Entregar una propuesta revisable en horas, no esperar varios días para verla.</p></article>
+            <article class="outcome"><strong>Diseño más consistente</strong><p>Reducir omisiones en endpoints, producto, datos, auditoría y Vault.</p></article>
+            <article class="outcome"><strong>Arquitectos en decisiones</strong><p>Reasignar el esfuerzo desde documentación manual hacia riesgos y trade-offs.</p></article>
+          </div>
+          <aside class="decision">
+            <div>
+              <div class="complexity">Hipótesis a validar en piloto</div>
+              <div class="big">2–4 horas</div>
+            </div>
+            <p>Medir el tiempo desde una solicitud completa hasta un diagrama revisado y listo para aprobación. Conservar el tiempo de aprobación humana como métrica separada.</p>
+          </aside>
+        </div>
+        <div class="callout"><span class="symbol" aria-hidden="true">◎</span><span><strong>Indicadores sugeridos:</strong> lead time por complejidad, horas activas de arquitectura, aceptación en primera revisión, número de iteraciones, hallazgos por revisión, porcentaje de contratos con fuente y decisiones pendientes al aprobar. Comparar una muestra del proceso actual con el piloto antes de declarar ahorro realizado.</span></div>
+        <p class="footnote">Base de esta propuesta: tiempos y alcances proporcionados para la arquitectura de canal; objetivo agéntico estimado de 2–4 horas. No se han presentado datos históricos de medición.</p>
+      </section>
+    </main>
+
+    <footer class="controls">
+      <div class="control-group">
+        <button class="nav-button" id="prev" type="button" aria-label="Diapositiva anterior">←</button>
+        <button class="nav-button" id="next" type="button" aria-label="Diapositiva siguiente">→</button>
+      </div>
+      <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="control-group">
+        <span class="keyboard-hint">Usa ← → para navegar · Imprimir para exportar a PDF</span>
+        <button class="nav-button" type="button" onclick="window.print()" aria-label="Imprimir o guardar como PDF">PDF</button>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll(".slide")];
+      const count = document.getElementById("slideCount");
+      const progress = document.getElementById("progressBar");
+      const previous = document.getElementById("prev");
+      const next = document.getElementById("next");
+      const simulationSlideIndex = slides.findIndex(slide => slide.dataset.simulationSlide === "true");
+      const simulationChoices = [...document.querySelectorAll(".sim-choice")];
+      const simulationNodes = [...document.querySelectorAll(".sim-step")];
+      const simulationPlay = document.getElementById("simPlay");
+      const simulationStatus = document.getElementById("simStatus");
+      const simulationElapsed = document.getElementById("simElapsed");
+      const simulationTotal = document.getElementById("simTotal");
+      const allocationSlider = document.getElementById("allocation");
+      const allocationValue = document.getElementById("allocationValue");
+      const financeAverage = document.getElementById("financeAverage");
+      const annualCountInputs = [...document.querySelectorAll(".annual-count")];
+      const annualVolumeTotal = document.getElementById("annualVolumeTotal");
+      const annualHoursTotal = document.getElementById("annualHoursTotal");
+      const annualHoursRange = document.getElementById("annualHoursRange");
+      const annualSavingsTotal = document.getElementById("annualSavingsTotal");
+      const annualSavingsRange = document.getElementById("annualSavingsRange");
+      const simulationProfiles = {
+        baja: {label: "Baja", minutes: [5, 15, 20, 25, 15, 15, 20, 25]},
+        media: {label: "Media", minutes: [10, 25, 30, 40, 25, 20, 25, 30]},
+        alta: {label: "Alta", minutes: [10, 25, 35, 40, 25, 20, 30, 35]}
+      };
+      const financeProfiles = [
+        {id: "baja", days: [3, 5], leaderMinutes: 20, architectMinutes: 25},
+        {id: "media", days: [7, 10], leaderMinutes: 25, architectMinutes: 30},
+        {id: "alta", days: [12, 20], leaderMinutes: 30, architectMinutes: 35}
+      ];
+      const currency = new Intl.NumberFormat("es-PE", {
+        style: "currency", currency: "PEN", maximumFractionDigits: 0
+      });
+      const wholeNumber = new Intl.NumberFormat("es-PE", {maximumFractionDigits: 0});
+      const hourlyCost = {leader: 100, architect: 120};
+      const baselineAverageDays = {baja: 4, media: 8.5, alta: 16};
+      let current = 0;
+      let selectedSimulation = "baja";
+      let simulationStep = -1;
+      let simulationTimer = null;
+      let simulationFinished = false;
+
+      function formatMinutes(total) {
+        const hours = Math.floor(total / 60);
+        const minutes = total % 60;
+        if (!hours) return `${minutes} min`;
+        return minutes ? `${hours} h ${String(minutes).padStart(2, "0")} min` : `${hours} h`;
+      }
+
+      function renderSimulation() {
+        const profile = simulationProfiles[selectedSimulation];
+        const total = profile.minutes.reduce((sum, minutes) => sum + minutes, 0);
+        const activeStep = simulationFinished ? profile.minutes.length : simulationStep;
+        const elapsedSteps = simulationFinished ? profile.minutes.length : Math.max(0, simulationStep);
+        const elapsed = profile.minutes.slice(0, elapsedSteps).reduce((sum, minutes) => sum + minutes, 0);
+
+        simulationChoices.forEach(button => {
+          button.setAttribute("aria-pressed", String(button.dataset.sim === selectedSimulation));
+        });
+        simulationNodes.forEach((node, index) => {
+          const isCurrent = !simulationFinished && index === simulationStep;
+          node.classList.toggle("is-current", isCurrent);
+          node.classList.toggle("is-done", index < activeStep);
+          if (isCurrent) node.setAttribute("aria-current", "step");
+          else node.removeAttribute("aria-current");
+          node.querySelector(".sim-duration").textContent = formatMinutes(profile.minutes[index]);
+        });
+
+        simulationTotal.textContent = formatMinutes(total);
+        simulationElapsed.textContent = formatMinutes(elapsed);
+        simulationPlay.disabled = simulationTimer !== null || simulationFinished;
+        simulationPlay.textContent = simulationFinished
+          ? "Simulación completa"
+          : simulationTimer !== null ? "Ejecutando…" : "▶ Simular ejecución";
+        if (simulationFinished) {
+          simulationStatus.textContent = `Escenario ${profile.label.toLowerCase()} completo; diagrama listo para la decisión de aprobación.`;
+        } else if (simulationTimer !== null && simulationStep >= 0) {
+          const nodeTitle = simulationNodes[simulationStep].querySelector("h3").textContent;
+          simulationStatus.textContent = `Etapa ${simulationStep + 1} de ${simulationNodes.length}: ${nodeTitle}.`;
+        } else {
+          simulationStatus.textContent = `Escenario ${profile.label.toLowerCase()} listo para simular.`;
+        }
+      }
+
+      function updateFinanceCell(id, mainText, detailText) {
+        const cell = document.getElementById(id);
+        cell.textContent = mainText;
+        const detail = document.createElement("span");
+        detail.textContent = detailText;
+        cell.append(detail);
+      }
+
+      function renderAnnual() {
+        const allocation = Number(allocationSlider.value) / 100;
+        const totals = {count: 0, hoursMin: 0, hoursMid: 0, hoursMax: 0, valueMin: 0, valueMid: 0, valueMax: 0};
+
+        financeProfiles.forEach(profile => {
+          const input = document.getElementById(`annualCountInput-${profile.id}`);
+          const count = Math.max(0, Math.floor(input.valueAsNumber || 0));
+          input.value = String(count);
+          const approvalHours = (profile.leaderMinutes + profile.architectMinutes) / 60;
+          const approvalCost = profile.leaderMinutes / 60 * hourlyCost.leader +
+            profile.architectMinutes / 60 * hourlyCost.architect;
+          const savedHours = profile.days.map(days => days * 8 * 2 * allocation - approvalHours);
+          const savedValue = profile.days.map(days => days * 8 *
+            (hourlyCost.leader + hourlyCost.architect) * allocation - approvalCost);
+          const midpointHours = baselineAverageDays[profile.id] * 8 * 2 * allocation - approvalHours;
+          const midpointValue = baselineAverageDays[profile.id] * 8 *
+            (hourlyCost.leader + hourlyCost.architect) * allocation - approvalCost;
+
+          totals.count += count;
+          totals.hoursMin += savedHours[0] * count;
+          totals.hoursMid += midpointHours * count;
+          totals.hoursMax += savedHours[1] * count;
+          totals.valueMin += savedValue[0] * count;
+          totals.valueMid += midpointValue * count;
+          totals.valueMax += savedValue[1] * count;
+
+          document.getElementById(`annualCount-${profile.id}`).textContent = wholeNumber.format(count);
+          document.getElementById(`annualHours-${profile.id}`).textContent =
+            `${wholeNumber.format(Math.round(savedHours[0] * count))}–${wholeNumber.format(Math.round(savedHours[1] * count))} h/año`;
+          updateFinanceCell(
+            `annualValue-${profile.id}`,
+            `${currency.format(savedValue[0] * count)}–${currency.format(savedValue[1] * count)}`,
+            `Punto medio: ${currency.format(midpointValue * count)}`
+          );
+        });
+
+        annualVolumeTotal.textContent = wholeNumber.format(totals.count);
+        annualHoursTotal.textContent = `${wholeNumber.format(Math.round(totals.hoursMid))} h/año`;
+        annualHoursRange.textContent = `Rango modelado: ${wholeNumber.format(Math.round(totals.hoursMin))}–${wholeNumber.format(Math.round(totals.hoursMax))} h/año`;
+        annualSavingsTotal.textContent = `${currency.format(totals.valueMid)}/año`;
+        annualSavingsRange.textContent = `Rango modelado: ${currency.format(totals.valueMin)}–${currency.format(totals.valueMax)}/año`;
+      }
+
+      function renderFinance() {
+        const allocation = Number(allocationSlider.value) / 100;
+        allocationValue.textContent = `${Math.round(allocation * 100)}%`;
+        let midpointBenefitSum = 0;
+
+        financeProfiles.forEach(profile => {
+          const currentCosts = profile.days.map(days => days * 8 *
+            (hourlyCost.leader + hourlyCost.architect) * allocation);
+          const approvalCost = profile.leaderMinutes / 60 * hourlyCost.leader +
+            profile.architectMinutes / 60 * hourlyCost.architect;
+          const releaseValues = currentCosts.map(cost => cost - approvalCost);
+          const midpointBaseline = baselineAverageDays[profile.id] * 8 *
+            (hourlyCost.leader + hourlyCost.architect) * allocation;
+          const midpointBenefit = midpointBaseline - approvalCost;
+          midpointBenefitSum += midpointBenefit;
+
+          updateFinanceCell(
+            `financeCurrent-${profile.id}`,
+            `${currency.format(currentCosts[0])}–${currency.format(currentCosts[1])}`,
+            `Punto medio: ${currency.format((currentCosts[0] + currentCosts[1]) / 2)}`
+          );
+          updateFinanceCell(
+            `financeApproval-${profile.id}`,
+            currency.format(approvalCost),
+            `Líder ${profile.leaderMinutes} min + arquitecto ${profile.architectMinutes} min`
+          );
+          updateFinanceCell(
+            `financeReleased-${profile.id}`,
+            `${currency.format(releaseValues[0])}–${currency.format(releaseValues[1])}`,
+            `Punto medio: ${currency.format(midpointBenefit)}`
+          );
+        });
+
+        financeAverage.textContent = currency.format(midpointBenefitSum / financeProfiles.length);
+        renderAnnual();
+      }
+
+      function resetSimulation() {
+        if (simulationTimer !== null) window.clearInterval(simulationTimer);
+        simulationTimer = null;
+        simulationStep = -1;
+        simulationFinished = false;
+        renderSimulation();
+      }
+
+      function playSimulation() {
+        if (simulationTimer !== null || simulationFinished) return;
+        simulationStep = 0;
+        renderSimulation();
+        const interval = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 120 : 700;
+        simulationTimer = window.setInterval(() => {
+          if (simulationStep < simulationNodes.length - 1) {
+            simulationStep += 1;
+            renderSimulation();
+            return;
+          }
+          window.clearInterval(simulationTimer);
+          simulationTimer = null;
+          simulationFinished = true;
+          renderSimulation();
+        }, interval);
+        renderSimulation();
+      }
+
+      function show(index) {
+        current = Math.max(0, Math.min(index, slides.length - 1));
+        if (current !== simulationSlideIndex && simulationTimer !== null) resetSimulation();
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === current);
+          slide.setAttribute("aria-hidden", String(i !== current));
+        });
+        count.textContent = `${String(current + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+        progress.style.width = `${((current + 1) / slides.length) * 100}%`;
+        previous.disabled = current === 0;
+        next.disabled = current === slides.length - 1;
+      }
+
+      previous.addEventListener("click", () => show(current - 1));
+      next.addEventListener("click", () => show(current + 1));
+      simulationChoices.forEach(button => {
+        button.addEventListener("click", () => {
+          selectedSimulation = button.dataset.sim;
+          resetSimulation();
+        });
+      });
+      simulationPlay.addEventListener("click", playSimulation);
+      document.getElementById("simReset").addEventListener("click", resetSimulation);
+      allocationSlider.addEventListener("input", renderFinance);
+      annualCountInputs.forEach(input => input.addEventListener("input", renderAnnual));
+      document.addEventListener("keydown", event => {
+        if (event.altKey || event.ctrlKey || event.metaKey) return;
+        if (event.key === "ArrowRight" || event.key === " ") {
+          event.preventDefault();
+          show(current + 1);
+        } else if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          show(current - 1);
+        } else if (event.key === "Home") {
+          show(0);
+        } else if (event.key === "End") {
+          show(slides.length - 1);
+        }
+      });
+      window.addEventListener("beforeprint", () => slides.forEach(slide => slide.classList.add("active")));
+      window.addEventListener("afterprint", () => show(current));
+      renderSimulation();
+      renderFinance();
+      show(0);
+    })();
+  </script>
+</body>
+</html>
