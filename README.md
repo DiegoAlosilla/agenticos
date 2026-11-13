@@ -10,12 +10,21 @@ Abre un chat en el proyecto Agenticos. Puedes mencionar la skill con `$` como en
 
 > $canal-diseno Quiero diseñar un flujo de préstamo de consumo. Comienza con el inicio de la solicitud, continúa con evaluación crediticia, simulación y confirmación de datos, y termina con el desembolso.
 
-1. Entrevista por rondas para aclarar etapas, datos, responsables y resultados.
-2. Consulta el catálogo Business y BIAN para identificar operaciones reutilizables. Registra las referencias confirmadas y los pendientes.
-3. Propone uno o varios servicios UX según sus responsabilidades y guarda las decisiones y escenarios en la spec.
-4. Genera un OpenAPI por servicio UX y abre el diagrama animado en Draw.io.
+1. Discovery entrevista y registra requisitos, criterios, decisiones y pendientes.
+2. Architecture consulta contratos Git y BIAN y diseña responsabilidades, escenarios y trazabilidad.
+3. Contract precisa interfaces; el coordinador valida y genera OpenAPI y Draw.io desde la misma spec.
+4. Reviewer contrasta la entrega con la línea base. El coordinador devuelve hallazgos al responsable o cierra como diseño revisado/bosquejo, con límites de iteración.
 
-[Guía de diseño de canal](docs/channel-design.md)
+[Guía de diseño de canal](docs/channel-design.md) · [Roles, comandos y estados de orquestación](docs/orchestration.md)
+
+El host ejecuta los roles y las herramientas. El CLI Node.js controla turnos, revisiones y archivos; no invoca un modelo por sí mismo. Cada sesión conserva su historia bajo `runs/`.
+
+```powershell
+npm run orchestrate:diagram -- --open
+npm run orchestrate:demo
+```
+
+El primer comando abre un diagrama animado local de petición → skill → coordinador → agentes → validadores → entrega, con escenarios de corrección y consulta al usuario. El segundo ejecuta una demo con entregas ficticias predeterminadas y una corrección verificable.
 
 ### `$microservicio-diseno` · Diseñar un cambio en un servicio existente
 

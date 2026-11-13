@@ -21,6 +21,9 @@ En la raíz, [`AGENTS.md`](../AGENTS.md) indica cuándo activar el agente. [`pac
 
 | Módulo | Responsabilidad |
 | --- | --- |
+| [`orchestration-cli.mjs`](../src/orchestration-cli.mjs) | Expone `init`, `next`, `status`, `submit`, `answer` y `diagram`. El host ejecuta los roles asignados. |
+| [`orchestration.mjs`](../src/orchestration.mjs) | Coordina Discovery, Architecture, Contract y Reviewer; versiona línea base y entregas, comprueba trazabilidad, genera artefactos, valida huellas y limita iteraciones. [Guía](orchestration.md) |
+| [`orchestration-diagram.mjs`](../src/orchestration-diagram.mjs) | Genera el recorrido de la propia orquestación como HTML animado, Draw.io con cuatro escenarios y modelo ArquiFlow. |
 | [`channel-cli.mjs`](../src/channel-cli.mjs) | Punto de entrada. Despacha `editor`, `search`, `operation`, `bian`, `guide`, `build` y `demo`. Prepara el clon ficticio cuando corresponde, lee el JSON de entrada y llama al módulo que ejecuta la operación. Con `--open`, entrega el diagrama al editor después de guardar la propuesta. |
 | [`channel-catalog.mjs`](../src/channel-catalog.mjs) | Lee contratos JSON o YAML desde un commit de Git y los interpreta con el núcleo OpenAPI del editor. `search` devuelve candidatos e identifica archivos omitidos. `operation` recupera una operación por archivo, método y ruta. La consulta BIAN comprueba la huella del catálogo local y permite buscar por propósito y acción semántica. El servidor del editor reutiliza el mismo catálogo Git. |
 | [`channel-design.mjs`](../src/channel-design.mjs) | `buildChannel()` valida servicios UX, etapas, escenarios y referencias de la spec. Contrasta método, ruta y SHA-256 de los consumos confirmados contra el commit elegido. Genera un OpenAPI por servicio UX, arma el recorrido de cada escenario y calcula la distribución del lienzo. `writeChannel()` guarda el conjunto de entregables en un directorio nuevo. |

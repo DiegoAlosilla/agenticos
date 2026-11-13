@@ -2,6 +2,8 @@
 
 Abre este repositorio en Codex y describe el flujo que quieres diseñar. En Copilot, selecciona `channel-design` antes de enviar la descripción. [Protocolo del agente](../agents/channel-design-protocol.md)
 
+Los flujos nuevos utilizan [cuatro roles y un coordinador versionado](orchestration.md): Discovery, Architecture, Contract y Reviewer. El CLI de canal descrito aquí mantiene las consultas, la spec y el generador; `orchestrate submit --role contract` integra esa generación con trazabilidad, revisión y límites de iteración. `channel build` y `channel:demo` siguen disponibles como herramientas directas sin revisión orquestada.
+
 ## Flujo y decisiones del agente
 
 ```mermaid

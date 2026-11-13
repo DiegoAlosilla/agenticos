@@ -8,7 +8,12 @@
     "channel": "node src/channel-cli.mjs",
     "channel:editor": "node src/channel-cli.mjs editor",
     "channel:demo": "node src/channel-cli.mjs demo",
-    "test": "npm --prefix editor test"
+    "orchestrate": "node src/orchestration-cli.mjs",
+    "orchestrate:demo": "node scripts/orchestration-demo.mjs",
+    "orchestrate:diagram": "node src/orchestration-cli.mjs diagram",
+    "test:orchestration": "npm --prefix editor run build && node --test tests/orchestration.test.mjs",
+    "test:orchestration:browser": "node tests/orchestration-browser.mjs",
+    "test": "npm run test:orchestration && npm --prefix editor test"
   },
   "dependencies": {"yaml": "2.9.1"}
 }
