@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-18",
+  "passed": true,
+  "startupMs": 435,
+  "sourceCommit": "b58bf4c2c300dd018afc084e9bb24b7adaaa3500",
+  "catalogSha256": "be3d4320380e30cff5f4c11a385fceb303d51b5a63dbbd0689e732ea8e56fd74",
+  "nodeExternalNetworking": "blocked by offline.cjs before bootstrap",
+  "browserExternalNetworking": "blocked",
+  "external": [],
+  "errors": [],
+  "scope": "Existing dependencies and verified WAR; start/build and actual BIAN search, not a new clean clone/bootstrap download.",
+  "supportChecked": "Guide, Spanish summary, manual action filter and actual reference insertion under network isolation"
+}

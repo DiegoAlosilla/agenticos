@@ -1,0 +1,18 @@
+{
+  "openapi": "3.0.4",
+  "info": {"title": "API de clientes ficticios", "version": "0.1.0", "description": "Demostración ficticia. Ninguna operación se ejecuta."},
+  "paths": {
+    "/clientes/{clienteId}": {
+      "get": {
+        "operationId": "consultarClienteFicticio",
+        "summary": "Consultar un cliente ficticio",
+        "description": "Documentación de demostración, conservada en el snapshot del diagrama.",
+        "parameters": [{"name": "clienteId", "in": "path", "required": true, "schema": {"type": "string"}, "example": "cliente-demo-001"}],
+        "responses": {
+          "200": {"description": "Cliente ficticio encontrado", "content": {"application/json": {"schema": {"type": "object", "properties": {"nombre": {"type": "string"}}}, "example": {"nombre": "Persona de prueba"}}}},
+          "404": {"description": "Cliente ficticio inexistente"}
+        }
+      }
+    }
+  }
+}

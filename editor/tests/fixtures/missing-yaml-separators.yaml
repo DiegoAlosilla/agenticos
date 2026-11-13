@@ -1,0 +1,7 @@
+openapi 3.1.0
+info
+  title API ficticia sin separadores
+paths
+  ficticio
+    get
+      responses { 200 { description Respuesta ficticia } }

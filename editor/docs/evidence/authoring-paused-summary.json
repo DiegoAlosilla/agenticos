@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-18",
+  "scenario": "UI retirada, preservación y colores nativos",
+  "palettes": [
+    {
+      "dark": false,
+      "native": {
+        "color": "rgb(63, 63, 63)",
+        "background": "rgb(241, 243, 244)",
+        "border": "rgb(218, 218, 218)"
+      },
+      "operation": {
+        "color": "rgb(63, 63, 63)",
+        "background": "rgb(241, 243, 244)",
+        "border": "rgb(218, 218, 218)"
+      },
+      "all": {
+        "color": "rgb(63, 63, 63)",
+        "background": "rgb(241, 243, 244)",
+        "border": "rgb(218, 218, 218)"
+      }
+    },
+    {
+      "dark": true,
+      "native": {
+        "color": "rgb(192, 192, 192)",
+        "background": "rgb(27, 29, 30)",
+        "border": "rgb(51, 51, 51)"
+      },
+      "operation": {
+        "color": "rgb(192, 192, 192)",
+        "background": "rgb(27, 29, 30)",
+        "border": "rgb(51, 51, 51)"
+      },
+      "all": {
+        "color": "rgb(192, 192, 192)",
+        "background": "rgb(27, 29, 30)",
+        "border": "rgb(51, 51, 51)"
+      }
+    }
+  ],
+  "external": [],
+  "errors": []
+}

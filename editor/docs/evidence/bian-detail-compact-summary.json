@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-24",
+  "change": "Operation-first BIAN detail matching the chosen list/detail proposal",
+  "checks": {
+    "typescript": true,
+    "build": true,
+    "unit": {
+      "passed": 32
+    },
+    "browser": {
+      "startTime": "2026-10-24T05:41:25.259Z",
+      "duration": 208215.5,
+      "expected": 25,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "focusedBeforeFinalNativeColorPolish": {
+      "startTime": "2026-10-24T05:39:52.563Z",
+      "duration": 81124.004,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "offline": {
+      "passed": true,
+      "startupMs": 659
+    }
+  },
+  "coverage": [
+    "1220x884, default 488 px native sidebar / 477 px usable root, light and dark",
+    "17 AccountRecovery operations explicitly reviewed through the manual picker",
+    "One visible operation, exact method/path and matching insert reference",
+    "Insert button remains outside scrolling content when original/domain details expand",
+    "Selection, keyboard focus, tabs, 300/560/760 px, both scroll positions through native refresh",
+    "Single transaction, undo/redo, copies, pages, clean reopen, native reserialization",
+    "Divergent saved snapshots and unknown versions preserved",
+    "Swagger and import regressions"
+  ],
+  "ai": "UI scenarios use an identified transport double; no inference, semantic quality or model change is claimed.",
+  "unchanged": [
+    "BIAN source/catalog hashes",
+    "Ollama/models/retrieval",
+    "editor source",
+    "dependencies/lockfile",
+    "persisted document format"
+  ],
+  "limits": [
+    "Human comfort review pending",
+    "Other native layouts/platforms not tested",
+    "No new clean bootstrap or real inference run; existing prepared runtime used"
+  ],
+  "evidence": [
+    "bian-detail-compact-layout.json",
+    "bian-detail-compact-regression-results.json",
+    "bian-detail-compact-focused-results.json",
+    "bian-detail-compact-offline-summary.json"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "apis": [{
+    "id": "api-catalogo-ficticio",
+    "profile": "basic-openapi-3.0.1/v1",
+    "title": "API de catálogo ficticio",
+    "version": "1.0.0",
+    "description": "Consulta de artículos inventados para probar la autoría local.",
+    "server": "/",
+    "tag": "Artículos ficticios",
+    "security": "bearer",
+    "operations": [{
+      "id": "operacion-consultar-articulo",
+      "method": "GET",
+      "path": "/articulos/{id}",
+      "operationId": "consultarArticulo",
+      "summary": "Consultar un artículo ficticio.",
+      "description": "Devuelve datos inventados del artículo seleccionado.",
+      "parameters": [
+        {"name":"id","type":"string","description":"Identificador ficticio.","required":true,"example":"ART-DEMO","location":"path"},
+        {"name":"detalle","type":"boolean","description":"Solicitar detalle ficticio.","required":false,"example":"true","location":"query"}
+      ],
+      "responses": [
+        {"code":"200","description":"Artículo ficticio disponible.","body":"object","fields":[
+          {"name":"nombre","type":"string","description":"Nombre inventado.","required":true,"example":"Artículo demo"},
+          {"name":"precio","type":"number","description":"Precio ficticio.","required":false,"example":"10.5"},
+          {"name":"disponible","type":"boolean","description":"Disponibilidad inventada.","required":true,"example":"true"}
+        ]},
+        {"code":"204","description":"Consulta ficticia sin contenido.","body":"none","fields":[]}
+      ]
+    }]
+  }]
+}

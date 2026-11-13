@@ -1,0 +1,14 @@
+openapi: 3.1.2
+info:
+  title: API ficticia con referencia no soportada
+  version: 1.0.0
+paths:
+  /ficticio:
+    get:
+      responses:
+        '200':
+          description: Respuesta ficticia
+          content:
+            application/json:
+              schema:
+                $ref: https://example.invalid/schema-ficticio.json

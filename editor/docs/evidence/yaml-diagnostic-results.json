@@ -1,0 +1,272 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\DrawIo\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/integration/import.spec.mjs",
+      "tests/integration/viability.spec.mjs"
+    ],
+    "configFile": "D:\\DrawIo\\playwright.config.mjs",
+    "rootDir": "D:/DrawIo/tests/integration",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/DrawIo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/DrawIo/tests/integration",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\DrawIo\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\DrawIo\\tests\\integration",
+        "snapshotDir": "D:\\DrawIo\\tests\\integration",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8080",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "headless": true,
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm start",
+      "url": "http://127.0.0.1:8080/health",
+      "reuseExistingServer": true,
+      "timeout": 180000
+    }
+  },
+  "suites": [
+    {
+      "title": "import.spec.mjs",
+      "file": "import.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 2: importar tres versiones, deduplicar y rechazar sin cambiar el lienzo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7065,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T02:36:07.777Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a6cd7810acf282988ca5-ab76a820f2eaca1d2526",
+          "file": "import.spec.mjs",
+          "line": 15,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "viability.spec.mjs",
+      "file": "viability.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 0: editor real, guardado portable, perfiles limpios, páginas y red local",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12222,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T02:36:14.984Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "network",
+                      "contentType": "application/json",
+                      "body": "eyJyZXF1ZXN0cyI6W3sidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwLz9sYW5nPWVzJnVpPWtlbm5lZHkmbW9kZT1kZXZpY2UmZ2FwaT0wJmRiPTAmb2Q9MCZnaD0wJmdsPTAmdHI9MCZicm93c2VyPTAmcGlja2VyPTAmc3RlYWx0aD0xJm1hdGg9MCIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9ncmFwaGVkaXRvci5jc3MiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9ib290c3RyYXAuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9tYWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2hpZ2gtY29udHJhc3QuY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUHJlQ29uZmlnLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYXBwLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL214Z3JhcGgvY3NzL2NvbW1vbi5jc3MiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9Qb3N0Q29uZmlnLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvcGx1Z2lucy9jb250cmFjdHMuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZXNvdXJjZXMvZGlhX2VzLnR4dCIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3NoYXBlcy0xNC02LTUubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc3RlbmNpbHMubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvZXh0ZW5zaW9ucy5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9pbWFnZXMvZ2l0aHViLWxvZ28uc3ZnIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvP2xhbmc9ZXMmdWk9a2VubmVkeSZtb2RlPWRldmljZSZnYXBpPTAmZGI9MCZvZD0wJmdoPTAmZ2w9MCZ0cj0wJmJyb3dzZXI9MCZwaWNrZXI9MCZzdGVhbHRoPTEmbWF0aD0wIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2dyYXBoZWRpdG9yLmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2Jvb3RzdHJhcC5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL21haW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvaGlnaC1jb250cmFzdC5jc3MiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9QcmVDb25maWcuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9hcHAubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvbXhncmFwaC9jc3MvY29tbW9uLmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1Bvc3RDb25maWcuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9wbHVnaW5zL2NvbnRyYWN0cy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3Jlc291cmNlcy9kaWFfZXMudHh0IiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9leHRlbnNpb25zLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2ltYWdlcy9naXRodWItbG9nby5zdmciLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC8/bGFuZz1lcyZ1aT1rZW5uZWR5Jm1vZGU9ZGV2aWNlJmdhcGk9MCZkYj0wJm9kPTAmZ2g9MCZnbD0wJnRyPTAmYnJvd3Nlcj0wJnBpY2tlcj0wJnN0ZWFsdGg9MSZtYXRoPTAmY29udHJhY3RzPTAiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvZ3JhcGhlZGl0b3IuY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYm9vdHN0cmFwLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2FwcC5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9teGdyYXBoL2Nzcy9jb21tb24uY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3Jlc291cmNlcy9kaWFfZXMudHh0IiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9leHRlbnNpb25zLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2ltYWdlcy9naXRodWItbG9nby5zdmciLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC8/bGFuZz1lcyZ1aT1rZW5uZWR5Jm1vZGU9ZGV2aWNlJmdhcGk9MCZkYj0wJm9kPTAmZ2g9MCZnbD0wJnRyPTAmYnJvd3Nlcj0wJnBpY2tlcj0wJnN0ZWFsdGg9MSZtYXRoPTAiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvZ3JhcGhlZGl0b3IuY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYm9vdHN0cmFwLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2FwcC5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9teGdyYXBoL2Nzcy9jb21tb24uY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3BsdWdpbnMvY29udHJhY3RzLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvcmVzb3VyY2VzL2RpYV9lcy50eHQiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zaGFwZXMtMTQtNi01Lm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3N0ZW5jaWxzLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2V4dGVuc2lvbnMubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaW1hZ2VzL2dpdGh1Yi1sb2dvLnN2ZyIsIm1ldGhvZCI6IkdFVCJ9XSwicmVzcG9uc2VzIjpbeyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvP2xhbmc9ZXMmdWk9a2VubmVkeSZtb2RlPWRldmljZSZnYXBpPTAmZGI9MCZvZD0wJmdoPTAmZ2w9MCZ0cj0wJmJyb3dzZXI9MCZwaWNrZXI9MCZzdGVhbHRoPTEmbWF0aD0wIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9ncmFwaGVkaXRvci5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9ib290c3RyYXAuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUHJlQ29uZmlnLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9hcHAubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL214Z3JhcGgvY3NzL2NvbW1vbi5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9wbHVnaW5zL2NvbnRyYWN0cy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZXNvdXJjZXMvZGlhX2VzLnR4dCIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvZXh0ZW5zaW9ucy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaW1hZ2VzL2dpdGh1Yi1sb2dvLnN2ZyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC8/bGFuZz1lcyZ1aT1rZW5uZWR5Jm1vZGU9ZGV2aWNlJmdhcGk9MCZkYj0wJm9kPTAmZ2g9MCZnbD0wJnRyPTAmYnJvd3Nlcj0wJnBpY2tlcj0wJnN0ZWFsdGg9MSZtYXRoPTAiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2dyYXBoZWRpdG9yLmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9tYWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2Jvb3RzdHJhcC5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvaGlnaC1jb250cmFzdC5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUHJlQ29uZmlnLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2FwcC5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvbXhncmFwaC9jc3MvY29tbW9uLmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9Qb3N0Q29uZmlnLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3BsdWdpbnMvY29udHJhY3RzLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3Jlc291cmNlcy9kaWFfZXMudHh0Iiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3N0ZW5jaWxzLm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zaGFwZXMtMTQtNi01Lm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9leHRlbnNpb25zLm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9pbWFnZXMvZ2l0aHViLWxvZ28uc3ZnIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwLz9sYW5nPWVzJnVpPWtlbm5lZHkmbW9kZT1kZXZpY2UmZ2FwaT0wJmRiPTAmb2Q9MCZnaD0wJmdsPTAmdHI9MCZicm93c2VyPTAmcGlja2VyPTAmc3RlYWx0aD0xJm1hdGg9MCZjb250cmFjdHM9MCIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvZ3JhcGhlZGl0b3IuY3NzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL21haW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYm9vdHN0cmFwLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9QcmVDb25maWcuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYXBwLm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9teGdyYXBoL2Nzcy9jb21tb24uY3NzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1Bvc3RDb25maWcuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvcmVzb3VyY2VzL2RpYV9lcy50eHQiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc3RlbmNpbHMubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3NoYXBlcy0xNC02LTUubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2V4dGVuc2lvbnMubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2ltYWdlcy9naXRodWItbG9nby5zdmciLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvP2xhbmc9ZXMmdWk9a2VubmVkeSZtb2RlPWRldmljZSZnYXBpPTAmZGI9MCZvZD0wJmdoPTAmZ2w9MCZ0cj0wJmJyb3dzZXI9MCZwaWNrZXI9MCZzdGVhbHRoPTEmbWF0aD0wIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9ncmFwaGVkaXRvci5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYm9vdHN0cmFwLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL21haW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2hpZ2gtY29udHJhc3QuY3NzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9hcHAubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL214Z3JhcGgvY3NzL2NvbW1vbi5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9wbHVnaW5zL2NvbnRyYWN0cy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZXNvdXJjZXMvZGlhX2VzLnR4dCIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvZXh0ZW5zaW9ucy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaW1hZ2VzL2dpdGh1Yi1sb2dvLnN2ZyIsInN0YXR1cyI6MjAwfV0sImV4dGVybmFsIjpbXSwiZXJyb3JzIjpbXX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccd0f659d0abd2231e8a-38e74f17bd7b8960c858",
+          "file": "viability.spec.mjs",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "la documentación del snapshot se muestra como texto y no ejecuta HTML",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2478,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T02:36:27.221Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccd0f659d0abd2231e8a-887af02a1657725eb059",
+          "file": "viability.spec.mjs",
+          "line": 177,
+          "column": 1
+        },
+        {
+          "title": "formatos desconocidos y vínculos perdidos conservan figura y datos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2424,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T02:36:29.714Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccd0f659d0abd2231e8a-6219b96bee873e7dbe6b",
+          "file": "viability.spec.mjs",
+          "line": 199,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-15T02:36:07.255Z",
+    "duration": 25039.926,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

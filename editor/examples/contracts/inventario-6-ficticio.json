@@ -1,0 +1,17 @@
+{
+  "openapi": "3.1.2",
+  "info": {"title": "API de inventario ficticio", "version": "1.0.0"},
+  "paths": {
+    "/articulos": {
+      "get": {"summary": "Listar artículos ficticios", "responses": {"200": {"description": "Lista ficticia"}}},
+      "post": {"summary": "Crear artículo ficticio", "responses": {"201": {"description": "Artículo ficticio creado"}}},
+      "delete": {"summary": "Vaciar inventario ficticio", "responses": {"204": {"description": "Inventario ficticio vacío"}}}
+    },
+    "/articulos/{id}": {
+      "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string"}}],
+      "get": {"summary": "Consultar artículo ficticio", "responses": {"200": {"description": "Artículo ficticio encontrado"}}},
+      "put": {"summary": "Actualizar artículo ficticio", "responses": {"200": {"description": "Artículo ficticio actualizado"}}},
+      "delete": {"summary": "Eliminar artículo ficticio", "responses": {"204": {"description": "Artículo ficticio eliminado"}}}
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "commit": "6367b778d19bab24b2718b522539299504269f4c",
+  "results": [
+    {
+      "file": "examples/api-with-examples.yaml",
+      "accepted": false,
+      "unchanged": true
+    },
+    {
+      "file": "examples/callback-example.yaml",
+      "accepted": true
+    },
+    {
+      "file": "examples/link-example.yaml",
+      "accepted": true
+    },
+    {
+      "file": "examples/petstore-expanded.yaml",
+      "accepted": false,
+      "unchanged": true
+    },
+    {
+      "file": "examples/petstore.yaml",
+      "accepted": true
+    },
+    {
+      "file": "examples/recursive.json",
+      "accepted": true
+    },
+    {
+      "file": "examples/sample-swagger.yaml",
+      "accepted": true
+    },
+    {
+      "file": "examples/sampleswagger.yaml",
+      "accepted": true
+    },
+    {
+      "file": "examples/uspto.yaml",
+      "accepted": true
+    }
+  ],
+  "correctedExample": {
+    "operations": 2,
+    "status300ExampleVisible": true
+  },
+  "externalRequests": 0
+}

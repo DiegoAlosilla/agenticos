@@ -1,0 +1,112 @@
+{
+  "verified": true,
+  "commit": "b58bf4c2c300dd018afc084e9bb24b7adaaa3500",
+  "domains": 258,
+  "operations": 4580,
+  "catalogBytes": 2171027,
+  "catalogSha256": "be3d4320380e30cff5f4c11a385fceb303d51b5a63dbbd0689e732ea8e56fd74",
+  "anomalies": [
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/BrokeredProductProxy.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/CardTransactionTracking.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/ClaimAdministration.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/ClaimAssessment.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/CustomerSurveys.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/FuneralPolicy.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/IncentiveAccount.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/IncentiveProgramDirectory.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/InformationProviderOperation.yaml",
+      "field": "info.description",
+      "value": "",
+      "expected": "non-empty definition"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/IssuedCertificateDirectory.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/LegalAdvisory.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/OperationsLog.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/PartnerAdministration.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/PartnerManagement.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/RewardsDelivery.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/RewardsInventory.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/RewardsMenu.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    }
+  ]
+}

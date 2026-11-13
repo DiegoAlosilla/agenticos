@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-24",
+  "passed": true,
+  "layout": "Lista y detalle selected explicitly by user",
+  "typecheck": true,
+  "build": true,
+  "core": {
+    "passed": 32,
+    "command": "npm test"
+  },
+  "regression": {
+    "passed": 24,
+    "durationMs": 202226.18800000002,
+    "report": "bian-list-detail-regression-results.json"
+  },
+  "focused": {
+    "passed": 3,
+    "durationMs": 31048.776,
+    "report": "bian-list-detail-focused-results.json",
+    "scope": "After final count text and keeping pending query when clicking already active tab; no second full regression claimed"
+  },
+  "offline": {
+    "passed": true,
+    "startupMs": 1064,
+    "external": [],
+    "errors": [],
+    "report": "bian-list-detail-offline-summary.json",
+    "cleanBootstrap": false
+  },
+  "interaction": {
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "panelWidths": [
+      300,
+      560,
+      760
+    ],
+    "splitThresholdUsablePx": 460,
+    "sourceTabs": true,
+    "explicitSelection": true,
+    "bothScrollPositionsPreserved": true,
+    "narrowBackFocus": true,
+    "queryDoesNotEditDocument": true
+  },
+  "aiEvidence": "Interface tests use labeled response doubles. Existing genuine inference remains historical; no current model/semantic validation claimed for this UI change.",
+  "historicalGeneratedFilesRestored": 33,
+  "unchanged": [
+    "contracts/model core",
+    "BIAN catalog/manifest",
+    "retrieval/models/digests/API",
+    "npm dependencies/lockfile",
+    "Draw.io WAR",
+    "document formats/snapshots/drafts"
+  ],
+  "limits": [
+    "User comfort review pending",
+    "Other editor layouts/browsers/platforms not certified",
+    "Semantic quality and CPU latency limitations from ADR-013 remain"
+  ],
+  "publication": "No commit, push or uploads"
+}

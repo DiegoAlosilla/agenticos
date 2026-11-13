@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-23",
+  "command": "npx playwright test",
+  "stats": {
+    "startTime": "2026-10-24T03:34:03.207Z",
+    "duration": 189765.515,
+    "expected": 23,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "file": "authoring.spec.mjs",
+      "title": "autoría retirada: preserva diseños existentes y consulta con colores nativos",
+      "passed": true,
+      "durationMs": 12215
+    },
+    {
+      "file": "bian-ai.spec.mjs",
+      "title": "IA BIAN (doble): sugerencia escapada, fuente fijada, revisión e inserción manual deshacible, claro/oscuro",
+      "passed": true,
+      "durationMs": 9283
+    },
+    {
+      "file": "bian-ai.spec.mjs",
+      "title": "IA BIAN (doble): errores, filtro, cancelación, resultados tardíos y cambio de documento",
+      "passed": true,
+      "durationMs": 4435
+    },
+    {
+      "file": "bian-help.spec.mjs",
+      "title": "BIAN: guía, acción manual, préstamo personal y apoyo español con original intacto",
+      "passed": true,
+      "durationMs": 9629
+    },
+    {
+      "file": "bian-help.spec.mjs",
+      "title": "BIAN: agregar referencia, identidad, una transacción, copias, páginas y reapertura portable",
+      "passed": true,
+      "durationMs": 10881
+    },
+    {
+      "file": "bian-input.spec.mjs",
+      "title": "BIAN: clic, selección y escritura real del propósito sin editar el lienzo",
+      "passed": true,
+      "durationMs": 10136
+    },
+    {
+      "file": "bian.spec.mjs",
+      "title": "BIAN: propósito local, definiciones y rutas oficiales, ida y vuelta con Swagger sin modificar el documento",
+      "passed": true,
+      "durationMs": 13393
+    },
+    {
+      "file": "bian.spec.mjs",
+      "title": "BIAN: controles nativos oscuros, teclado y ancho mínimo del panel",
+      "passed": true,
+      "durationMs": 3947
+    },
+    {
+      "file": "budget.spec.mjs",
+      "title": "presupuesto provisional: 3 contratos de 100 operaciones y búsqueda local",
+      "passed": true,
+      "durationMs": 3625
+    },
+    {
+      "file": "canvas-contract-selection.spec.mjs",
+      "title": "fila única de seis endpoints y selección del lienzo: API completa y endpoint expandido",
+      "passed": true,
+      "durationMs": 9124
+    },
+    {
+      "file": "catalog.spec.mjs",
+      "title": "etapa 3: buscar, botón, arrastre y vinculación conserva trabajo",
+      "passed": true,
+      "durationMs": 5949
+    },
+    {
+      "file": "component.spec.mjs",
+      "title": "figura de componente: edición, copia interna, conversión reversible y perfil limpio",
+      "passed": true,
+      "durationMs": 7161
+    },
+    {
+      "file": "endpoint-dock.spec.mjs",
+      "title": "Contratos en pestañas nativas: buscador persistente, API completa, inserción y formato sin cambiar colores",
+      "passed": true,
+      "durationMs": 5910
+    },
+    {
+      "file": "import.spec.mjs",
+      "title": "etapa 2: importar tres versiones, deduplicar y rechazar sin cambiar el lienzo",
+      "passed": true,
+      "durationMs": 9907
+    },
+    {
+      "file": "inspector.spec.mjs",
+      "title": "Swagger UI real: herencia, refs, esquemas 3.1, respuestas, seguridad y selección sin mutar snapshot",
+      "passed": true,
+      "durationMs": 9460
+    },
+    {
+      "file": "inspector.spec.mjs",
+      "title": "Swagger UI: ejemplos sin schema, selector nativo, ventana estrecha y aislamiento del formato",
+      "passed": true,
+      "durationMs": 5405
+    },
+    {
+      "file": "inspector.spec.mjs",
+      "title": "Swagger UI: contrato 3.0 y Swagger 2.0, body/formData y cambio de archivo",
+      "passed": true,
+      "durationMs": 5464
+    },
+    {
+      "file": "inspector.spec.mjs",
+      "title": "Swagger UI: refs entre rutas, múltiples tags, HTML, OIDC y ejemplos externos no generan red",
+      "passed": true,
+      "durationMs": 3746
+    },
+    {
+      "file": "panel-controls.spec.mjs",
+      "title": "ajustes de controles: ancho, cierre integrado y API completa portable en una transacción",
+      "passed": true,
+      "durationMs": 17323
+    },
+    {
+      "file": "portability.spec.mjs",
+      "title": "etapa 5: copiar, páginas, salvar y reabrir sin originales; copia incompleta bloqueada",
+      "passed": true,
+      "durationMs": 9429
+    },
+    {
+      "file": "viability.spec.mjs",
+      "title": "etapa 0: editor real, guardado portable, perfiles limpios, páginas y red local",
+      "passed": true,
+      "durationMs": 14541
+    },
+    {
+      "file": "viability.spec.mjs",
+      "title": "la documentación del snapshot se muestra como texto y no ejecuta HTML",
+      "passed": true,
+      "durationMs": 3322
+    },
+    {
+      "file": "viability.spec.mjs",
+      "title": "formatos desconocidos y vínculos perdidos conservan figura y datos",
+      "passed": true,
+      "durationMs": 3429
+    }
+  ]
+}

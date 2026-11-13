@@ -1,0 +1,14 @@
+{
+  "name": "agenticos-channel-design",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": "24.18.x"},
+  "scripts": {
+    "channel": "node src/channel-cli.mjs",
+    "channel:editor": "node src/channel-cli.mjs editor",
+    "channel:demo": "node src/channel-cli.mjs demo",
+    "test": "npm --prefix editor test"
+  },
+  "dependencies": {"yaml": "2.9.1"}
+}

@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-23",
+  "passed": true,
+  "typecheck": "npm run check passed",
+  "build": "npm run build passed",
+  "core": {
+    "passed": 32,
+    "command": "node --require ./tests/runtime/offline.cjs --test tests/unit/*.test.mjs",
+    "transportDoubles": 6
+  },
+  "browser": {
+    "passed": 23,
+    "failed": 0,
+    "durationMs": 189765.515,
+    "command": "npx playwright test",
+    "aiUiDoubles": 2
+  },
+  "real": {
+    "queries": 3,
+    "durationsMs": [
+      128264,
+      89971,
+      76550
+    ],
+    "models": {
+      "chat": {
+        "name": "qwen3:4b-instruct-2507-q4_K_M",
+        "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+      },
+      "embedding": {
+        "name": "embeddinggemma:300m",
+        "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1"
+      }
+    },
+    "engineVersion": "0.40.10",
+    "engineArchiveSha256": "d52aea2d323bdd324bf66a4b1226844aa5fb665cc5974fbcceceda1ce3d934eb",
+    "execution": "CPU, observed size_vram=0",
+    "externalRequests": 0,
+    "pageErrors": 0,
+    "results": "bian-ai-real-results.json"
+  },
+  "unavailable": "bian-ai-unavailable.json (actual absent engine, no double)",
+  "startup": {
+    "date": "2026-10-23",
+    "command": "npm run test:startup",
+    "platform": "win32",
+    "node": "v24.18.0",
+    "events": [
+      {
+        "check": "clon limpio",
+        "passed": true,
+        "elapsedMs": 19612
+      },
+      {
+        "check": "reutilización sin acceso externo",
+        "passed": true,
+        "elapsedMs": 4540
+      },
+      {
+        "check": "núcleo de tres versiones en clon limpio sin acceso externo y schema fijado",
+        "passed": true
+      },
+      {
+        "check": "puerto ocupado",
+        "passed": true
+      },
+      {
+        "check": "puerto inválido",
+        "passed": true
+      },
+      {
+        "check": "huella incorrecta rechazada",
+        "passed": true
+      }
+    ],
+    "scope": "Fresh local clone without node_modules/.runtime, verified Draw.io bootstrap, strict Node/Chromium external isolation on reuse, 32 core tests under offline guard; no optional AI engine or model download in normal startup."
+  },
+  "unchanged": {
+    "npmDependencies": true,
+    "lockfile": true,
+    "editorWar": true,
+    "bianCatalogAndManifest": true,
+    "openApiDialects": true,
+    "documentPersistence": true
+  },
+  "limits": [
+    "Ambiguous purposes may still get plausible but unsuitable alternatives; no reliable abstention or human utility evaluation.",
+    "Model explanations can infer unstated details; official definitions must be checked.",
+    "Windows x64 and the recorded machine only; no GPU acceleration or OS firewall audit claimed.",
+    "Cold in-memory index is rebuilt after server restart. Up to four minutes per request."
+  ],
+  "intermediateFailures": [
+    "Test expectations and overlapping Playwright artifact runs were corrected and rerun in isolation.",
+    "Native responsive Format panel collapse reproduced using a HEAD bundle; tests now wait and reopen through the native action.",
+    "Return focus must use explicit originating button because native panel cancels mousedown.",
+    "Clean-clone harness needed data/ and exact-byte Git attributes for BIAN JSON/license; final clean clone passed."
+  ],
+  "publication": "No commit, push or upload"
+}

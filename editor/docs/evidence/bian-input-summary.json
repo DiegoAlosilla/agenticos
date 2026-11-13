@@ -1,0 +1,28 @@
+{
+  "viewport": {
+    "width": 1220,
+    "height": 884
+  },
+  "runs": [
+    {
+      "theme": "light",
+      "mouseFocus": true,
+      "pointerTextSelection": true,
+      "keyboardEditing": true,
+      "refreshFocus": true,
+      "documentUnchanged": true,
+      "external": [],
+      "errors": []
+    },
+    {
+      "theme": "dark",
+      "mouseFocus": true,
+      "pointerTextSelection": true,
+      "keyboardEditing": true,
+      "refreshFocus": true,
+      "documentUnchanged": true,
+      "external": [],
+      "errors": []
+    }
+  ]
+}

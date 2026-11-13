@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-24",
+  "viewport": "1220×884",
+  "catalog": "real pinned local data; no model call",
+  "measurements": [
+    {
+      "dark": false,
+      "bounds": {
+        "panel": 477,
+        "pane": {
+          "x": 904.71875,
+          "y": 404,
+          "width": 305.28125,
+          "height": 414.5
+        },
+        "add": {
+          "x": 918.71875,
+          "y": 776.5,
+          "width": 277.28125,
+          "height": 30
+        },
+        "overflow": false
+      },
+      "operationsReviewed": 17,
+      "external": [],
+      "errors": []
+    },
+    {
+      "dark": true,
+      "bounds": {
+        "panel": 477,
+        "pane": {
+          "x": 904.71875,
+          "y": 404,
+          "width": 305.28125,
+          "height": 414.5
+        },
+        "add": {
+          "x": 918.71875,
+          "y": 776.5,
+          "width": 277.28125,
+          "height": 30
+        },
+        "overflow": false
+      },
+      "operationsReviewed": 17,
+      "external": [],
+      "errors": []
+    }
+  ]
+}

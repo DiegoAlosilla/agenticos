@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-24",
+  "command": "npm run check && npm run build && npx playwright test tests/integration/bian-ai.spec.mjs",
+  "stats": {
+    "startTime": "2026-10-24T05:11:42.876Z",
+    "duration": 31048.776,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "scope": "Three UI scenarios with explicitly labeled transport doubles, including final count text and preserving requests when reselecting the active tab."
+}

@@ -1,0 +1,624 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\DrawIo\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "D:\\DrawIo\\playwright.config.mjs",
+    "rootDir": "D:/DrawIo/tests/integration",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/DrawIo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/DrawIo/tests/integration",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\DrawIo\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\DrawIo\\tests\\integration",
+        "snapshotDir": "D:\\DrawIo\\tests\\integration",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8080",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "headless": true,
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm start",
+      "url": "http://127.0.0.1:8080/health",
+      "reuseExistingServer": true,
+      "timeout": 180000
+    }
+  },
+  "suites": [
+    {
+      "title": "budget.spec.mjs",
+      "file": "budget.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "presupuesto provisional: 3 contratos de 100 operaciones y búsqueda local",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3560,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:56:18.869Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "94195c00299906cd3643-b8a192ab78e559e788e1",
+          "file": "budget.spec.mjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "catalog.spec.mjs",
+      "file": "catalog.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 3: buscar, botón, arrastre y vinculación conserva trabajo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4831,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:56:22.550Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2f3358616d79b25ef16d-3f8d6745952bf12e5ec9",
+          "file": "catalog.spec.mjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "component.spec.mjs",
+      "file": "component.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "figura de componente: edición, copia interna, conversión reversible y perfil limpio",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5823,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:56:27.403Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3195ced0d90f8914b0c-383e76bcffee5b2b445e",
+          "file": "component.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "endpoint-dock.spec.mjs",
+      "file": "endpoint-dock.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Contratos en pestañas nativas: buscador persistente, API completa, inserción y formato sin cambiar colores",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4312,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:56:33.253Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1619f95c05caa2aa8026-d92e4f73e66d271f1830",
+          "file": "endpoint-dock.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "import.spec.mjs",
+      "file": "import.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 2: importar tres versiones, deduplicar y rechazar sin cambiar el lienzo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8082,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:56:37.582Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a6cd7810acf282988ca5-ab76a820f2eaca1d2526",
+          "file": "import.spec.mjs",
+          "line": 15,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "inspector.spec.mjs",
+      "file": "inspector.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Swagger UI real: herencia, refs, esquemas 3.1, respuestas, seguridad y selección sin mutar snapshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5962,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:56:45.684Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47d3f36512423018dff7-ab43d3f04ea89b528345",
+          "file": "inspector.spec.mjs",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "Swagger UI: ejemplos sin schema, selector nativo, ventana estrecha y aislamiento del formato",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:56:51.657Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47d3f36512423018dff7-a8e18dc584c524a161d8",
+          "file": "inspector.spec.mjs",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "Swagger UI: contrato 3.0 y Swagger 2.0, body/formData y cambio de archivo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3887,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:56:55.386Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47d3f36512423018dff7-e135695e8f072b6165d0",
+          "file": "inspector.spec.mjs",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "Swagger UI: refs entre rutas, múltiples tags, HTML, OIDC y ejemplos externos no generan red",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2927,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:56:59.282Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47d3f36512423018dff7-30488677d0e3514c3f5d",
+          "file": "inspector.spec.mjs",
+          "line": 84,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "portability.spec.mjs",
+      "file": "portability.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 5: copiar, páginas, salvar y reabrir sin originales; copia incompleta bloqueada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7526,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:57:02.242Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c9193b22e05939fd6a7b-791accdc8829122dbfe3",
+          "file": "portability.spec.mjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "viability.spec.mjs",
+      "file": "viability.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 0: editor real, guardado portable, perfiles limpios, páginas y red local",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11699,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:57:09.803Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "network",
+                      "contentType": "application/json",
+                      "body": "eyJyZXF1ZXN0cyI6W3sidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwLz9sYW5nPWVzJnVpPWtlbm5lZHkmbW9kZT1kZXZpY2UmZ2FwaT0wJmRiPTAmb2Q9MCZnaD0wJmdsPTAmdHI9MCZicm93c2VyPTAmcGlja2VyPTAmc3RlYWx0aD0xJm1hdGg9MCIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9ncmFwaGVkaXRvci5jc3MiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9ib290c3RyYXAuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9tYWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2hpZ2gtY29udHJhc3QuY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUHJlQ29uZmlnLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYXBwLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL214Z3JhcGgvY3NzL2NvbW1vbi5jc3MiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9Qb3N0Q29uZmlnLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvcGx1Z2lucy9jb250cmFjdHMuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZXNvdXJjZXMvZGlhX2VzLnR4dCIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3NoYXBlcy0xNC02LTUubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc3RlbmNpbHMubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvZXh0ZW5zaW9ucy5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9pbWFnZXMvZ2l0aHViLWxvZ28uc3ZnIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvP2xhbmc9ZXMmdWk9a2VubmVkeSZtb2RlPWRldmljZSZnYXBpPTAmZGI9MCZvZD0wJmdoPTAmZ2w9MCZ0cj0wJmJyb3dzZXI9MCZwaWNrZXI9MCZzdGVhbHRoPTEmbWF0aD0wIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2dyYXBoZWRpdG9yLmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2Jvb3RzdHJhcC5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL21haW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvaGlnaC1jb250cmFzdC5jc3MiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9QcmVDb25maWcuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9hcHAubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvbXhncmFwaC9jc3MvY29tbW9uLmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1Bvc3RDb25maWcuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9wbHVnaW5zL2NvbnRyYWN0cy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3Jlc291cmNlcy9kaWFfZXMudHh0IiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9leHRlbnNpb25zLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2ltYWdlcy9naXRodWItbG9nby5zdmciLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC8/bGFuZz1lcyZ1aT1rZW5uZWR5Jm1vZGU9ZGV2aWNlJmdhcGk9MCZkYj0wJm9kPTAmZ2g9MCZnbD0wJnRyPTAmYnJvd3Nlcj0wJnBpY2tlcj0wJnN0ZWFsdGg9MSZtYXRoPTAmY29udHJhY3RzPTAiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvZ3JhcGhlZGl0b3IuY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYm9vdHN0cmFwLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2FwcC5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9teGdyYXBoL2Nzcy9jb21tb24uY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3Jlc291cmNlcy9kaWFfZXMudHh0IiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9leHRlbnNpb25zLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2ltYWdlcy9naXRodWItbG9nby5zdmciLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC8/bGFuZz1lcyZ1aT1rZW5uZWR5Jm1vZGU9ZGV2aWNlJmdhcGk9MCZkYj0wJm9kPTAmZ2g9MCZnbD0wJnRyPTAmYnJvd3Nlcj0wJnBpY2tlcj0wJnN0ZWFsdGg9MSZtYXRoPTAiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvZ3JhcGhlZGl0b3IuY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYm9vdHN0cmFwLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2FwcC5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9teGdyYXBoL2Nzcy9jb21tb24uY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3BsdWdpbnMvY29udHJhY3RzLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvcmVzb3VyY2VzL2RpYV9lcy50eHQiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zaGFwZXMtMTQtNi01Lm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3N0ZW5jaWxzLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2V4dGVuc2lvbnMubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaW1hZ2VzL2dpdGh1Yi1sb2dvLnN2ZyIsIm1ldGhvZCI6IkdFVCJ9XSwicmVzcG9uc2VzIjpbeyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvP2xhbmc9ZXMmdWk9a2VubmVkeSZtb2RlPWRldmljZSZnYXBpPTAmZGI9MCZvZD0wJmdoPTAmZ2w9MCZ0cj0wJmJyb3dzZXI9MCZwaWNrZXI9MCZzdGVhbHRoPTEmbWF0aD0wIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9ncmFwaGVkaXRvci5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9ib290c3RyYXAuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUHJlQ29uZmlnLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9hcHAubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL214Z3JhcGgvY3NzL2NvbW1vbi5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9wbHVnaW5zL2NvbnRyYWN0cy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZXNvdXJjZXMvZGlhX2VzLnR4dCIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvZXh0ZW5zaW9ucy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaW1hZ2VzL2dpdGh1Yi1sb2dvLnN2ZyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC8/bGFuZz1lcyZ1aT1rZW5uZWR5Jm1vZGU9ZGV2aWNlJmdhcGk9MCZkYj0wJm9kPTAmZ2g9MCZnbD0wJnRyPTAmYnJvd3Nlcj0wJnBpY2tlcj0wJnN0ZWFsdGg9MSZtYXRoPTAiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2dyYXBoZWRpdG9yLmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9tYWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2Jvb3RzdHJhcC5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvaGlnaC1jb250cmFzdC5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUHJlQ29uZmlnLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2FwcC5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvbXhncmFwaC9jc3MvY29tbW9uLmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9Qb3N0Q29uZmlnLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3BsdWdpbnMvY29udHJhY3RzLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3Jlc291cmNlcy9kaWFfZXMudHh0Iiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3N0ZW5jaWxzLm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zaGFwZXMtMTQtNi01Lm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9leHRlbnNpb25zLm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9pbWFnZXMvZ2l0aHViLWxvZ28uc3ZnIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwLz9sYW5nPWVzJnVpPWtlbm5lZHkmbW9kZT1kZXZpY2UmZ2FwaT0wJmRiPTAmb2Q9MCZnaD0wJmdsPTAmdHI9MCZicm93c2VyPTAmcGlja2VyPTAmc3RlYWx0aD0xJm1hdGg9MCZjb250cmFjdHM9MCIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvZ3JhcGhlZGl0b3IuY3NzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL21haW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYm9vdHN0cmFwLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9QcmVDb25maWcuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYXBwLm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9teGdyYXBoL2Nzcy9jb21tb24uY3NzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1Bvc3RDb25maWcuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvcmVzb3VyY2VzL2RpYV9lcy50eHQiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc3RlbmNpbHMubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3NoYXBlcy0xNC02LTUubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2V4dGVuc2lvbnMubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2ltYWdlcy9naXRodWItbG9nby5zdmciLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvP2xhbmc9ZXMmdWk9a2VubmVkeSZtb2RlPWRldmljZSZnYXBpPTAmZGI9MCZvZD0wJmdoPTAmZ2w9MCZ0cj0wJmJyb3dzZXI9MCZwaWNrZXI9MCZzdGVhbHRoPTEmbWF0aD0wIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9ncmFwaGVkaXRvci5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9ib290c3RyYXAuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2hpZ2gtY29udHJhc3QuY3NzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9hcHAubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL214Z3JhcGgvY3NzL2NvbW1vbi5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9wbHVnaW5zL2NvbnRyYWN0cy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZXNvdXJjZXMvZGlhX2VzLnR4dCIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvZXh0ZW5zaW9ucy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaW1hZ2VzL2dpdGh1Yi1sb2dvLnN2ZyIsInN0YXR1cyI6MjAwfV0sImV4dGVybmFsIjpbXSwiZXJyb3JzIjpbXX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccd0f659d0abd2231e8a-38e74f17bd7b8960c858",
+          "file": "viability.spec.mjs",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "la documentación del snapshot se muestra como texto y no ejecuta HTML",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2600,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:57:21.508Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccd0f659d0abd2231e8a-887af02a1657725eb059",
+          "file": "viability.spec.mjs",
+          "line": 177,
+          "column": 1
+        },
+        {
+          "title": "formatos desconocidos y vínculos perdidos conservan figura y datos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2505,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T03:57:24.118Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccd0f659d0abd2231e8a-6219b96bee873e7dbe6b",
+          "file": "viability.spec.mjs",
+          "line": 199,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-15T03:56:18.258Z",
+    "duration": 68651.826,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

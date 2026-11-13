@@ -1,0 +1,5 @@
+* text=auto
+src/contracts/schemas/*.json -text
+examples/contracts/* -text
+data/bian/*.json -text
+licenses/bian-Apache-2.0.txt -text

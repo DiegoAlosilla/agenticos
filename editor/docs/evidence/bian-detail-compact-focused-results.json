@@ -1,0 +1,420 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\DrawIo\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/integration/bian.spec.mjs",
+      "tests/integration/bian-help.spec.mjs",
+      "tests/integration/bian-ai.spec.mjs",
+      "tests/integration/bian-detail.spec.mjs"
+    ],
+    "configFile": "D:\\DrawIo\\playwright.config.mjs",
+    "rootDir": "D:/DrawIo/tests/integration",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/DrawIo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/DrawIo/tests/integration",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\DrawIo\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\DrawIo\\tests\\integration",
+        "snapshotDir": "D:\\DrawIo\\tests\\integration",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8080",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "headless": true,
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm start",
+      "url": "http://127.0.0.1:8080/health",
+      "reuseExistingServer": true,
+      "timeout": 180000
+    }
+  },
+  "suites": [
+    {
+      "title": "bian-ai.spec.mjs",
+      "file": "bian-ai.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "IA BIAN (doble): sugerencia escapada, fuente fijada, revisión e inserción manual deshacible, claro/oscuro",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9762,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:39:53.284Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "37a123e3e3526f73098d-4553843ecbce4ae2ef58",
+          "file": "bian-ai.spec.mjs",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "IA BIAN (doble): errores, filtro, cancelación, resultados tardíos y cambio de documento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4745,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:40:03.181Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "37a123e3e3526f73098d-fe802cad4fba12058ac8",
+          "file": "bian-ai.spec.mjs",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "BIAN lista y detalle: columnas, selección explícita, scroll, pestañas y regreso en 300 px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14978,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:40:07.937Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "37a123e3e3526f73098d-7c0f96f4b3a53722af42",
+          "file": "bian-ai.spec.mjs",
+          "line": 54,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "bian-detail.spec.mjs",
+      "file": "bian-detail.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BIAN detalle compacto: ancho inicial real, todas las operaciones y acción visible al desplegar originales",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13928,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:40:22.952Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3edee0a77709aba44ecd-1736af770b0c4b2b5a6b",
+          "file": "bian-detail.spec.mjs",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "bian-help.spec.mjs",
+      "file": "bian-help.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BIAN: guía, acción manual, préstamo personal y apoyo español con original intacto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9443,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:40:36.932Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4b0c2c8a23364e574d28-9fed5abc14476722df2b",
+          "file": "bian-help.spec.mjs",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "BIAN: agregar referencia, identidad, una transacción, copias, páginas y reapertura portable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10250,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:40:46.387Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4b0c2c8a23364e574d28-4190f25e11cc5cd439c3",
+          "file": "bian-help.spec.mjs",
+          "line": 36,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "bian.spec.mjs",
+      "file": "bian.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BIAN: propósito local, definiciones y rutas oficiales, ida y vuelta con Swagger sin modificar el documento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12775,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:40:56.659Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b1e1abad28804615f1ce-4842ec292a7e621c1ffa",
+          "file": "bian.spec.mjs",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "BIAN: controles nativos oscuros, teclado y ancho mínimo del panel",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3817,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:41:09.446Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b1e1abad28804615f1ce-24a399632f11aceef070",
+          "file": "bian.spec.mjs",
+          "line": 72,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-24T05:39:52.563Z",
+    "duration": 81124.004,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

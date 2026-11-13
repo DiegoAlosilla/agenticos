@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-23",
+  "passed": true,
+  "kind": "Real app and actual absent Ollama, no doubles",
+  "status": 503,
+  "requests": [
+    {
+      "purpose": "iniciar préstamo personal ficticio",
+      "action": ""
+    }
+  ],
+  "external": [],
+  "errors": [],
+  "documentAndUndoUnchanged": true,
+  "lexicalSearchUsable": true
+}

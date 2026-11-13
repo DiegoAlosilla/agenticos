@@ -1,0 +1,42 @@
+openapi: 3.0.4
+info:
+  title: API de ofertas de demostración
+  version: 0.2.0
+paths:
+  /clientes/{clienteId}:
+    parameters:
+      - name: clienteId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      operationId: consultarCliente
+      summary: Consultar oferta ficticia para un cliente
+      responses:
+        '200':
+          description: Oferta ficticia
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Oferta'
+        default:
+          description: Resultado ficticio no clasificado
+components:
+  schemas:
+    Oferta:
+      type: object
+      properties:
+        nombre:
+          type: string
+          nullable: true
+        detalle:
+          allOf:
+            - type: object
+              properties:
+                codigo:
+                  type: string
+            - type: object
+              properties:
+                vigente:
+                  type: boolean

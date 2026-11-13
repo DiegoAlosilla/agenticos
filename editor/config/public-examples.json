@@ -1,0 +1,86 @@
+{
+  "repository": "https://github.com/postmanlabs/openapi-to-postman",
+  "commit": "6367b778d19bab24b2718b522539299504269f4c",
+  "scope": "examples contracts only; options configs excluded",
+  "files": [
+    {
+      "path": "examples/api-with-examples.yaml",
+      "sha256": "3363e5055227e802947e0c62b2764ea2492bd9a5278defca10d2faf16af7d27b",
+      "expected": {
+        "status": "rejected",
+        "code": "INVALID_FILE"
+      }
+    },
+    {
+      "path": "examples/callback-example.yaml",
+      "sha256": "bc72afa54a67af68358ae68e85676bc3b76b7882b1c91e6bf07b77c8eac1da5f",
+      "expected": {
+        "status": "accepted",
+        "operations": 1,
+        "version": "3.0.0"
+      }
+    },
+    {
+      "path": "examples/link-example.yaml",
+      "sha256": "4b7b29d7bda1cf95f8c027500c86a9eb3761dfee42f1a8aeb095c5c0b5ccde3b",
+      "expected": {
+        "status": "accepted",
+        "operations": 6,
+        "version": "3.0.0"
+      }
+    },
+    {
+      "path": "examples/petstore-expanded.yaml",
+      "sha256": "1d824812d149853cdd8c18595653072e2d3f879719792d6e5198883e8a81bb80",
+      "expected": {
+        "status": "rejected",
+        "code": "INVALID_OPENAPI"
+      }
+    },
+    {
+      "path": "examples/petstore.yaml",
+      "sha256": "ac5ff9472683a27734cee3403b0fca55c9c13a22e00fd836620f09c212aa6fa3",
+      "expected": {
+        "status": "accepted",
+        "operations": 3,
+        "version": "3.0.0"
+      }
+    },
+    {
+      "path": "examples/recursive.json",
+      "sha256": "f80ff743603f9d379b971765b3a151dc2116d445f601b35ced75501c23974d0e",
+      "expected": {
+        "status": "accepted",
+        "operations": 1,
+        "version": "2.0"
+      }
+    },
+    {
+      "path": "examples/sample-swagger.yaml",
+      "sha256": "1791f1b37be68e48897b5e6f2d3faaf6052cdd41980d5b3aee8ebafdef9321dd",
+      "expected": {
+        "status": "accepted",
+        "operations": 39,
+        "version": "3.0.0"
+      }
+    },
+    {
+      "path": "examples/sampleswagger.yaml",
+      "sha256": "a0dbca1667ac6d28d1744e435155cffecced70c3e41a47aced9f1bfeca168e20",
+      "expected": {
+        "status": "accepted",
+        "operations": 20,
+        "version": "3.0.0"
+      }
+    },
+    {
+      "path": "examples/uspto.yaml",
+      "sha256": "8bc4262698b10cd973290efcd15b935d0d9d7f1b464d772bf0cc83541e5de76b",
+      "expected": {
+        "status": "accepted",
+        "operations": 3,
+        "version": "3.0.0"
+      }
+    }
+  ]
+}

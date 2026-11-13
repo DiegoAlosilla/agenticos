@@ -1,0 +1,66 @@
+{
+  "external": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:8080/?lang=es&ui=kennedy",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/grapheditor.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/bootstrap.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/main.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/high-contrast.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PreConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/app.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/mxgraph/css/common.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PostConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/plugins/contracts.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/resources/dia_es.txt",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/shapes-14-6-5.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/stencils.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/extensions.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/images/github-logo.svg",
+      "method": "GET"
+    }
+  ],
+  "errors": []
+}

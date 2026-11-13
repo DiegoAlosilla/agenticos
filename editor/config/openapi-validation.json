@@ -1,0 +1,10 @@
+{
+  "openapi31": {
+    "source": "https://spec.openapis.org/oas/3.1/schema/2022-10-07",
+    "file": "src/contracts/schemas/openapi-3.1-2022-10-07.json",
+    "sha256": "da01ba28852cac0de53893797cb8d1942bc3b05084f526dcc216717dec314ed0",
+    "adapter": "Al compilar el schema estructural oficial, #meta se fija a #/$defs/schema; Link.parameters admite valores JSON y Link.server corrige body según OAS 3.1.2 §4.8.20. Dialectos personalizados rechazados; snapshot original intacto."
+  },
+  "legacy": {"package": "@apidevtools/openapi-schemas", "version": "2.1.0", "lines": ["3.0", "2.0"]},
+  "limits": {"fileMiB": 5, "documentMiB": 15, "depth": 64, "nodes": 200000, "yamlAliases": 50, "referenceHops": 64}
+}

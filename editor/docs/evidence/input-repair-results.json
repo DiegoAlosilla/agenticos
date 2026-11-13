@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "openapi": "3.0.0",
+  "operations": 6,
+  "revisions": 1,
+  "snapshotHashMatches": true,
+  "cleanProfileInspector": true,
+  "externalRequests": 0
+}

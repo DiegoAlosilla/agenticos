@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "engine": {
+    "version": "0.40.10",
+    "windowsArchive": "https://github.com/ollama/ollama/releases/download/v0.40.10/ollama-windows-amd64.zip",
+    "sha256": "d52aea2d323bdd324bf66a4b1226844aa5fb665cc5974fbcceceda1ce3d934eb"
+  },
+  "chat": {"name": "qwen3:4b-instruct-2507-q4_K_M", "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"},
+  "embedding": {"name": "embeddinggemma:300m", "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1"}
+}

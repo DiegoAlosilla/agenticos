@@ -1,0 +1,515 @@
+{
+  "date": "2026-10-16",
+  "scope": "Fictional OpenAPI inputs only; excludes the private template and ruleset content.",
+  "versions": {
+    "spectral-cli": "6.17.0",
+    "spectral-core": "1.24.0",
+    "spectral-rulesets": "1.23.0",
+    "spectral-functions": "1.11.0",
+    "spectral-formats": "1.9.0"
+  },
+  "rulesetSha256": "3ea997e5d99fecc02603e1a6b5de71c6ab4aef78d5443e1d65136507894303a7",
+  "temporaryLockfileSha256": "b5013510c2ac98804f248f2006ced8879516c545da5c2321f259bd25c9dcf932",
+  "providedFunctions": [
+    {
+      "name": "applyIfVersionMatch.js",
+      "sha256": "062586905a625c5f0ad4273a8bf83e8b02f0c17ab1f2ebfe9a5e4cd179cea596",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "bcpValidateExample.js",
+      "sha256": "931fc9aab78f20cc09f1a5c2158bfd6e5e53c9f7336e4121b8cbff312ad1680d",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "bcpValidateResponse200.js",
+      "sha256": "855c9db557d119b225eff71cf3b88aafc3e53806468adbf581b7f221b9218fb4",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "bcpValidateSecurity.js",
+      "sha256": "bc802e998e384a26acb2150e43cd3746ef9a846c67d77e643fb02ce534c8fd94",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "debugFunction.js",
+      "sha256": "48a46ac3ac835ca034fc630f81c6b9342a22ca04fe49c1e448fe84cfd0315393",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasDiscriminator.js",
+      "sha256": "7d8ba05efdde9f4d1212179a7d021b50c82f854ac9237ff6f9286b9a50c32425",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasDocumentSchema.js",
+      "sha256": "9b2e94439fe20a7f37b441c2989cc32e1fdf557a4023c6d36af3623fc81a33e7",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasExample.js",
+      "sha256": "ab4526852197b0e3b11cf86c953748749c61db4d4202ba25624067fe5a47df70",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasOpFormDataConsumeCheck.js",
+      "sha256": "c5e092b66a61fb189eb7c579513b5fdb55572fb664d4217408a3afcb9af27cf2",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasOpIdUnique.js",
+      "sha256": "db3477439bcf4572756fe4dff87fd18f5b3a6ae79c068c396c0f3965ab4ffa00",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasOpParams.js",
+      "sha256": "a631f4a7ab4545bb794612c1fbef9adbaf9d259e2854fb2b42c4075a5bc535d7",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasOpSecurityDefined.js",
+      "sha256": "44bc84fccc9c14cf6ac298351bb7f01d4e6b242cd75351a9b6055130ae61bed4",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasOpSuccessResponse.js",
+      "sha256": "79be662055d7db683314c60572bdd2cba6f3e5af0c7b23faa620744157394dec",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasPathParam.js",
+      "sha256": "f3092ef7acc32292db20d1897961a4421853fe10e318ad39dcddce0e02e22ad7",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasSchema.js",
+      "sha256": "7ea3eaf89eeb963044494535614bb7007a9a52afd5862a21890023ce8fa0fbdb",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasTagDefined.js",
+      "sha256": "d6104740e9f2e102e88a83d2c6a02e4c7f4ced52d8333e41745a8d9327712c93",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "oasUnusedComponent.js",
+      "sha256": "6e93387adfa3d902c19f80d74520a70212960b3a774504d0ebe5449f32a70ad5",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "refSiblings.js",
+      "sha256": "d4e71c694e87eb0513aaecba253a10871482b4de44959ef31ef630b8fad7458f",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "serverVariables.js",
+      "sha256": "000298433b666a653a3bd185a87a42a93da876a79723fe7c7d88962af2dae5d9",
+      "matchesProvidedFile": true
+    },
+    {
+      "name": "typedEnum.js",
+      "sha256": "3a568b4c11790861a512faca23ddb4cb58c58b79ee43a8295b0c8648ab4378f4",
+      "matchesProvidedFile": true
+    }
+  ],
+  "cases": 24,
+  "passed": 24,
+  "network": {
+    "blockedNetworkAttempts": 0
+  },
+  "results": [
+    {
+      "id": "baseline_without_503",
+      "expectedRule": null,
+      "expectedPresent": false,
+      "passed": true,
+      "diagnostics": []
+    },
+    {
+      "id": "success_201",
+      "expectedRule": "R09-api-endpoint-response-200",
+      "expectedPresent": false,
+      "passed": true,
+      "diagnostics": []
+    },
+    {
+      "id": "success_204",
+      "expectedRule": "R09-api-endpoint-response-200",
+      "expectedPresent": false,
+      "passed": true,
+      "diagnostics": []
+    },
+    {
+      "id": "success_2XX",
+      "expectedRule": "R09-api-endpoint-response-200",
+      "expectedPresent": false,
+      "passed": true,
+      "diagnostics": []
+    },
+    {
+      "id": "no_success",
+      "expectedRule": "R09-api-endpoint-response-200",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "operation-success-response",
+          "severity": 1,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "responses"
+          ]
+        },
+        {
+          "code": "R09-api-endpoint-response-200",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "responses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "missing_400",
+      "expectedRule": "R33-api-endpoint-responses-4XX",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R33-api-endpoint-responses-4XX",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "responses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "missing_401",
+      "expectedRule": "R33-api-endpoint-responses-4XX",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R33-api-endpoint-responses-4XX",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "responses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "missing_404",
+      "expectedRule": "R33-api-endpoint-responses-4XX",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R33-api-endpoint-responses-4XX",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "responses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "missing_429",
+      "expectedRule": "R32-api-endpoint-response-429",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R32-api-endpoint-response-429",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "responses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "missing_500",
+      "expectedRule": "R34-api-endpoint-responses-5XX",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R34-api-endpoint-responses-5XX",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "responses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "missing_504",
+      "expectedRule": "R34-api-endpoint-responses-5XX",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R34-api-endpoint-responses-5XX",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "responses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CR_without_429",
+      "expectedRule": "R32-api-endpoint-response-429",
+      "expectedPresent": false,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R43-api-servers-url-api-cr",
+          "severity": 1,
+          "path": [
+            "servers",
+            "0",
+            "url"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "authorization_wrong_first",
+      "expectedRule": "R12-api-endpoint-header-authorization",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R12-api-endpoint-header-authorization",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "parameters",
+            "0",
+            "name"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "authorization_no_parameters",
+      "expectedRule": "R12-api-endpoint-header-authorization",
+      "expectedPresent": false,
+      "passed": true,
+      "diagnostics": []
+    },
+    {
+      "id": "missing_global_security_get",
+      "expectedRule": "R29-api-security",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R29-api-security",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "empty_security_array_get",
+      "expectedRule": "R29-api-security",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R29-api-security",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anonymous_security_entry_get",
+      "expectedRule": "R29-api-security",
+      "expectedPresent": false,
+      "passed": true,
+      "diagnostics": []
+    },
+    {
+      "id": "missing_security_patch",
+      "expectedRule": "R29-api-security",
+      "expectedPresent": false,
+      "passed": true,
+      "diagnostics": []
+    },
+    {
+      "id": "server_v1_error",
+      "expectedRule": "R19-api-servers-url-api-ux",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R19-api-servers-url-api-ux",
+          "severity": 0,
+          "path": [
+            "servers",
+            "0",
+            "url"
+          ]
+        },
+        {
+          "code": "server-trailing-slash",
+          "severity": 1,
+          "path": [
+            "servers",
+            "0",
+            "url"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "server_v1_1_warning",
+      "expectedRule": "R39-api-servers-url-api-ux",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R39-api-servers-url-api-ux",
+          "severity": 1,
+          "path": [
+            "servers",
+            "0",
+            "url"
+          ]
+        },
+        {
+          "code": "server-trailing-slash",
+          "severity": 1,
+          "path": [
+            "servers",
+            "0",
+            "url"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schema_description_checked",
+      "expectedRule": "R38-schema-description-advanced-validation",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R38-schema-description-advanced-validation",
+          "severity": 0,
+          "path": [
+            "components",
+            "schemas",
+            "Registro",
+            "description"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unused_schema_description_checked",
+      "expectedRule": "R38-schema-description-advanced-validation",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R25-api-componens-schema-valid-reuse",
+          "severity": 1,
+          "path": [
+            "components",
+            "schemas",
+            "Registro"
+          ]
+        },
+        {
+          "code": "R38-schema-description-advanced-validation",
+          "severity": 0,
+          "path": [
+            "components",
+            "schemas",
+            "Registro",
+            "description"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parameter_description_checked",
+      "expectedRule": "R38-schema-description-advanced-validation",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "R38-schema-description-advanced-validation",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "parameters",
+            "0",
+            "description"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "external_reference_unresolved_offline",
+      "expectedRule": "invalid-ref",
+      "expectedPresent": true,
+      "passed": true,
+      "diagnostics": [
+        {
+          "code": "invalid-ref",
+          "severity": 0,
+          "path": [
+            "paths",
+            "/registros",
+            "get",
+            "responses",
+            "200",
+            "$ref"
+          ]
+        }
+      ]
+    }
+  ]
+}

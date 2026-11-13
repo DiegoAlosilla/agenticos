@@ -1,0 +1,32 @@
+{
+  "recordType": "summary-of-observed-command-output",
+  "date": "2026-10-14",
+  "timezone": "America/Lima",
+  "command": "npm test",
+  "exitCode": 0,
+  "typescript": "passed",
+  "unitTests": {"passed": 15, "failed": 0},
+  "browserTests": {"passed": 14, "failed": 0, "reportedDuration": "1.4m"},
+  "browserScenarios": [
+    "presupuesto provisional: 3 contratos de 100 operaciones y búsqueda local",
+    "etapa 3: buscar, botón, arrastre y vinculación conserva trabajo",
+    "figura de componente: edición, copia interna, conversión reversible y perfil limpio",
+    "Contratos en pestañas nativas: buscador persistente, API completa, inserción y formato sin cambiar colores",
+    "etapa 2: importar tres versiones, deduplicar y rechazar sin cambiar el lienzo",
+    "Swagger UI real: herencia, refs, esquemas 3.1, respuestas, seguridad y selección sin mutar snapshot",
+    "Swagger UI: ejemplos sin schema, selector nativo, ventana estrecha y aislamiento del formato",
+    "Swagger UI: contrato 3.0 y Swagger 2.0, body/formData y cambio de archivo",
+    "Swagger UI: refs entre rutas, múltiples tags, HTML, OIDC y ejemplos externos no generan red",
+    "ajustes de controles: ancho, cierre integrado y API completa portable en una transacción",
+    "etapa 5: copiar, páginas, salvar y reabrir sin originales; copia incompleta bloqueada",
+    "etapa 0: editor real, guardado portable, perfiles limpios, páginas y red local",
+    "la documentación del snapshot se muestra como texto y no ejecuta HTML",
+    "formatos desconocidos y vínculos perdidos conservan figura y datos"
+  ],
+  "limitations": [
+    "El reporte JSON original de esta ejecución fue retirado automáticamente al iniciar la siguiente prueba; este archivo resume su salida observada, no pretende ser el reporte original de Playwright.",
+    "Tras añadir el indicador del tirador, ampliar su title y reforzar duplicación de páginas/edición sin extensión se ejecutaron check, build y dos escenarios enfocados; reporte original conservado en panel-controls-focused-results.json.",
+    "No se repitieron bootstrap desde clon limpio ni corpus público para este ajuste; sus resultados anteriores siguen siendo históricos.",
+    "No se certifican contratos de tamaño máximo ni el piloto humano."
+  ]
+}

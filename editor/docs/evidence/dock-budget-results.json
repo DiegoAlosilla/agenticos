@@ -1,0 +1,24 @@
+{
+  "fixtureOnly": true,
+  "contracts": [
+    {
+      "version": "3.1.2",
+      "bytes": 176866,
+      "operations": 100,
+      "importMs": 227
+    },
+    {
+      "version": "3.0.4",
+      "bytes": 176866,
+      "operations": 100,
+      "importMs": 190
+    },
+    {
+      "version": "2.0",
+      "bytes": 173596,
+      "operations": 100,
+      "importMs": 150
+    }
+  ],
+  "searchMs": 2.100000023841858
+}

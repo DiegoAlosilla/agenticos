@@ -1,0 +1,1096 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\DrawIo\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "D:\\DrawIo\\playwright.config.mjs",
+    "rootDir": "D:/DrawIo/tests/integration",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/DrawIo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/DrawIo/tests/integration",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\DrawIo\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\DrawIo\\tests\\integration",
+        "snapshotDir": "D:\\DrawIo\\tests\\integration",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8080",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "headless": true,
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm start",
+      "url": "http://127.0.0.1:8080/health",
+      "reuseExistingServer": true,
+      "timeout": 180000
+    }
+  },
+  "suites": [
+    {
+      "title": "authoring.spec.mjs",
+      "file": "authoring.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "autoría retirada: preserva diseños existentes y consulta con colores nativos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11949,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:41:25.949Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b10ddee20f933a67948a-c83e6c11a433de78ccdc",
+          "file": "authoring.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "bian-ai.spec.mjs",
+      "file": "bian-ai.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "IA BIAN (doble): sugerencia escapada, fuente fijada, revisión e inserción manual deshacible, claro/oscuro",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8948,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:41:38.055Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "37a123e3e3526f73098d-4553843ecbce4ae2ef58",
+          "file": "bian-ai.spec.mjs",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "IA BIAN (doble): errores, filtro, cancelación, resultados tardíos y cambio de documento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4304,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:41:47.013Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "37a123e3e3526f73098d-fe802cad4fba12058ac8",
+          "file": "bian-ai.spec.mjs",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "BIAN lista y detalle: columnas, selección explícita, scroll, pestañas y regreso en 300 px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14172,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:41:51.328Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "37a123e3e3526f73098d-7c0f96f4b3a53722af42",
+          "file": "bian-ai.spec.mjs",
+          "line": 54,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "bian-detail.spec.mjs",
+      "file": "bian-detail.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BIAN detalle compacto: ancho inicial real, todas las operaciones y acción visible al desplegar originales",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13887,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:42:05.551Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3edee0a77709aba44ecd-1736af770b0c4b2b5a6b",
+          "file": "bian-detail.spec.mjs",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "bian-help.spec.mjs",
+      "file": "bian-help.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BIAN: guía, acción manual, préstamo personal y apoyo español con original intacto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9281,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:42:19.475Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4b0c2c8a23364e574d28-9fed5abc14476722df2b",
+          "file": "bian-help.spec.mjs",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "BIAN: agregar referencia, identidad, una transacción, copias, páginas y reapertura portable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10025,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:42:28.777Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4b0c2c8a23364e574d28-4190f25e11cc5cd439c3",
+          "file": "bian-help.spec.mjs",
+          "line": 36,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "bian-input.spec.mjs",
+      "file": "bian-input.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BIAN: clic, selección y escritura real del propósito sin editar el lienzo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10243,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:42:38.825Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b2c50f432edfd568cf34-31137a4806677481a0bd",
+          "file": "bian-input.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "bian.spec.mjs",
+      "file": "bian.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BIAN: propósito local, definiciones y rutas oficiales, ida y vuelta con Swagger sin modificar el documento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12893,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:42:49.106Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b1e1abad28804615f1ce-4842ec292a7e621c1ffa",
+          "file": "bian.spec.mjs",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "BIAN: controles nativos oscuros, teclado y ancho mínimo del panel",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3801,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:02.011Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b1e1abad28804615f1ce-24a399632f11aceef070",
+          "file": "bian.spec.mjs",
+          "line": 72,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "budget.spec.mjs",
+      "file": "budget.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "presupuesto provisional: 3 contratos de 100 operaciones y búsqueda local",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3534,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:05.845Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "94195c00299906cd3643-b8a192ab78e559e788e1",
+          "file": "budget.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "canvas-contract-selection.spec.mjs",
+      "file": "canvas-contract-selection.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "fila única de seis endpoints y selección del lienzo: API completa y endpoint expandido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8609,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:09.401Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8109f6b950783018dd86-ce531d4f42adba10194d",
+          "file": "canvas-contract-selection.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "catalog.spec.mjs",
+      "file": "catalog.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 3: buscar, botón, arrastre y vinculación conserva trabajo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5430,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:18.031Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2f3358616d79b25ef16d-3f8d6745952bf12e5ec9",
+          "file": "catalog.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "component.spec.mjs",
+      "file": "component.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "figura de componente: edición, copia interna, conversión reversible y perfil limpio",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7012,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:23.485Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3195ced0d90f8914b0c-383e76bcffee5b2b445e",
+          "file": "component.spec.mjs",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "endpoint-dock.spec.mjs",
+      "file": "endpoint-dock.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Contratos en pestañas nativas: buscador persistente, API completa, inserción y formato sin cambiar colores",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5438,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:30.520Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1619f95c05caa2aa8026-d92e4f73e66d271f1830",
+          "file": "endpoint-dock.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "import.spec.mjs",
+      "file": "import.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 2: importar tres versiones, deduplicar y rechazar sin cambiar el lienzo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9588,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:35.982Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a6cd7810acf282988ca5-ab76a820f2eaca1d2526",
+          "file": "import.spec.mjs",
+          "line": 19,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "inspector.spec.mjs",
+      "file": "inspector.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Swagger UI real: herencia, refs, esquemas 3.1, respuestas, seguridad y selección sin mutar snapshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8127,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:45.604Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47d3f36512423018dff7-ab43d3f04ea89b528345",
+          "file": "inspector.spec.mjs",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Swagger UI: ejemplos sin schema, selector nativo, ventana estrecha y aislamiento del formato",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5033,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:53.744Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47d3f36512423018dff7-a8e18dc584c524a161d8",
+          "file": "inspector.spec.mjs",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "Swagger UI: contrato 3.0 y Swagger 2.0, body/formData y cambio de archivo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4602,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:43:58.788Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47d3f36512423018dff7-e135695e8f072b6165d0",
+          "file": "inspector.spec.mjs",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "Swagger UI: refs entre rutas, múltiples tags, HTML, OIDC y ejemplos externos no generan red",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3489,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:44:03.400Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47d3f36512423018dff7-30488677d0e3514c3f5d",
+          "file": "inspector.spec.mjs",
+          "line": 90,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "panel-controls.spec.mjs",
+      "file": "panel-controls.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ajustes de controles: ancho, cierre integrado y API completa portable en una transacción",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15885,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:44:06.915Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f8299b7201a3c9f6b71-7b521a0e23385382e05d",
+          "file": "panel-controls.spec.mjs",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "portability.spec.mjs",
+      "file": "portability.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 5: copiar, páginas, salvar y reabrir sin originales; copia incompleta bloqueada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9469,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:44:22.818Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c9193b22e05939fd6a7b-791accdc8829122dbfe3",
+          "file": "portability.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "viability.spec.mjs",
+      "file": "viability.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "etapa 0: editor real, guardado portable, perfiles limpios, páginas y red local",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13927,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:44:32.320Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "network",
+                      "contentType": "application/json",
+                      "body": "eyJyZXF1ZXN0cyI6W3sidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwLz9sYW5nPWVzJnVpPWtlbm5lZHkmbW9kZT1kZXZpY2UmZ2FwaT0wJmRiPTAmb2Q9MCZnaD0wJmdsPTAmdHI9MCZicm93c2VyPTAmcGlja2VyPTAmc3RlYWx0aD0xJm1hdGg9MCIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9ncmFwaGVkaXRvci5jc3MiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9ib290c3RyYXAuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9tYWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2hpZ2gtY29udHJhc3QuY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUHJlQ29uZmlnLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYXBwLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL214Z3JhcGgvY3NzL2NvbW1vbi5jc3MiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9Qb3N0Q29uZmlnLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvcGx1Z2lucy9jb250cmFjdHMuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZXNvdXJjZXMvZGlhX2VzLnR4dCIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3NoYXBlcy0xNC02LTUubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc3RlbmNpbHMubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvZXh0ZW5zaW9ucy5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9pbWFnZXMvZ2l0aHViLWxvZ28uc3ZnIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvP2xhbmc9ZXMmdWk9a2VubmVkeSZtb2RlPWRldmljZSZnYXBpPTAmZGI9MCZvZD0wJmdoPTAmZ2w9MCZ0cj0wJmJyb3dzZXI9MCZwaWNrZXI9MCZzdGVhbHRoPTEmbWF0aD0wIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2dyYXBoZWRpdG9yLmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2Jvb3RzdHJhcC5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL21haW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvaGlnaC1jb250cmFzdC5jc3MiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9QcmVDb25maWcuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9hcHAubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvbXhncmFwaC9jc3MvY29tbW9uLmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1Bvc3RDb25maWcuanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9wbHVnaW5zL2NvbnRyYWN0cy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3Jlc291cmNlcy9kaWFfZXMudHh0IiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9leHRlbnNpb25zLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2ltYWdlcy9naXRodWItbG9nby5zdmciLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC8/bGFuZz1lcyZ1aT1rZW5uZWR5Jm1vZGU9ZGV2aWNlJmdhcGk9MCZkYj0wJm9kPTAmZ2g9MCZnbD0wJnRyPTAmYnJvd3Nlcj0wJnBpY2tlcj0wJnN0ZWFsdGg9MSZtYXRoPTAmY29udHJhY3RzPTAiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvZ3JhcGhlZGl0b3IuY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYm9vdHN0cmFwLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2FwcC5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9teGdyYXBoL2Nzcy9jb21tb24uY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3Jlc291cmNlcy9kaWFfZXMudHh0IiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9leHRlbnNpb25zLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2ltYWdlcy9naXRodWItbG9nby5zdmciLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC8/bGFuZz1lcyZ1aT1rZW5uZWR5Jm1vZGU9ZGV2aWNlJmdhcGk9MCZkYj0wJm9kPTAmZ2g9MCZnbD0wJnRyPTAmYnJvd3Nlcj0wJnBpY2tlcj0wJnN0ZWFsdGg9MSZtYXRoPTAiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvZ3JhcGhlZGl0b3IuY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYm9vdHN0cmFwLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2FwcC5taW4uanMiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9teGdyYXBoL2Nzcy9jb21tb24uY3NzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3BsdWdpbnMvY29udHJhY3RzLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvcmVzb3VyY2VzL2RpYV9lcy50eHQiLCJtZXRob2QiOiJHRVQifSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zaGFwZXMtMTQtNi01Lm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3N0ZW5jaWxzLm1pbi5qcyIsIm1ldGhvZCI6IkdFVCJ9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2V4dGVuc2lvbnMubWluLmpzIiwibWV0aG9kIjoiR0VUIn0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaW1hZ2VzL2dpdGh1Yi1sb2dvLnN2ZyIsIm1ldGhvZCI6IkdFVCJ9XSwicmVzcG9uc2VzIjpbeyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvP2xhbmc9ZXMmdWk9a2VubmVkeSZtb2RlPWRldmljZSZnYXBpPTAmZGI9MCZvZD0wJmdoPTAmZ2w9MCZ0cj0wJmJyb3dzZXI9MCZwaWNrZXI9MCZzdGVhbHRoPTEmbWF0aD0wIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9ncmFwaGVkaXRvci5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9ib290c3RyYXAuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2hpZ2gtY29udHJhc3QuY3NzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9hcHAubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL214Z3JhcGgvY3NzL2NvbW1vbi5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9wbHVnaW5zL2NvbnRyYWN0cy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZXNvdXJjZXMvZGlhX2VzLnR4dCIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvZXh0ZW5zaW9ucy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaW1hZ2VzL2dpdGh1Yi1sb2dvLnN2ZyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC8/bGFuZz1lcyZ1aT1rZW5uZWR5Jm1vZGU9ZGV2aWNlJmdhcGk9MCZkYj0wJm9kPTAmZ2g9MCZnbD0wJnRyPTAmYnJvd3Nlcj0wJnBpY2tlcj0wJnN0ZWFsdGg9MSZtYXRoPTAiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2dyYXBoZWRpdG9yLmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9tYWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2Jvb3RzdHJhcC5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9zdHlsZXMvaGlnaC1jb250cmFzdC5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUHJlQ29uZmlnLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2FwcC5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvbXhncmFwaC9jc3MvY29tbW9uLmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9Qb3N0Q29uZmlnLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3BsdWdpbnMvY29udHJhY3RzLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3Jlc291cmNlcy9kaWFfZXMudHh0Iiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3N0ZW5jaWxzLm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zaGFwZXMtMTQtNi01Lm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9leHRlbnNpb25zLm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9pbWFnZXMvZ2l0aHViLWxvZ28uc3ZnIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwLz9sYW5nPWVzJnVpPWtlbm5lZHkmbW9kZT1kZXZpY2UmZ2FwaT0wJmRiPTAmb2Q9MCZnaD0wJmdsPTAmdHI9MCZicm93c2VyPTAmcGlja2VyPTAmc3RlYWx0aD0xJm1hdGg9MCZjb250cmFjdHM9MCIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9ib290c3RyYXAuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2dyYXBoZWRpdG9yLmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9tYWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9oaWdoLWNvbnRyYXN0LmNzcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9QcmVDb25maWcuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvYXBwLm1pbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9teGdyYXBoL2Nzcy9jb21tb24uY3NzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1Bvc3RDb25maWcuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvcmVzb3VyY2VzL2RpYV9lcy50eHQiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc3RlbmNpbHMubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL3NoYXBlcy0xNC02LTUubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL2V4dGVuc2lvbnMubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2ltYWdlcy9naXRodWItbG9nby5zdmciLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvP2xhbmc9ZXMmdWk9a2VubmVkeSZtb2RlPWRldmljZSZnYXBpPTAmZGI9MCZvZD0wJmdoPTAmZ2w9MCZ0cj0wJmJyb3dzZXI9MCZwaWNrZXI9MCZzdGVhbHRoPTEmbWF0aD0wIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL3N0eWxlcy9ncmFwaGVkaXRvci5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvbWFpbi5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9ib290c3RyYXAuanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvc3R5bGVzL2hpZ2gtY29udHJhc3QuY3NzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL1ByZUNvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9hcHAubWluLmpzIiwic3RhdHVzIjoyMDB9LHsidXJsIjoiaHR0cDovLzEyNy4wLjAuMTo4MDgwL214Z3JhcGgvY3NzL2NvbW1vbi5jc3MiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvUG9zdENvbmZpZy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9wbHVnaW5zL2NvbnRyYWN0cy5qcyIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZXNvdXJjZXMvZGlhX2VzLnR4dCIsInN0YXR1cyI6MjAwfSx7InVybCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9zdGVuY2lscy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvc2hhcGVzLTE0LTYtNS5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvZXh0ZW5zaW9ucy5taW4uanMiLCJzdGF0dXMiOjIwMH0seyJ1cmwiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaW1hZ2VzL2dpdGh1Yi1sb2dvLnN2ZyIsInN0YXR1cyI6MjAwfV0sImV4dGVybmFsIjpbXSwiZXJyb3JzIjpbXX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccd0f659d0abd2231e8a-38e74f17bd7b8960c858",
+          "file": "viability.spec.mjs",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "la documentación del snapshot se muestra como texto y no ejecuta HTML",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3154,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:44:46.258Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccd0f659d0abd2231e8a-887af02a1657725eb059",
+          "file": "viability.spec.mjs",
+          "line": 178,
+          "column": 1
+        },
+        {
+          "title": "formatos desconocidos y vínculos perdidos conservan figura y datos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3365,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T05:44:49.424Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccd0f659d0abd2231e8a-6219b96bee873e7dbe6b",
+          "file": "viability.spec.mjs",
+          "line": 200,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-24T05:41:25.259Z",
+    "duration": 208215.5,
+    "expected": 25,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

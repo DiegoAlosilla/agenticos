@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-23",
+  "passed": true,
+  "kind": "REAL Ollama HTTP + embeddings + chat + browser UI; no doubles",
+  "startupMs": 1717,
+  "engineVersion": "0.40.10",
+  "hardware": "Windows x64; 16 GiB RAM; GTX 1050 Ti 4 GiB",
+  "network": "Node external destinations and Chromium external requests blocked; prepared Ollama runs with OLLAMA_NO_CLOUD=1. No OS-level firewall audit.",
+  "external": [],
+  "errors": [],
+  "runs": [
+    {
+      "purpose": "Consultar las cuotas pendientes de un préstamo personal ficticio",
+      "action": "Retrieve",
+      "lexical": [
+        {
+          "domainId": "ConsumerLoan",
+          "method": "GET",
+          "path": "/ConsumerLoan/{consumerloanid}/Retrieve"
+        },
+        {
+          "domainId": "Loan",
+          "method": "GET",
+          "path": "/Loan/{loanid}/Retrieve"
+        },
+        {
+          "domainId": "ConsumerInvestments",
+          "method": "GET",
+          "path": "/ConsumerInvestments/{consumerinvestmentsid}/Retrieve"
+        }
+      ],
+      "data": {
+        "suggestions": [
+          {
+            "domainId": "ConsumerLoan",
+            "method": "GET",
+            "path": "/ConsumerLoan/{consumerloanid}/Repayment/{repaymentid}/Retrieve",
+            "reason": "El servicio 'RetrieveRepayment' está diseñado para obtener detalles sobre una cuota de reembolso de un préstamo personal, lo cual es directamente relevante para consultar cuotas pendientes."
+          },
+          {
+            "domainId": "ConsumerLoan",
+            "method": "GET",
+            "path": "/ConsumerLoan/{consumerloanid}/Interest/{interestid}/Retrieve",
+            "reason": "Aunque 'RetrieveInterest' obtiene detalles sobre intereses aplicados, no aborda cuotas pendientes, sino el cálculo de intereses. No es el mejor candidato para el propósito de cuotas pendientes."
+          },
+          {
+            "domainId": "ConsumerLoan",
+            "method": "GET",
+            "path": "/ConsumerLoan/{consumerloanid}/Retrieve",
+            "reason": "El servicio 'Retrieve' para un préstamo personal devuelve detalles generales del préstamo, no específicamente cuotas pendientes. Es menos específico que 'RetrieveRepayment'."
+          }
+        ],
+        "limitations": "Los candidatos se filtran por el propósito especificado: 'Consultar las cuotas pendientes de un préstamo personal ficticio'. Aunque todos los candidatos pertenecen al dominio 'Consumer Loan', solo aquellos que están relacionados con 'cuotas pendientes' (es decir, pagos o reembolsos) son relevantes. Los servicios que manejan 'cuotas pendientes' son aquellos que se centran en el reembolso del préstamo. El servicio 'RetrieveRepayment' (C4) está directamente relacionado con los pagos del préstamo, mientras que 'RetrieveInterest' (C5) y 'RetrieveDisbursement' (C6) no son específicos para cuotas pendientes. El servicio 'Retrieve' (C2) y 'RetrieveCharge' (C3) no abordan el concepto de cuotas pendientes. El servicio 'Retrieve' en 'Loan' (C10) es para préstamos generales, no específicos para préstamos personales. Por lo tanto, solo se consideran los servicios que tratan el reembolso o pagos del préstamo personal.",
+        "catalogCommit": "b58bf4c2c300dd018afc084e9bb24b7adaaa3500",
+        "catalogSha256": "be3d4320380e30cff5f4c11a385fceb303d51b5a63dbbd0689e732ea8e56fd74",
+        "models": {
+          "chat": {
+            "name": "qwen3:4b-instruct-2507-q4_K_M",
+            "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+          },
+          "embedding": {
+            "name": "embeddinggemma:300m",
+            "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1"
+          }
+        },
+        "elapsedMs": 128264
+      }
+    },
+    {
+      "purpose": "Consultar el saldo de una cuenta corriente ficticia",
+      "action": "Retrieve",
+      "lexical": [
+        {
+          "domainId": "CurrentAccount",
+          "method": "GET",
+          "path": "/CurrentAccount/{currentaccountid}/Retrieve"
+        },
+        {
+          "domainId": "CorporateCurrentAccount",
+          "method": "GET",
+          "path": "/CorporateCurrentAccount/{corporatecurrentaccountid}/Retrieve"
+        },
+        {
+          "domainId": "CashManagementAndAccountServices",
+          "method": "GET",
+          "path": "/CashManagementAndAccountServices/{cashmanagementandaccountservicesid}/Retrieve"
+        }
+      ],
+      "data": {
+        "suggestions": [
+          {
+            "domainId": "CurrentAccount",
+            "method": "GET",
+            "path": "/CurrentAccount/{currentaccountid}/Retrieve",
+            "reason": "El servicio C1 permite recuperar información general sobre una cuenta corriente (reportes estándar o atributos seleccionados). Dado que el propósito es consultar el saldo, y que el saldo es un atributo típico de una cuenta corriente, este servicio es el más general y probablemente incluya el saldo como parte de los atributos estándar. Aunque no se especifica explícitamente, es el más adecuado para un propósito de consulta de saldo general."
+          },
+          {
+            "domainId": "CurrentAccount",
+            "method": "GET",
+            "path": "/CurrentAccount/{currentaccountid}/Deposit/{depositid}/Retrieve",
+            "reason": "El servicio C8 permite recuperar detalles sobre una transacción de depósito. Aunque no es directamente el saldo, los depósitos pueden contribuir al saldo total. Sin embargo, no proporciona el saldo en sí, sino solo una transacción específica. Por lo tanto, no es el mejor candidato para consultar el saldo total."
+          },
+          {
+            "domainId": "CurrentAccount",
+            "method": "GET",
+            "path": "/CurrentAccount/{currentaccountid}/Payment/{paymentid}/Retrieve",
+            "reason": "El servicio C9 permite recuperar detalles sobre una transacción de pago. Puede ser relevante para entender el movimiento de fondos, pero no proporciona el saldo total de la cuenta. Es un servicio de transacción, no de saldo."
+          }
+        ],
+        "limitations": "El propósito solicitado es 'Consultar el saldo de una cuenta corriente ficticia'. Aunque varios candidatos pertenecen al dominio 'Current Account', no todos ofrecen directamente el saldo de la cuenta. La acción 'Retrieve' en general no especifica el saldo, y los métodos como 'RetrieveAmountBlock', 'RetrieveInterest', 'RetrieveCharge', 'RetrieveDebitandCredit', 'RetrieveDeposit', 'RetrievePayment' o 'RetrieveIssuedDevice' están enfocados en aspectos específicos (bloques de monto, intereses, cargos, transacciones), no en el saldo total de la cuenta. Además, el dominio 'Corporate Current Account' (C7) y 'Cash Management And Account Services' (C10) no son adecuados para una cuenta corriente ficticia de consumidor. Por lo tanto, se debe evaluar qué servicio proporciona el saldo total de una cuenta corriente de consumidor.",
+        "catalogCommit": "b58bf4c2c300dd018afc084e9bb24b7adaaa3500",
+        "catalogSha256": "be3d4320380e30cff5f4c11a385fceb303d51b5a63dbbd0689e732ea8e56fd74",
+        "models": {
+          "chat": {
+            "name": "qwen3:4b-instruct-2507-q4_K_M",
+            "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+          },
+          "embedding": {
+            "name": "embeddinggemma:300m",
+            "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1"
+          }
+        },
+        "elapsedMs": 89971
+      }
+    },
+    {
+      "purpose": "Procesar una operación ficticia sin producto ni cliente definidos",
+      "action": "Retrieve",
+      "lexical": [
+        {
+          "domainId": "CustomerAgreement",
+          "method": "GET",
+          "path": "/CustomerAgreement/{customeragreementid}/Retrieve"
+        },
+        {
+          "domainId": "CustomerBilling",
+          "method": "GET",
+          "path": "/CustomerBilling/{customerbillingid}/Retrieve"
+        },
+        {
+          "domainId": "CustomerCase",
+          "method": "GET",
+          "path": "/CustomerCase/{customercaseid}/Retrieve"
+        }
+      ],
+      "data": {
+        "suggestions": [
+          {
+            "domainId": "CustomerOffer",
+            "method": "GET",
+            "path": "/CustomerOffer/{customerofferid}/Retrieve",
+            "reason": "El dominio 'Customer Offer' está diseñado para gestionar ofertas de productos para nuevos o clientes establecidos. Dado que la acción solicitada es 'Retrieve' y el propósito es ficticio, este candidato es relevante porque puede recuperar detalles de una oferta de producto, lo cual es un paso común antes de la contratación o activación de un producto."
+          },
+          {
+            "domainId": "CustomerAgreement",
+            "method": "GET",
+            "path": "/CustomerAgreement/{customeragreementid}/Retrieve",
+            "reason": "El dominio 'Customer Agreement' almacena el contrato principal del cliente. Aunque no se especifica un producto ni cliente, este es un componente fundamental en cualquier operación relacionada con un cliente, por lo que puede ser relevante para un proceso ficticio que implique la gestión de acuerdos."
+          },
+          {
+            "domainId": "CustomerBilling",
+            "method": "GET",
+            "path": "/CustomerBilling/{customerbillingid}/Retrieve",
+            "reason": "El dominio 'Customer Billing' se encarga de facturación activa. Aunque no está directamente relacionado con un producto o cliente definido, puede ser un punto de partida en un proceso ficticio que implique el seguimiento de una operación financiera, como la facturación de un servicio."
+          }
+        ],
+        "limitations": "La solicitud tiene como propósito un proceso ficticio sin definición clara de producto ni cliente. Como resultado, no se puede establecer una coincidencia precisa entre el propósito y los dominios o operaciones disponibles. Los candidatos están clasificados por dominio, pero no se puede asignar un producto o tipo de cliente específico. Por tanto, se deben considerar solo los candidatos que tengan un dominio y operación que puedan ser aplicables en un escenario de recuperación de datos sin contexto real. No se puede garantizar que alguno de los candidatos sea el correcto sin más información.",
+        "catalogCommit": "b58bf4c2c300dd018afc084e9bb24b7adaaa3500",
+        "catalogSha256": "be3d4320380e30cff5f4c11a385fceb303d51b5a63dbbd0689e732ea8e56fd74",
+        "models": {
+          "chat": {
+            "name": "qwen3:4b-instruct-2507-q4_K_M",
+            "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+          },
+          "embedding": {
+            "name": "embeddinggemma:300m",
+            "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1"
+          }
+        },
+        "elapsedMs": 76550
+      }
+    }
+  ],
+  "limitations": "Three fictitious cases, not a human utility evaluation or proof of semantic correctness. Lexical baseline lists first operation per domain; IA may select another operation in the domain. No clean bootstrap repeated for Draw.io."
+}

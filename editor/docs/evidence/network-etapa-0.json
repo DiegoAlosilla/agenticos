@@ -1,0 +1,480 @@
+{
+  "requests": [
+    {
+      "url": "http://127.0.0.1:8080/?lang=es&ui=kennedy&mode=device&gapi=0&db=0&od=0&gh=0&gl=0&tr=0&browser=0&picker=0&stealth=1&math=0",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/grapheditor.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/bootstrap.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/main.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/high-contrast.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PreConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/app.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/mxgraph/css/common.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PostConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/plugins/contracts.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/resources/dia_es.txt",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/shapes-14-6-5.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/stencils.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/extensions.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/images/github-logo.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/?lang=es&ui=kennedy&mode=device&gapi=0&db=0&od=0&gh=0&gl=0&tr=0&browser=0&picker=0&stealth=1&math=0",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/grapheditor.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/bootstrap.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/main.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/high-contrast.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PreConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/app.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/mxgraph/css/common.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PostConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/plugins/contracts.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/resources/dia_es.txt",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/shapes-14-6-5.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/stencils.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/extensions.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/images/github-logo.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/?lang=es&ui=kennedy&mode=device&gapi=0&db=0&od=0&gh=0&gl=0&tr=0&browser=0&picker=0&stealth=1&math=0&contracts=0",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/grapheditor.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/bootstrap.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/main.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/high-contrast.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PreConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/app.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/mxgraph/css/common.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PostConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/resources/dia_es.txt",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/shapes-14-6-5.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/stencils.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/extensions.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/images/github-logo.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/?lang=es&ui=kennedy&mode=device&gapi=0&db=0&od=0&gh=0&gl=0&tr=0&browser=0&picker=0&stealth=1&math=0",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/grapheditor.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/bootstrap.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/main.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/high-contrast.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PreConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/app.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/mxgraph/css/common.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PostConfig.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/plugins/contracts.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/resources/dia_es.txt",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/shapes-14-6-5.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/stencils.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/extensions.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8080/images/github-logo.svg",
+      "method": "GET"
+    }
+  ],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:8080/?lang=es&ui=kennedy&mode=device&gapi=0&db=0&od=0&gh=0&gl=0&tr=0&browser=0&picker=0&stealth=1&math=0",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/grapheditor.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/bootstrap.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/main.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/high-contrast.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PreConfig.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/app.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/mxgraph/css/common.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PostConfig.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/plugins/contracts.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/resources/dia_es.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/stencils.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/shapes-14-6-5.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/extensions.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/images/github-logo.svg",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/?lang=es&ui=kennedy&mode=device&gapi=0&db=0&od=0&gh=0&gl=0&tr=0&browser=0&picker=0&stealth=1&math=0",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/grapheditor.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/bootstrap.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/main.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/high-contrast.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PreConfig.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/app.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/mxgraph/css/common.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PostConfig.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/plugins/contracts.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/resources/dia_es.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/stencils.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/shapes-14-6-5.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/extensions.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/images/github-logo.svg",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/?lang=es&ui=kennedy&mode=device&gapi=0&db=0&od=0&gh=0&gl=0&tr=0&browser=0&picker=0&stealth=1&math=0&contracts=0",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/grapheditor.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/main.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/bootstrap.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/high-contrast.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PreConfig.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/app.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/mxgraph/css/common.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PostConfig.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/resources/dia_es.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/stencils.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/shapes-14-6-5.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/extensions.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/images/github-logo.svg",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/?lang=es&ui=kennedy&mode=device&gapi=0&db=0&od=0&gh=0&gl=0&tr=0&browser=0&picker=0&stealth=1&math=0",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/grapheditor.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/main.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/bootstrap.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/styles/high-contrast.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PreConfig.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/app.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/mxgraph/css/common.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/PostConfig.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/plugins/contracts.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/resources/dia_es.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/stencils.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/shapes-14-6-5.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/js/extensions.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8080/images/github-logo.svg",
+      "status": 200
+    }
+  ],
+  "external": [],
+  "errors": []
+}

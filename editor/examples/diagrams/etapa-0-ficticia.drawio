@@ -1,0 +1,111 @@
+<mxfile host="127.0.0.1" contractsRegistry="{&quot;version&quot;:1,&quot;revisions&quot;:[{&quot;apiId&quot;:&quot;api-ficticia-clientes&quot;,&quot;revisionId&quot;:&quot;sha256:abe3bf6856c97f65a7df776d61bb7dc59d838bf8cbb7d6e66312f77ade6a23a6&quot;,&quot;sha256&quot;:&quot;abe3bf6856c97f65a7df776d61bb7dc59d838bf8cbb7d6e66312f77ade6a23a6&quot;,&quot;format&quot;:&quot;json&quot;,&quot;snapshot&quot;:&quot;{\n  \&quot;openapi\&quot;: \&quot;3.0.4\&quot;,\n  \&quot;info\&quot;: {\&quot;title\&quot;: \&quot;API de clientes ficticios\&quot;, \&quot;version\&quot;: \&quot;0.1.0\&quot;, \&quot;description\&quot;: \&quot;Demostración ficticia. Ninguna operación se ejecuta.\&quot;},\n  \&quot;paths\&quot;: {\n    \&quot;/clientes/{clienteId}\&quot;: {\n      \&quot;get\&quot;: {\n        \&quot;operationId\&quot;: \&quot;consultarClienteFicticio\&quot;,\n        \&quot;summary\&quot;: \&quot;Consultar un cliente ficticio\&quot;,\n        \&quot;description\&quot;: \&quot;Documentación de demostración, conservada en el snapshot del diagrama.\&quot;,\n        \&quot;parameters\&quot;: [{\&quot;name\&quot;: \&quot;clienteId\&quot;, \&quot;in\&quot;: \&quot;path\&quot;, \&quot;required\&quot;: true, \&quot;schema\&quot;: {\&quot;type\&quot;: \&quot;string\&quot;}, \&quot;example\&quot;: \&quot;cliente-demo-001\&quot;}],\n        \&quot;responses\&quot;: {\n          \&quot;200\&quot;: {\&quot;description\&quot;: \&quot;Cliente ficticio encontrado\&quot;, \&quot;content\&quot;: {\&quot;application/json\&quot;: {\&quot;schema\&quot;: {\&quot;type\&quot;: \&quot;object\&quot;, \&quot;properties\&quot;: {\&quot;nombre\&quot;: {\&quot;type\&quot;: \&quot;string\&quot;}}}, \&quot;example\&quot;: {\&quot;nombre\&quot;: \&quot;Persona de prueba\&quot;}}}},\n          \&quot;404\&quot;: {\&quot;description\&quot;: \&quot;Cliente ficticio inexistente\&quot;}\n        }\n      }\n    }\n  }\n}\n&quot;}]}" pages="3">
+  <diagram name="Página-1" id="Kw7RfE54WkLc8g7p0hfA">
+    <mxGraphModel dx="614" dy="832" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="«API»&#xa;API de clientes ficticios" contractState="linked" contractRef="{&quot;apiId&quot;:&quot;api-ficticia-clientes&quot;,&quot;revisionId&quot;:&quot;sha256:abe3bf6856c97f65a7df776d61bb7dc59d838bf8cbb7d6e66312f77ade6a23a6&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;path&quot;:&quot;/clientes/{clienteId}&quot;,&quot;operationId&quot;:&quot;consultarClienteFicticio&quot;}" authorLabel="API de clientes ficticios&#xa;GET /clientes/{clienteId}&#xa;Consultar un cliente ficticio" contractVisualRole="api" authorNote="Nota ficticia: conservar geometría y propósito." id="yV4Yn5Nqv8jAL8PT2cet-1">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;verticalAlign=top;spacingTop=8;spacingLeft=26;spacingRight=26;container=1;collapsible=0;recursiveResize=0;" vertex="1">
+            <mxGeometry height="170" width="360" x="100" y="100" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="operation" contractPurpose="" label="«GET»&#xa;/clientes/{clienteId}" id="yV4Yn5Nqv8jAL8PT2cet-2">
+          <mxCell parent="yV4Yn5Nqv8jAL8PT2cet-1" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;" vertex="1">
+            <mxGeometry height="74" width="220" x="70" y="68" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="decoration" id="yV4Yn5Nqv8jAL8PT2cet-3">
+          <mxCell connectable="0" parent="yV4Yn5Nqv8jAL8PT2cet-1" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;resizable=0;movable=0;editable=0;connectable=0;" vertex="1">
+            <mxGeometry height="22" relative="1" width="18" x="1" as="geometry">
+              <mxPoint x="-28" y="10" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="«API»&#xa;API de clientes ficticios" contractState="linked" contractRef="{&quot;apiId&quot;:&quot;api-ficticia-clientes&quot;,&quot;revisionId&quot;:&quot;sha256:abe3bf6856c97f65a7df776d61bb7dc59d838bf8cbb7d6e66312f77ade6a23a6&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;path&quot;:&quot;/clientes/{clienteId}&quot;,&quot;operationId&quot;:&quot;consultarClienteFicticio&quot;}" authorLabel="API de clientes ficticios&#xa;GET /clientes/{clienteId}&#xa;Consultar un cliente ficticio" contractVisualRole="api" authorNote="Nota ficticia: conservar geometría y propósito." id="yV4Yn5Nqv8jAL8PT2cet-4">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;verticalAlign=top;spacingTop=8;spacingLeft=26;spacingRight=26;container=1;collapsible=0;recursiveResize=0;" vertex="1">
+            <mxGeometry height="170" width="360" x="460" y="230" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="operation" contractPurpose="" label="«GET»&#xa;/clientes/{clienteId}" id="yV4Yn5Nqv8jAL8PT2cet-5">
+          <mxCell parent="yV4Yn5Nqv8jAL8PT2cet-4" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;" vertex="1">
+            <mxGeometry height="74" width="220" x="70" y="68" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="decoration" id="yV4Yn5Nqv8jAL8PT2cet-6">
+          <mxCell connectable="0" parent="yV4Yn5Nqv8jAL8PT2cet-4" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;resizable=0;movable=0;editable=0;connectable=0;" vertex="1">
+            <mxGeometry height="22" relative="1" width="18" x="1" as="geometry">
+              <mxPoint x="-28" y="10" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copia ficticia" id="O_SaFNQk_5sF_52mS2Rr">
+    <mxGraphModel dx="1173" dy="832" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="ISGEh4b1rkGuvEI9n17Y-0" />
+        <mxCell id="ISGEh4b1rkGuvEI9n17Y-1" parent="ISGEh4b1rkGuvEI9n17Y-0" />
+        <UserObject label="«API»&#xa;API de clientes ficticios" contractState="linked" contractRef="{&quot;apiId&quot;:&quot;api-ficticia-clientes&quot;,&quot;revisionId&quot;:&quot;sha256:abe3bf6856c97f65a7df776d61bb7dc59d838bf8cbb7d6e66312f77ade6a23a6&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;path&quot;:&quot;/clientes/{clienteId}&quot;,&quot;operationId&quot;:&quot;consultarClienteFicticio&quot;}" authorLabel="API de clientes ficticios&#xa;GET /clientes/{clienteId}&#xa;Consultar un cliente ficticio" contractVisualRole="api" authorNote="Nota ficticia: conservar geometría y propósito." id="ISGEh4b1rkGuvEI9n17Y-2">
+          <mxCell parent="ISGEh4b1rkGuvEI9n17Y-1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;verticalAlign=top;spacingTop=8;spacingLeft=26;spacingRight=26;container=1;collapsible=0;recursiveResize=0;" vertex="1">
+            <mxGeometry height="170" width="360" x="100" y="100" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="operation" contractPurpose="" label="«GET»&#xa;/clientes/{clienteId}" id="ISGEh4b1rkGuvEI9n17Y-3">
+          <mxCell parent="ISGEh4b1rkGuvEI9n17Y-2" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;" vertex="1">
+            <mxGeometry height="74" width="220" x="70" y="68" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="decoration" id="ISGEh4b1rkGuvEI9n17Y-4">
+          <mxCell connectable="0" parent="ISGEh4b1rkGuvEI9n17Y-2" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;resizable=0;movable=0;editable=0;connectable=0;" vertex="1">
+            <mxGeometry height="22" relative="1" width="18" x="1" as="geometry">
+              <mxPoint x="-28" y="10" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="«API»&#xa;API de clientes ficticios" contractState="linked" contractRef="{&quot;apiId&quot;:&quot;api-ficticia-clientes&quot;,&quot;revisionId&quot;:&quot;sha256:abe3bf6856c97f65a7df776d61bb7dc59d838bf8cbb7d6e66312f77ade6a23a6&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;path&quot;:&quot;/clientes/{clienteId}&quot;,&quot;operationId&quot;:&quot;consultarClienteFicticio&quot;}" authorLabel="API de clientes ficticios&#xa;GET /clientes/{clienteId}&#xa;Consultar un cliente ficticio" contractVisualRole="api" authorNote="Nota ficticia: conservar geometría y propósito." id="ISGEh4b1rkGuvEI9n17Y-5">
+          <mxCell parent="ISGEh4b1rkGuvEI9n17Y-1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;verticalAlign=top;spacingTop=8;spacingLeft=26;spacingRight=26;container=1;collapsible=0;recursiveResize=0;" vertex="1">
+            <mxGeometry height="170" width="360" x="460" y="230" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="operation" contractPurpose="" label="«GET»&#xa;/clientes/{clienteId}" id="ISGEh4b1rkGuvEI9n17Y-6">
+          <mxCell parent="ISGEh4b1rkGuvEI9n17Y-5" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;" vertex="1">
+            <mxGeometry height="74" width="220" x="70" y="68" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="decoration" id="ISGEh4b1rkGuvEI9n17Y-7">
+          <mxCell connectable="0" parent="ISGEh4b1rkGuvEI9n17Y-5" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;resizable=0;movable=0;editable=0;connectable=0;" vertex="1">
+            <mxGeometry height="22" relative="1" width="18" x="1" as="geometry">
+              <mxPoint x="-28" y="10" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="cWEW_iYa8343Lzdek0f7" name="Página-3">
+    <mxGraphModel dx="614" dy="832" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="«API»&#xa;API de clientes ficticios" contractState="linked" contractRef="{&quot;apiId&quot;:&quot;api-ficticia-clientes&quot;,&quot;revisionId&quot;:&quot;sha256:abe3bf6856c97f65a7df776d61bb7dc59d838bf8cbb7d6e66312f77ade6a23a6&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;path&quot;:&quot;/clientes/{clienteId}&quot;,&quot;operationId&quot;:&quot;consultarClienteFicticio&quot;}" authorLabel="API de clientes ficticios&#xa;GET /clientes/{clienteId}&#xa;Consultar un cliente ficticio" contractVisualRole="api" id="ej_u8MynJozKf_QG_qSt-1">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;verticalAlign=top;spacingTop=8;spacingLeft=26;spacingRight=26;container=1;collapsible=0;recursiveResize=0;" vertex="1">
+            <mxGeometry height="170" width="360" x="100" y="100" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="operation" contractPurpose="" label="«GET»&#xa;/clientes/{clienteId}" id="ej_u8MynJozKf_QG_qSt-2">
+          <mxCell parent="ej_u8MynJozKf_QG_qSt-1" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;" vertex="1">
+            <mxGeometry height="74" width="220" x="70" y="68" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject contractVisualRole="decoration" id="ej_u8MynJozKf_QG_qSt-3">
+          <mxCell connectable="0" parent="ej_u8MynJozKf_QG_qSt-1" style="shape=component;jettyWidth=10;jettyHeight=5;whiteSpace=wrap;html=0;fillColor=#ffff99;strokeColor=#808040;fontColor=#000000;fontSize=12;resizable=0;movable=0;editable=0;connectable=0;" vertex="1">
+            <mxGeometry height="22" relative="1" width="18" x="1" as="geometry">
+              <mxPoint x="-28" y="10" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

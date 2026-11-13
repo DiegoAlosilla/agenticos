@@ -1,0 +1,17 @@
+{
+  "swagger": "2.0",
+  "info": {"title": "API ficticia anterior", "version": "0.9.0"},
+  "consumes": ["application/json"], "produces": ["application/json"],
+  "securityDefinitions": {"demoBasic": {"type": "basic"}}, "security": [{"demoBasic": []}],
+  "paths": {
+    "/clientes/{clienteId}": {
+      "parameters": [{"name": "clienteId", "in": "path", "required": true, "type": "string"}],
+      "get": {"operationId": "consultarCliente", "summary": "Consulta ficticia anterior", "responses": {"200": {"description": "Cliente ficticio", "schema": {"$ref": "#/definitions/Persona"}, "headers": {"X-Demo": {"type": "string"}}}, "default": {"description": "Error ficticio"}}},
+      "patch": {"security": [], "parameters": [{"name": "persona", "in": "body", "required": true, "schema": {"$ref": "#/definitions/Persona"}}], "responses": {"204": {"description": "Actualización ficticia sin contenido"}}}
+    },
+    "/archivos": {
+      "post": {"consumes": ["multipart/form-data"], "produces": ["text/plain"], "parameters": [{"name": "archivo", "in": "formData", "required": true, "type": "file"}, {"name": "etiquetas", "in": "formData", "type": "array", "items": {"type": "string"}, "collectionFormat": "multi"}], "responses": {"201": {"description": "Archivo ficticio recibido", "schema": {"type": "string"}, "examples": {"text/plain": "ejemplo ficticio"}}}}
+    }
+  },
+  "definitions": {"Persona": {"type": "object", "properties": {"nombre": {"type": "string"}}}}
+}

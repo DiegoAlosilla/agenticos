@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-23",
+  "command": "npm run test:startup",
+  "platform": "win32",
+  "node": "v24.18.0",
+  "events": [
+    {
+      "check": "clon limpio",
+      "passed": true,
+      "elapsedMs": 19612
+    },
+    {
+      "check": "reutilización sin acceso externo",
+      "passed": true,
+      "elapsedMs": 4540
+    },
+    {
+      "check": "núcleo de tres versiones en clon limpio sin acceso externo y schema fijado",
+      "passed": true
+    },
+    {
+      "check": "puerto ocupado",
+      "passed": true
+    },
+    {
+      "check": "puerto inválido",
+      "passed": true
+    },
+    {
+      "check": "huella incorrecta rechazada",
+      "passed": true
+    }
+  ],
+  "scope": "Fresh local clone without node_modules/.runtime, verified Draw.io bootstrap, strict Node/Chromium external isolation on reuse, 32 core tests under offline guard; no optional AI engine or model download in normal startup."
+}

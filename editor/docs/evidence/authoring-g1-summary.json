@@ -1,0 +1,137 @@
+{
+  "date": "2026-10-16",
+  "scope": "G1 estructural: GET, parámetros escalares y respuestas planas; perfil institucional y BIAN no integrados.",
+  "typecheck": "passed",
+  "unitTests": {
+    "command": "npm run test:unit",
+    "offlinePreload": "tests/runtime/offline.cjs",
+    "passed": 20,
+    "failed": 0
+  },
+  "browser": {
+    "distinctScenariosPassed": 16,
+    "regressionsPassed": 15,
+    "latestFocusedPassed": 2,
+    "latestFocusedDurationMs": 23372.178,
+    "scenarios": [
+      {
+        "title": "G1: diseñar GET en panel, generar, undo/copia/páginas y guardar/reabrir borrador junto a snapshots",
+        "file": "authoring.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "presupuesto provisional: 3 contratos de 100 operaciones y búsqueda local",
+        "file": "budget.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "fila única de seis endpoints y selección del lienzo: API completa y endpoint expandido",
+        "file": "canvas-contract-selection.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "etapa 3: buscar, botón, arrastre y vinculación conserva trabajo",
+        "file": "catalog.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "figura de componente: edición, copia interna, conversión reversible y perfil limpio",
+        "file": "component.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "Contratos en pestañas nativas: buscador persistente, API completa, inserción y formato sin cambiar colores",
+        "file": "endpoint-dock.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "etapa 2: importar tres versiones, deduplicar y rechazar sin cambiar el lienzo",
+        "file": "import.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "Swagger UI real: herencia, refs, esquemas 3.1, respuestas, seguridad y selección sin mutar snapshot",
+        "file": "inspector.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "Swagger UI: ejemplos sin schema, selector nativo, ventana estrecha y aislamiento del formato",
+        "file": "inspector.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "Swagger UI: contrato 3.0 y Swagger 2.0, body/formData y cambio de archivo",
+        "file": "inspector.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "Swagger UI: refs entre rutas, múltiples tags, HTML, OIDC y ejemplos externos no generan red",
+        "file": "inspector.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "ajustes de controles: ancho, cierre integrado y API completa portable en una transacción",
+        "file": "panel-controls.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "etapa 5: copiar, páginas, salvar y reabrir sin originales; copia incompleta bloqueada",
+        "file": "portability.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "etapa 0: editor real, guardado portable, perfiles limpios, páginas y red local",
+        "file": "viability.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "la documentación del snapshot se muestra como texto y no ejecuta HTML",
+        "file": "viability.spec.mjs",
+        "status": "passed"
+      },
+      {
+        "title": "formatos desconocidos y vínculos perdidos conservan figura y datos",
+        "file": "viability.spec.mjs",
+        "status": "passed"
+      }
+    ]
+  },
+  "startup": {
+    "passed": 6,
+    "events": [
+      {
+        "check": "clon limpio",
+        "passed": true,
+        "elapsedMs": 55024
+      },
+      {
+        "check": "reutilización sin acceso externo",
+        "passed": true,
+        "elapsedMs": 2898
+      },
+      {
+        "check": "núcleo de tres versiones en clon limpio sin acceso externo y schema fijado",
+        "passed": true
+      },
+      {
+        "check": "puerto ocupado",
+        "passed": true
+      },
+      {
+        "check": "puerto inválido",
+        "passed": true
+      },
+      {
+        "check": "huella incorrecta rechazada",
+        "passed": true
+      }
+    ],
+    "note": "El clon limpio incluyó 19 pruebas de núcleo; después se añadió y pasó offline en el checkout la prueba 20 del presupuesto combinado. No cambió bootstrap ni dependencias."
+  },
+  "notes": [
+    "Resultados de navegador combinados de la regresión y el cierre focal; no se presenta el reporte intermedio con fallo del runner como una suite completa aprobada.",
+    "Un recorrido previo tuvo UNKNOWN al escribir una fixture en disco; la repetición de importación pasó. Un selector del nuevo test no toleraba figuras con texto libre y se corrigió el test.",
+    "El aviso duplicado al retirar un borrador durante cambio de documento se corrigió en producto y se volvió a probar.",
+    "Sin cambios de dependencias, editor base o publicación. Ejemplos/evidencias de producto ficticios."
+  ]
+}

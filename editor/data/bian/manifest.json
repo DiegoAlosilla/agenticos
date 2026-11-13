@@ -1,0 +1,1678 @@
+{
+  "format": 1,
+  "verifiedOn": "2026-10-18",
+  "repository": "https://github.com/bian-official/public",
+  "commit": "b58bf4c2c300dd018afc084e9bb24b7adaaa3500",
+  "rawBase": "https://raw.githubusercontent.com/bian-official/public/b58bf4c2c300dd018afc084e9bb24b7adaaa3500",
+  "landscape": "14.0",
+  "artifactRelease": "14.0.0",
+  "variant": "BOM extended · OAS 3.x",
+  "sourceDirectory": "release14.0.0/semantic-apis/oas3 /yamls/",
+  "landscapeSource": "https://bian.org/deliverables/service-landscape/",
+  "projectionNotice": "Derived from BIAN official public repository, Apache-2.0. Modified: local read-only projection of BOM OAS domain definitions and operations; payloads omitted. BIAN and contributors. No endorsement or certification.",
+  "license": {
+    "id": "Apache-2.0",
+    "path": "LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "additionalNoticeFiles": []
+  },
+  "catalogSha256": "be3d4320380e30cff5f4c11a385fceb303d51b5a63dbbd0689e732ea8e56fd74",
+  "counts": {
+    "domains": 258,
+    "operations": 4580
+  },
+  "anomalies": [
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/BrokeredProductProxy.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/CardTransactionTracking.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/ClaimAdministration.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/ClaimAssessment.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/CustomerSurveys.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/FuneralPolicy.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/IncentiveAccount.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/IncentiveProgramDirectory.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/InformationProviderOperation.yaml",
+      "field": "info.description",
+      "value": "",
+      "expected": "non-empty definition"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/IssuedCertificateDirectory.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/LegalAdvisory.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/OperationsLog.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/PartnerAdministration.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/PartnerManagement.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/RewardsDelivery.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/RewardsInventory.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    },
+    {
+      "source": "release14.0.0/semantic-apis/oas3 /yamls/RewardsMenu.yaml",
+      "field": "paths",
+      "value": 0,
+      "expected": "published operations"
+    }
+  ],
+  "sources": [
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ATMNetworkOperations.yaml",
+      "gitBlobSha1": "8cce278af1b944554b59214d4a59941defbd43b8",
+      "sha256": "8f7d6a4794797daba57cd09e5b20cac09dc660f7de94f62bc9ef5e0a34706e18",
+      "bytes": 54990
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/AccountReconciliation.yaml",
+      "gitBlobSha1": "53283a91cd68c47bdf555e84ca8049301ace0f55",
+      "sha256": "f4d975f6b43d4644919585751e1540416a0f7fba283b0e93bc7e14daced76354",
+      "bytes": 161518
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/AccountRecovery.yaml",
+      "gitBlobSha1": "afaea3c0aec53cb0bffc082dd8350971465e8ae2",
+      "sha256": "2e01765493ebebc36d080e5e6010db4a9f5e9b67ac9e0c678d8e56dd870ba50c",
+      "bytes": 157495
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/AccountsReceivable.yaml",
+      "gitBlobSha1": "ee9d81385b69d02ceee38a475ba1beb6276e2f84",
+      "sha256": "56e4a9fe6ccee83d6fa849561549fb8c81fc5ef358685518e237da37f8021b1d",
+      "bytes": 87445
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/AdvancedVoiceServicesManagement.yaml",
+      "gitBlobSha1": "c0a32b6ba930bc8a644f984b8930749f7b521dd3",
+      "sha256": "f23e5cd82592e8737e644991c2b9911953f0b39bf997b33b32cceee5cc8dbb4b",
+      "bytes": 53586
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/AdvancedVoiceServicesOperations.yaml",
+      "gitBlobSha1": "f71f21ec054cc808c866898323a403a0a816a892",
+      "sha256": "fb7750bc6ee9eb0e849c3648d7f843560dcf61797da52d98c197b0d9e5a2814d",
+      "bytes": 50164
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/Advertising.yaml",
+      "gitBlobSha1": "b61132abff6539284cb579a3698c5c9f027ae7d2",
+      "sha256": "6f8c4cfacd4619284c8abdfcca95a22fbe9d8661bbcd1c47072759836ca8d499",
+      "bytes": 60984
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ArchiveServices.yaml",
+      "gitBlobSha1": "67d731dd89d9a279e1cfc61751e32e1f9d715e21",
+      "sha256": "c79773d94afa93546261d52c1bd163c932496a018f7a6e6d210520e21c87be2d",
+      "bytes": 60357
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/AssetAndLiabilityManagement.yaml",
+      "gitBlobSha1": "7ff0c966745dee5790a613039a5cf45d90fd0456",
+      "sha256": "47d78bb8fb0f635373233c30681a15988e3efae260ed2ce3d1b2b4c8bf23b3c6",
+      "bytes": 49234
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/AssetSecuritization.yaml",
+      "gitBlobSha1": "e23019e4d18e09abba4009c3164b6bb448a83494",
+      "sha256": "af178edf02ea8f3147dafbdb7cb994c67919417c7ed60ce9b425a87404a34a04",
+      "bytes": 163540
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BankDrafts.yaml",
+      "gitBlobSha1": "dacd18e1edca6d28b5c8d1eba05bc00b7402db0c",
+      "sha256": "be9ff02920b25718eba4ffe7e21f6c7aa44b1f8138796778482284657ccaea9f",
+      "bytes": 135706
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BankGuarantee.yaml",
+      "gitBlobSha1": "dab453864eb583998311a9bb9303d6c8944aaf57",
+      "sha256": "3a1f74db367e75a68930537a840c8a76f0dffe85d9278c3c2b3f42ea30725453",
+      "bytes": 157976
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BranchCurrencyDistribution.yaml",
+      "gitBlobSha1": "804b47a6211a6627c4ef06b8dde91721cc5967b9",
+      "sha256": "bf6ab29b7e549cac5b1645720ea77efe353b72f61ba65774cb5586dd0935ff82",
+      "bytes": 83373
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BranchCurrencyManagement.yaml",
+      "gitBlobSha1": "eb589b808871484697603284415ef423ed51e62b",
+      "sha256": "2800fb2ee3867e7bb963f303fed16eb6cfd0e49ef46f9ccc4e270025d69a9947",
+      "bytes": 67050
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BranchLocationManagement.yaml",
+      "gitBlobSha1": "6b86eb012b6d49afe8f3cc678eba6a50bc807b2d",
+      "sha256": "931a5673221b0710860d9d3efb1ab97cb2add3a8a4ace796e69ea5160dedd355",
+      "bytes": 73417
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BranchLocationOperations.yaml",
+      "gitBlobSha1": "636bcc13325562e88f54b9379fed593bed7ea417",
+      "sha256": "75f1a8da82d26743f0764d6925e7c97ff8ae1387f4304905d4216c94a7fd85f6",
+      "bytes": 75494
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BrandManagement.yaml",
+      "gitBlobSha1": "ba0fd96a6fbcb9e6c36f714b8b7a1a245c2e00d6",
+      "sha256": "67b254d173fa9267d19525726779fe845e0ac65cb58a60b5bb0ec4f21d4e9759",
+      "bytes": 39877
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BrokeredProductProxy.yaml",
+      "gitBlobSha1": "dec4b270688c8dfcbd871b375593a22c47d2a65c",
+      "sha256": "c0b8b87830d9717d9860c2298bed7489120561b4b0e80143e5677ab8551c3e90",
+      "bytes": 2972
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BusinessDevelopment.yaml",
+      "gitBlobSha1": "7831601616abe656d52a38f194e6e7ee46026ba6",
+      "sha256": "f3d00afae52fac28851b53906d25badd84b36021f685200fc4f5703ef8544535",
+      "bytes": 83144
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/BusinessUnitManagement.yaml",
+      "gitBlobSha1": "c801d9e67493dc406268d60de9a43e0e6026c0f3",
+      "sha256": "f6598dbb6320de24ca19c331a216d9d919a97f980e9515a21f4d3af9736a3ae0",
+      "bytes": 42530
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardAuthorization.yaml",
+      "gitBlobSha1": "1944086f61b121d8681fbf5b7680051274256331",
+      "sha256": "c14889a9baf91e561bea9d9eef74922a4297ac25a27c58175c2429df79961735",
+      "bytes": 231400
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardCase.yaml",
+      "gitBlobSha1": "8057512d47f9bad0535dd014500f82d81d89f99a",
+      "sha256": "7709303634c71ea7e2d53b53453aa00880a6601e518786f44a5bdd7ecaab8255",
+      "bytes": 217216
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardClearing.yaml",
+      "gitBlobSha1": "ef4c58803bcc25dc9ade803eeb85c4d7d93f8f3e",
+      "sha256": "9d3a12878beb1a7f876a63a1afc507511238f7cb602083f9c70347eb9323f773",
+      "bytes": 199231
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardCollections.yaml",
+      "gitBlobSha1": "41d0eb4ce90217f7a72bee0f616825016636c3c1",
+      "sha256": "8a3365d9a7f7a6555e4923edbbb6284fb1102d075eca980dd6335fcb446eaa13",
+      "bytes": 249794
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardFinancialSettlement.yaml",
+      "gitBlobSha1": "2887fc690c4518d19916785a2dced30d1ddb6370",
+      "sha256": "d2b6b7e395fd46ff39f57eb73db10e2fcad70a523a39a5160a09e502923992e6",
+      "bytes": 125990
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardNetworkParticipantFacility.yaml",
+      "gitBlobSha1": "293017af5e363287dfe3ca07d577c970ef08fe1c",
+      "sha256": "c47486a2466b14b9bf21988e64d752be027e3d86b4955c3a6263ecaff28f0a88",
+      "bytes": 39429
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardTerminalAdministration.yaml",
+      "gitBlobSha1": "4a3eb7733886842e6936b43b1c2345ca1459ee20",
+      "sha256": "86b6c5703dc0d54bccbbadd8caecb8b9eb28a11dcada283c8e248e9ab9c414e8",
+      "bytes": 131518
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardTerminalOperation.yaml",
+      "gitBlobSha1": "e33f86ed4a1ae4ca79088fd88f2ef2d6b404e442",
+      "sha256": "b656badbae3e62cbe2665d624b06e8d074267171f9028caea7413f7812836002",
+      "bytes": 164329
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardTransactionCapture.yaml",
+      "gitBlobSha1": "8959ee52b8c3d506c86801467eae0ae8eea06fb0",
+      "sha256": "39bc9500c3de799a401332e61555b780caef60bd435d4826c46a6c86e0ce9087",
+      "bytes": 166777
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardTransactionSwitch.yaml",
+      "gitBlobSha1": "d2c49691d5abae141ba7a4d301133574809873bf",
+      "sha256": "86716024f9ef820325a501b013ada17ff2eb066993fe92a19484a2d3d4eebe89",
+      "bytes": 180960
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardTransactionTracking.yaml",
+      "gitBlobSha1": "388cdccd0d51a86d90ed93ee1e96e011d8862152",
+      "sha256": "c29e3f6250199d16f779747c55e661fc9a24c34243c88fbd8da16b1e60366004",
+      "bytes": 6239
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CardeCommerceGateway.yaml",
+      "gitBlobSha1": "ea3f15155d146a238365316eefd6450146979fe7",
+      "sha256": "ced15a0bb18a528810a6db5fd93fbd69527c3517dc3264162daa4eb8af6a9b17",
+      "bytes": 149842
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CaseRootCauseAnalysis.yaml",
+      "gitBlobSha1": "6bdd59fbaa974cf1466cc8e2603690a9c612c8ad",
+      "sha256": "6ed2c859ead47f266eac2df1fecd83cf7b2de46a3cf44eb060a5fed23b4074e1",
+      "bytes": 48670
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CashConcentration.yaml",
+      "gitBlobSha1": "e66a478bf2e7c0e6b7490a0e3f612d2e58d6d7c0",
+      "sha256": "a51708540746440708a501b7874f68730849c47d256131925696b9290f85a53e",
+      "bytes": 159525
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CashManagementAndAccountServices.yaml",
+      "gitBlobSha1": "c4a432797e50717d2f48df18ccd34ebaa53cfee0",
+      "sha256": "dd70600a6dc13908fa2855ba6638691a861576fea060a9fc94e2c3526546c24a",
+      "bytes": 329371
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CentralCashHandling.yaml",
+      "gitBlobSha1": "870e280863a24f34f1128bfbc45c06a7c1c3d78b",
+      "sha256": "e723ec8b646861e842e108b7f232010779261586b19b4c90c7d65a77a9944db1",
+      "bytes": 75686
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ChannelActivityAnalysis.yaml",
+      "gitBlobSha1": "7ff0a7ff2d6cbe2348ad3fda3ebe4704b0f82dff",
+      "sha256": "a65a09976d8321c938a151f1f091f8df9e6455a66343a27be6b8743befa74b40",
+      "bytes": 30981
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ChannelActivityHistory.yaml",
+      "gitBlobSha1": "659ca502822969095a4e810fd773908fbaee3ddb",
+      "sha256": "c4bc2129cca16eab8e99753cb6c7cf938708fa5260b4791a51311ebf02ccfb21",
+      "bytes": 60693
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ChequeLockBox.yaml",
+      "gitBlobSha1": "5fc8cdaba886ec5696a207f303124e567501c10a",
+      "sha256": "5e9e3b58c5a6ce5d58f487357181e9b044f0f63fb683e8bf443569e5596fe0ec",
+      "bytes": 184744
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ChequeProcessing.yaml",
+      "gitBlobSha1": "11d016e3092930d24d392fb6dc89fbdbf59800cb",
+      "sha256": "922d1aee3e623ccdb761f4dcd699c5875898e6ca75d9b58ec001ac23d09f5c00",
+      "bytes": 45011
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ClaimAdministration.yaml",
+      "gitBlobSha1": "2467220bf1069b48957cf7f90451f8893f859727",
+      "sha256": "917f0f4ced6af07e86d1ce38c46b8187a609ec96014908d261bb2f97b9fc0d52",
+      "bytes": 14460
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ClaimAssessment.yaml",
+      "gitBlobSha1": "f2ce06e8514458cdc2d97592f4ed410a8f0aa59b",
+      "sha256": "ee6ced1f1485a20659d18f507f85af6fd79b0676cd5e45cb88641ae12be9be65",
+      "bytes": 11962
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CollateralAllocationManagement.yaml",
+      "gitBlobSha1": "728857c8687adfca7a8c354fade493a5e5ab2ff3",
+      "sha256": "3ae6321c156c43ca982d60b1485a98e011ea4e300c33f706f7d8df96a0bfc2ea",
+      "bytes": 20012
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CollateralAssetAdministration.yaml",
+      "gitBlobSha1": "ede21a882c4f203fe61f052ff127dc4cffcbbf40",
+      "sha256": "b8e940a0c33ae720e1be3a11d2da38c704b72ef7edee6c3ed5cf170c12eac5a5",
+      "bytes": 155016
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/Collections.yaml",
+      "gitBlobSha1": "1fa995abcd416e3686391bfa82772d0e673cce1f",
+      "sha256": "6647a237c8cfa902538f9fa80b4b8cd1252187e730cc8acaca9da69e20a73fd5",
+      "bytes": 91428
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CommissionAgreement.yaml",
+      "gitBlobSha1": "4efad4d681094d7c6211eaacb5513e71f8559ca0",
+      "sha256": "c0a4f9449f680e97829af8ac33a0d6cc21ec4d9a7f9f15c97e589bf1ebf40814",
+      "bytes": 77384
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/Commissions.yaml",
+      "gitBlobSha1": "544f9169844c7af72d888d8032e761e0707ae3d6",
+      "sha256": "9971864a97a1314ec05f6e76d0a61515f3f5629d36f6c11d79f6c6ffab9e9cc2",
+      "bytes": 157280
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CompetitorAnalysis.yaml",
+      "gitBlobSha1": "47157f47c42b27ff9b3e6ef51e14eaf678d457f8",
+      "sha256": "9004856f78c52ad7e3bd2350cda06737891965dd130daa11fc6f60c6eb73793c",
+      "bytes": 37921
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ComplianceReporting.yaml",
+      "gitBlobSha1": "8a1bd82651caca6af562b755c4aa7f45c5888ef8",
+      "sha256": "2cb1a328fe19904d99df31878bf6b9339691053cea6248ea628c8d27219c1a4d",
+      "bytes": 67138
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ConsumerAdvisoryServices.yaml",
+      "gitBlobSha1": "c52a84a4392c5fa8b621eb06da0c2cbec96488ca",
+      "sha256": "64528389427497287c12249a70de8597e4bfca260a07e6666d1bf78539c0fddb",
+      "bytes": 145938
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ConsumerInvestments.yaml",
+      "gitBlobSha1": "1a5d0b2cd388a55a14cbf3fcc88db1e4b4ed92ac",
+      "sha256": "e25b33702bb683009cb70000a7afa30e99e587edadcc918ea4d03280bf94cbd4",
+      "bytes": 53346
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ConsumerLoan.yaml",
+      "gitBlobSha1": "45c348cfcb09aa0388eaa86ff2ef20effba4d84a",
+      "sha256": "39bca23499aa596ff4e26add24fa0f54310b2097f3fab9c6906e0ebf733eb1f0",
+      "bytes": 308231
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ContactCenterManagement.yaml",
+      "gitBlobSha1": "8d14462b7f968f5df5a0f2a1e58168cc09855a51",
+      "sha256": "f67cb61655d2c34d310e0e0e4144f4f6b09ccf74450b68b19431018f73896a87",
+      "bytes": 45915
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ContactCenterOperations.yaml",
+      "gitBlobSha1": "f248c7d2acba420512aba5a6266dcbf01c3e4635",
+      "sha256": "83ffa4b72bebe3b8163e51d9b94f9f5cb2d062a1db1729a6bc70655ab533af1d",
+      "bytes": 49689
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ContactHandler.yaml",
+      "gitBlobSha1": "f951da94ffda7bfc5ba9d1575f5e6af6737b9b5d",
+      "sha256": "1e28636d4f0757b8e1b49343ecd298c0139a64c4c02df1d3d796317ed3ca65a9",
+      "bytes": 53138
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ContactRouting.yaml",
+      "gitBlobSha1": "296cfa9433c30eaecd0f0c09e10a30931475c4e6",
+      "sha256": "e900f1b0613d1f0f5674a9d9ed96b3e0d8e9689f2c8f0737943d1213136ebd60",
+      "bytes": 39599
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ContractorandSupplierAgreement.yaml",
+      "gitBlobSha1": "0626bf42faeca95bd5167d37edee32ffaf91ce6a",
+      "sha256": "7ee8115fcddf247278ccd00db87827bc4e9019fdbcc4546513b44c8909b84d9b",
+      "bytes": 100928
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorporateAction.yaml",
+      "gitBlobSha1": "a7c6b4047cecbf712013fe313232f326c26199f7",
+      "sha256": "e16a8870666c3d895bb1922a0d78d9c0a1ab0d9eb5e351fb9e94c52d223e0a46",
+      "bytes": 223962
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorporateCurrentAccount.yaml",
+      "gitBlobSha1": "5d0fb8f86dacc0bfdd1212f0a71e68957cab113e",
+      "sha256": "3320ba51500382da8c568168ff77292f6c3d523c2821c2fb225e82168d83258f",
+      "bytes": 359612
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorporateFinance.yaml",
+      "gitBlobSha1": "e757e48a615882e53b196cdbc921264186726175",
+      "sha256": "fa34a83815c3d70f5ee50d6fb812c6e68a8b829f8a35bef322063c4bb2b36682",
+      "bytes": 79928
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorporateLease.yaml",
+      "gitBlobSha1": "4b45cce862cdf3a2863ef3395259d1c690723548",
+      "sha256": "12f41e7ef6176dfdf173ee63fe107a479bb20cad2ed2762e770c49d93e4ca895",
+      "bytes": 67742
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorporateLoan.yaml",
+      "gitBlobSha1": "51ca88dc3d076e89ef7cb43bd306ef3653ceff68",
+      "sha256": "ff1e9a8e5dd52f30641a03a850784827a376f8abed812a793db4813045b11b95",
+      "bytes": 309624
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorporatePayrollServices.yaml",
+      "gitBlobSha1": "c7894aa75c06762abc118221352bf170ebd03d89",
+      "sha256": "fda2541749f9cd0fc3939580546d4b93ba2514ae3e3f56a84bb045899f9e46e9",
+      "bytes": 158317
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorporateTaxAdvisory.yaml",
+      "gitBlobSha1": "f07c5ea019e42dc1a6e34d1e3537ad5fe93ddf4e",
+      "sha256": "05b65993bf32fcbcc100e1da7d6a10b44da5dc9c8c49687b2d75675a14da7285",
+      "bytes": 155098
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorporateTreasury.yaml",
+      "gitBlobSha1": "20583bdd98d5a48a013c058a354ab19d8eb5996a",
+      "sha256": "f467b9353d2d976eb456f610ec1e88b58769910f688295aec49681c527db898d",
+      "bytes": 51610
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorporateTrustServices.yaml",
+      "gitBlobSha1": "a3843ac6f18290fbcf27992e67db20a95bcdb1b2",
+      "sha256": "a93a5b2cd1113c4d01041f0894cd9fb7fcadd34b88b13bf22d3402069cabb7f7",
+      "bytes": 191295
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/Correspondence.yaml",
+      "gitBlobSha1": "65c15ba330772a3b88af538d7bb5efb300b92bd7",
+      "sha256": "955b0505dceed7a527c7ebbb1e956e447cbb133aee20c9c92ab6effed369c4f8",
+      "bytes": 46533
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorrespondentBankDirectory.yaml",
+      "gitBlobSha1": "cf517134def903dcc3bfb07c534d3ccc2ffc20da",
+      "sha256": "970b558b67ec6f234d064694b62a9d0d2a1e2f69e97c9225988027694c377203",
+      "bytes": 36769
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CorrespondentBankRelationshipManagement.yaml",
+      "gitBlobSha1": "13a7c2899a8057e3ae01161102fcb2728aea2705",
+      "sha256": "c7dd0701adaff2360a04a1c4a4ceca32cab74d7e6d434a3a660de5aeac551156",
+      "bytes": 89518
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CounterpartyAdministration.yaml",
+      "gitBlobSha1": "1f7745fd0e524634d4ae233d8f8cba31222d68eb",
+      "sha256": "7d6334b4f17116fee67033060bbef10db4dae247dca15a84bd3dfe8206fb2fc3",
+      "bytes": 72927
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CreditCard.yaml",
+      "gitBlobSha1": "01f086c959153d5b609a01ca4debb064006c4b64",
+      "sha256": "90acd4e1b21383dd0853f0a9231b6e9e1213a81c32a72ce5e50330b5dba9f678",
+      "bytes": 328458
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CreditFacility.yaml",
+      "gitBlobSha1": "aa72dde7de0f5d38d865455861180031f683d3eb",
+      "sha256": "6fee7390eb07bf3c261a3f80af1095d3a9078498e85d9f8b39f0ea352e3e04cb",
+      "bytes": 208777
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CreditManagement.yaml",
+      "gitBlobSha1": "3de6ff9ab1a527d67f53c5cafa7a60b5f4b82dd5",
+      "sha256": "c893d39ea3d2793e8a5d05d919e7e1d5391cd1128d6a868c9315eccc5a44a9d0",
+      "bytes": 41263
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CreditRiskModels.yaml",
+      "gitBlobSha1": "6c1c18fb227129168a0417906ac9fca5cdfaefe0",
+      "sha256": "0bb0c90f19dc9d1f411be7a929e185ad9becfb21ce48aeed0f62bff40773a7d0",
+      "bytes": 41299
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CreditRiskOperations.yaml",
+      "gitBlobSha1": "c716407c3fa19baf15608c173e8e62ed3d1f875b",
+      "sha256": "eddae329e43ce121e5f3590a6644fb18c3d9921777381fb885f6df2567e68d60",
+      "bytes": 125282
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CurrencyExchange.yaml",
+      "gitBlobSha1": "fb46b811c90b9e0c059ca50235f40c0b2e969f88",
+      "sha256": "5f640871e8381bd050ce03265057b148b6a6626d8db232b91cf36d5d90dfedec",
+      "bytes": 159570
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CurrentAccount.yaml",
+      "gitBlobSha1": "ee54a56f8d604993cab8241a18c032e5d7ad4470",
+      "sha256": "0e46afcc4b3e949b6d4f324c875d14ec108d9b95f40465925b303b7b9e58c3b0",
+      "bytes": 358644
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustodyAdministration.yaml",
+      "gitBlobSha1": "63a3875d7db96fb537bb58f3128ffd0b93318738",
+      "sha256": "8af53f9e076d2934e55ab26889a4ffd72c1526288dc0377fb259d2082ae28f85",
+      "bytes": 82161
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerAccessEntitlement.yaml",
+      "gitBlobSha1": "c2ee0b33238cc4e414c58733995ba020ce6dc963",
+      "sha256": "ce29e41d818e8294beb839eb993dbf8174d6751a5f1bb6e2d1a18899fcfb2036",
+      "bytes": 50934
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerAgreement.yaml",
+      "gitBlobSha1": "8ca3ce7990ffdc33b082ca6171ceb18aacdcddfc",
+      "sha256": "b124152e93db68b5a6dee4e1f6297855db54ec3a2437bdbd22548fbdc690f04a",
+      "bytes": 46186
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerBehaviorInsights.yaml",
+      "gitBlobSha1": "ac9af5cda480a8d4bab9532ddd4248d4fb718605",
+      "sha256": "bfbdf3bdb041c9074983566a765343556b330a7f73cc7ca61c8e1baf318a93aa",
+      "bytes": 43857
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerBehaviorModels.yaml",
+      "gitBlobSha1": "49f6f70346350ae1942343de9bd00336d8572e18",
+      "sha256": "e6b56b41d42621a7084533d6254a092d58f5716247c10cc4641edd8279364297",
+      "bytes": 58378
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerBilling.yaml",
+      "gitBlobSha1": "7e4741d01c1d0697948ef21d79f6e042b25c2954",
+      "sha256": "c2cf8c29482018bd92aebb21c2a6628300f43f0818ea8bfb7114a3b8d0888dab",
+      "bytes": 126966
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerCampaignDesign.yaml",
+      "gitBlobSha1": "915f880514527c5a179dae5710f9ff1c5f9eef43",
+      "sha256": "f75d0de5a986264b3c0ababfc9e619f8df6de4f7c2f8e9c01959ee6259d74e55",
+      "bytes": 53958
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerCampaignExecution.yaml",
+      "gitBlobSha1": "a4ab9335af28624db5749a393b9dff149fb2bb95",
+      "sha256": "d330c182161bb81ea5c60922d06be22520e43660df8018e15411deb551c15023",
+      "bytes": 79126
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerCampaignManagement.yaml",
+      "gitBlobSha1": "833b2114d04b2d07da20e4267a62186ee9c7dac9",
+      "sha256": "d3f21d714dcdc87f545e88d7d3b0967ecda58fee984ffac2e35bc13ca10464e8",
+      "bytes": 100970
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerCase.yaml",
+      "gitBlobSha1": "db0093ab8d11c74ce94ace31f7a69b0f1f07d68f",
+      "sha256": "40a52a85ccf4290500b928b1ac088dfa43cabb7d757afa690de99c6087ead671",
+      "bytes": 86114
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerCaseManagement.yaml",
+      "gitBlobSha1": "b20dda270e1711bb2e370effd997f7d40a850dfe",
+      "sha256": "a1c5e37b539b64a696dce06e234d42a4d50b705ff13ceb4d0b19aad561bf852a",
+      "bytes": 45383
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerCreditRating.yaml",
+      "gitBlobSha1": "484a9c343a5c2690f6c0d29ec2d259cd763a0905",
+      "sha256": "c5f21538b233ed13b654a78e43873d400d22bce3d07b5b30848ace3ba87bd1de",
+      "bytes": 53858
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerEventHistory.yaml",
+      "gitBlobSha1": "4a29bdfca6b5f9ec897e5ab783d180482c8500a5",
+      "sha256": "d422a485b4c712874525dcd720ada58a5ddedc9fde24edc9719b4829fc39c018",
+      "bytes": 74935
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerFinancialInsights.yaml",
+      "gitBlobSha1": "9410099c43dfbcb3ecbb508711e61c6fb72683b0",
+      "sha256": "70805f72dc17e9d223d387e73fb6f9fab6edbaa9c1fa406e3c868a1e383a189c",
+      "bytes": 34323
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerOffer.yaml",
+      "gitBlobSha1": "80dd82e453f716a0615c2b0d75d0d86075e9d90f",
+      "sha256": "d7efcd587d9d2bb920acdd87e3a8478db821a6f2847f95b175f0360b296bb8dc",
+      "bytes": 234184
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerPortfolio.yaml",
+      "gitBlobSha1": "ef4279ee78fb7bf0331598a7bfc173fd85f6f141",
+      "sha256": "dc822c5be99c0daef5554e9df7d0adef259a6334748ec8436cc3d5dbd1261852",
+      "bytes": 60215
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerPosition.yaml",
+      "gitBlobSha1": "850401d30af96df80d9541f77957b6fa6f5d0cf0",
+      "sha256": "5f225181d5f68feee41824561b6a0174d2195dae16b449634b693396d6bf024f",
+      "bytes": 95608
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerProductAndServiceEligibility.yaml",
+      "gitBlobSha1": "b899a576a83345b40a5efd48aed96e8355ec91f3",
+      "sha256": "f7da89ddd79a963dd83e2d16e102250e33491d3ad870503ede0947e00388333e",
+      "bytes": 66643
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerProductandServiceDirectory.yaml",
+      "gitBlobSha1": "700576a1accce17b49acc511ba5c42ecdf69be59",
+      "sha256": "e01209e3b987be891f55712bbae9de20b44ab2e2002577ef399c6158f3d77c02",
+      "bytes": 45125
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerProposition.yaml",
+      "gitBlobSha1": "ead657cffa70ed992b183717ce7ee3d31cded575",
+      "sha256": "4a7e25a39b60bc1f9b0924a2442c2719eaa4c04724347a2ed118cb8b7c5cbc26",
+      "bytes": 97247
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerRelationshipManagement.yaml",
+      "gitBlobSha1": "d83ae30c2688b089e1767e70f2a2b8c712007ce2",
+      "sha256": "f57a0da7053e40cac7c2cc5ca9243bdb3cbf76fe39993e0502cc151f1a6ec603",
+      "bytes": 76484
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerSurveys.yaml",
+      "gitBlobSha1": "c679286afc47a7e4a60f30a4e491b843278b565a",
+      "sha256": "8f04af072b4a044f8b15ffa0faa1b6fef6271a0378dcc022f7909beecd002d05",
+      "bytes": 8132
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerTaxHandling.yaml",
+      "gitBlobSha1": "3fcad33b9255624f53e9b6d15c7bdaedb4a9e0ab",
+      "sha256": "05ee3e89266e9f0ffaea4692961e00db0c82ab7c8e297576763efd7c1b967ed0",
+      "bytes": 175429
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/CustomerWorkbench.yaml",
+      "gitBlobSha1": "82b26cb62717e06e1e239cf79aa94c0244287070",
+      "sha256": "e491dfd95f6f142bd27a42d041b02a5bcc8e79bdacdb4c2ea27945aba638cb61",
+      "bytes": 46708
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/DealerDesk.yaml",
+      "gitBlobSha1": "c6e8e4aadda34b6dbd586df0cb627f5095b1d203",
+      "sha256": "cddccbbabd625a649b7898e04a19885f0df1723e218471c3bbe0ce007ca8149e",
+      "bytes": 59178
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/DelinquentAccountHandling.yaml",
+      "gitBlobSha1": "ce58ae2a164efc7a1ec90329ee7b8da3f3729d9c",
+      "sha256": "9456c0eeb6bd298b416d913b8877227977e0701aa4983833113ac372f57d0f80",
+      "bytes": 186488
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/DirectDebit.yaml",
+      "gitBlobSha1": "01cdce12df45dfb5f49596d8399a4f83cb29fa6c",
+      "sha256": "bb044b8ec84b1de8bdd7d06d3f765e9cd23f2b16ea9ce107fb749afab2233080",
+      "bytes": 109382
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/DirectDebitMandate.yaml",
+      "gitBlobSha1": "2926106f58c5121faed251f784fe573762a77772",
+      "sha256": "27233ae58209dee68778a3111bc44c304f7476a5b191add5029f15bb7bdce2f5",
+      "bytes": 153964
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/Disbursement.yaml",
+      "gitBlobSha1": "2c2b80f056a276aac57c0db43b796e1321570279",
+      "sha256": "84b503fbb15940698279563de39d1e2314ea7f2322fa6be4192f84698d411b87",
+      "bytes": 155700
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/DocumentDirectory.yaml",
+      "gitBlobSha1": "266b721b99b35fc582abf1671bc6444b334bbf56",
+      "sha256": "6f42d3a9df0e13e896cb088ef468a4e3a9ce9ff075a65091cc6c82565ca998da",
+      "bytes": 104547
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/DocumentServices.yaml",
+      "gitBlobSha1": "79e5ce0d732fd535fc84b0ca8934886dca73ae1b",
+      "sha256": "895118b952f877e1c22846283e288829441f30e39c57b8782770f72c784f3f9b",
+      "bytes": 68368
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ECMAndDCM.yaml",
+      "gitBlobSha1": "f49236e0ac001d956678c8c73c6f010334ec9d7a",
+      "sha256": "a44a521f6b4aa429160f7f1284c828c22e12a95d3b9d550b4d64a58b591d477e",
+      "bytes": 63358
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/EnterpriseArchitecture.yaml",
+      "gitBlobSha1": "74393f186bc34f46b23e0a654c1b1c36bb1698d5",
+      "sha256": "b39702bb949843c60d1391826dbe6a97787c794e135f2f3f633269d356bb23b2",
+      "bytes": 54152
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/Factoring.yaml",
+      "gitBlobSha1": "9276ca901305262e1b0358c0b6c76064e4625b04",
+      "sha256": "ae743b35e76033b045898665f6f266ef8321b6cf94e910bddf2dc4b31b49290d",
+      "bytes": 182632
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FiduciaryAgreement.yaml",
+      "gitBlobSha1": "069e19c83f57e0981800912fed9e0d7f0199c281",
+      "sha256": "ef34d4ef60b4cb85a7494efcb6cecd662c6da9cf9b7bed61a3098ab60235a43c",
+      "bytes": 80653
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FinancialAccounting.yaml",
+      "gitBlobSha1": "ee6a03f511d9e139e33b1f359e87aac3abfe01a0",
+      "sha256": "dd6a2b294288346381f05f53340393bcf0f0412ac945b424de350dd78c61f674",
+      "bytes": 41045
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FinancialGateway.yaml",
+      "gitBlobSha1": "4b61779f2257d79fb7b8429e09c23ddc4c7768af",
+      "sha256": "ec1a419c01828d302454842173f205f7cf8604d5c327904bf5439c3881496420",
+      "bytes": 33954
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FinancialInstrumentReferenceDataManagement.yaml",
+      "gitBlobSha1": "2c735e7b5139aa5039b6f4cacae388ac9e32898a",
+      "sha256": "35ee746fefac5db26d561a2fa9dfe6337f6a7409b9f1865372fd1ff10826584d",
+      "bytes": 81455
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FinancialInstrumentValuation.yaml",
+      "gitBlobSha1": "b4393feccc5b1a6fc87710c93f3eb4351bf5b10e",
+      "sha256": "8d6db2909cc52a9686e06d70d19de9b7e9e8662b1764f81a87944f83daa247f3",
+      "bytes": 91613
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FinancialMarketAnalysis.yaml",
+      "gitBlobSha1": "1354c8a45ae95637eddb893ea35c244766118a5c",
+      "sha256": "1219be19c1627f1a4a31691911fce319fd70bf80a7e0481ab20fadb4bda87a5e",
+      "bytes": 31889
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FinancialMarketResearch.yaml",
+      "gitBlobSha1": "75c28ab3e8b85a7ad3144af005f0160e6c7640a9",
+      "sha256": "4ed43c79637fd8e7748546e2a0cca406b00cf312f322bb85a5a0bee47e6b141f",
+      "bytes": 31680
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FinancialStatementAssessment.yaml",
+      "gitBlobSha1": "85d6b1566974f3bc6bb6348672ae38937721cb51",
+      "sha256": "9610e61ab5ca70f28118a6cfbf43416f46e689fae4f2681456fbc34432648f9c",
+      "bytes": 67430
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FraudDiagnosis.yaml",
+      "gitBlobSha1": "5de6e2b2499225e62a26b0c5da3d6f39e7755d26",
+      "sha256": "489ab51d8c5d88739023ab97a91928012d6921de6ca37281ec110f1be3dc4f41",
+      "bytes": 31652
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FraudEvaluation.yaml",
+      "gitBlobSha1": "1439b411c021de972c9f16facdf64d2fbe1c7d96",
+      "sha256": "e95e7a21fc7a3956931f3cd54445f83114365b7227bcb1eee5c2ba5ef4e4f233",
+      "bytes": 24768
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FraudModel.yaml",
+      "gitBlobSha1": "3742eabfe246463b298db249c51d68245f8fef7b",
+      "sha256": "dd1737a3ff11b8af5d66c419fa51f9a228be9453397f644b8cc758ba0e6748b7",
+      "bytes": 65855
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FraudResolution.yaml",
+      "gitBlobSha1": "cea9f503dcc7d723cfd6dff893d0fb0a454395f2",
+      "sha256": "570d4809214234fc696c186400ee6ab45a560f6557159303d72ffa0ef189334a",
+      "bytes": 178246
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/FuneralPolicy.yaml",
+      "gitBlobSha1": "7433f3c0f9d2e4c3a397d81bc71e02c9586480ca",
+      "sha256": "db27822ffd6bb6a19c4dd91f9886f9bee7665f7539d596018a5d431b4ec12782",
+      "bytes": 13453
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/GuidelineCompliance.yaml",
+      "gitBlobSha1": "e4fed96d89edce6efb8dbbd13f38eb9aa0c2dd48",
+      "sha256": "e62794088da9bf0d84750a05b272189dab0ace486fe71157e9676a15544fd6fb",
+      "bytes": 45867
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/HedgeFundAdministration.yaml",
+      "gitBlobSha1": "afb125bcead09a8426c56878c0398a535844c137",
+      "sha256": "1ae842ae1232c2f64b0b92941f766861a197dac5fefdb16429f805415474293d",
+      "bytes": 131748
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ITStandardsAndGuidelines.yaml",
+      "gitBlobSha1": "9df0277dea48fee1a6bbd2ec42d8028202c4178d",
+      "sha256": "23fa8872b4edd67ab39e53e585f27e894d4119489cba3692c064235e2d3ba824",
+      "bytes": 68905
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/IncentiveAccount.yaml",
+      "gitBlobSha1": "de0460adb55c80c8381040d8adb7bd48fe002023",
+      "sha256": "7231fb412f6186ba25d7ddfaf2bbe5e7df0e4c8334f706e77c92ec7f46b578ba",
+      "bytes": 2931
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/IncentiveProgramDirectory.yaml",
+      "gitBlobSha1": "5b39b77254a59ca03a7bc75acdedf795293baae3",
+      "sha256": "18187a22b7513989596ab213839b057725ec89113aeba0ccf2822b3ec2044544",
+      "bytes": 3347
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/InformationProviderOperation.yaml",
+      "gitBlobSha1": "ab0d418546391e2c33bf9add2c370c06779ca49a",
+      "sha256": "4d1e3f29e67466d9c6603210b694de8e83b5caf5cc0c2d7e5e33f626f2cc74f1",
+      "bytes": 23777
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/IntellectualPropertyPortfolio.yaml",
+      "gitBlobSha1": "3e83d1ceaa2575313db05f444263a4e0fd324738",
+      "sha256": "dc37c3d6b16df161ed40b7cae0fccadd30e7ec5e76c2967198b8f488de213a43",
+      "bytes": 61826
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/InteractiveHelp.yaml",
+      "gitBlobSha1": "59481dfc4f7b9f52ac2ea428b520238d359a2fe6",
+      "sha256": "3e6bad9802cefc864471573d2dd97972cb9b59de05fccc0dc3638b454feb0f7c",
+      "bytes": 12918
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/InterbankRelationshipManagement.yaml",
+      "gitBlobSha1": "524cefcfeafa80aaf6f13cecbf3574c770e26751",
+      "sha256": "eb3e539e757dc354a5e341783e83c3999640dc3596708a4f97fd11b98ee42508",
+      "bytes": 45732
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/InternalAudit.yaml",
+      "gitBlobSha1": "63ca25f6cb1aa1336ba19f7a3f1081a523c823ba",
+      "sha256": "d78d58a7724efa03cff379fa4553882eb907bfd6950e28fca63060046f87168b",
+      "bytes": 49362
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/InternalBankAccount.yaml",
+      "gitBlobSha1": "f6dc981fc3a472dd0cef06f602ca474a0e2de012",
+      "sha256": "ba713af312e9dc1f3df016de0611e188374208f38ff18ced342aa795d3baf045",
+      "bytes": 167108
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/InvestmentAccount.yaml",
+      "gitBlobSha1": "8e33bde48e900ff03d1f6038718124de15dc4d64",
+      "sha256": "e9eaf186d73a67668f6c58ef3d2fb93a95b808709b2858b0a9182bbf15a2bdd4",
+      "bytes": 199541
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/InvestmentPortfolioAnalysis.yaml",
+      "gitBlobSha1": "1e81657f54719645099279616a2240ee63ebd3a4",
+      "sha256": "4f69bb92523726d9318144a9c7f6e720f89b821b7a15f5ed2a11decfffdb3fe4",
+      "bytes": 40594
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/InvestmentPortfolioManagement.yaml",
+      "gitBlobSha1": "67d16bb48bcadacd615a4dcfff0d312b91a068a5",
+      "sha256": "6ee855d9f64a1b52a82e86fe272f43a513a486401f546bd8ac020bb941e09c5c",
+      "bytes": 32167
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/InvestmentPortfolioPlanning.yaml",
+      "gitBlobSha1": "e71b8876c745d265cfacc68732dbd2846c129215",
+      "sha256": "68a10485d75f8d95a145934ed1c8f7fbac15d9a9d30089470614f669855b7f34",
+      "bytes": 41283
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/IssuedCertificateDirectory.yaml",
+      "gitBlobSha1": "f4c2688d44971a53c5303879a993ed423bb006dd",
+      "sha256": "824afa90c2ca55133e5803a57e76053334702a878503449848bdaf55e423dd27",
+      "bytes": 3347
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/IssuedDeviceAdministration.yaml",
+      "gitBlobSha1": "35526b75096fdac46c1511ed8273a349e54b965d",
+      "sha256": "9c457d2cafd82937b75acf1b47fcb351097dfe29b650a97672ea2d10492142e8",
+      "bytes": 115781
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/IssuedDeviceTracking.yaml",
+      "gitBlobSha1": "db39b896d174583041e74a0b78b9139f9a47ac7b",
+      "sha256": "d9a90c49134e8cd6ea002b8637412352b7d2eba388927b7991404df9ed8d3a60",
+      "bytes": 30986
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/KnowledgeExchange.yaml",
+      "gitBlobSha1": "d8bc449d159734ac5303a94656b0d2b85ccfb599",
+      "sha256": "c7f769e01d39038ffabc90f348c4cc576ff2c244edda6a50226e893010739207",
+      "bytes": 60454
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/LeadandOpportunityManagement.yaml",
+      "gitBlobSha1": "032e436f743a974d0be1c5ee62062d5aac82ac14",
+      "sha256": "2843f2804397910fca86a85b63676c486a671074eab7469f0940cd953352447e",
+      "bytes": 42967
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/Leasing.yaml",
+      "gitBlobSha1": "60536f8141af78a86ffeddb9f2dec67d26ca356c",
+      "sha256": "f3046ba11239aec736d6caec8362c26bf1f191805dbd0a90a77452de8db0bb73",
+      "bytes": 367132
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/LeasingItemAdministration.yaml",
+      "gitBlobSha1": "542347c38b4ec352bab6beba93a97449bad51407",
+      "sha256": "b40bb99329ecf52993b15952d4caebe72ffc34bd283c490a7e4dcaa026543312",
+      "bytes": 68399
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/LegalAdvisory.yaml",
+      "gitBlobSha1": "4ab7da75e4fa295bb84a6a7c1c7d73d7444e8f88",
+      "sha256": "66fb4ba23ff6bb1752355bfd9a3e82c1ed9cb0b37ea9cc7d9196a3cc51867386",
+      "bytes": 6010
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/LegalCompliance.yaml",
+      "gitBlobSha1": "8587ceb18ea639c5fdfe35c40072a5fe58c03476",
+      "sha256": "6a96018e105c5bfd8cbf409113113ac02e67fb2ffdfc4b83a051a34c0406cb9e",
+      "bytes": 152825
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/LegalEntityDirectory.yaml",
+      "gitBlobSha1": "48960571cb35560038fa615ed16c19c155632e40",
+      "sha256": "6c38eb742ed1bd67e34331370311dd2d942c9d49617433372543b4ac99a23803",
+      "bytes": 48486
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/LetterofCredit.yaml",
+      "gitBlobSha1": "6fc51dd8b15b4c75216f869466f46709731c2b13",
+      "sha256": "56223a12507866c55479013d2b6be69bd73e554aec0782f5204ecd237d9a8ea7",
+      "bytes": 284087
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/Loan.yaml",
+      "gitBlobSha1": "efa1fac21a566777565378b5294143aca5dad26d",
+      "sha256": "a456d64041396cfd32c4d7add69d808b05b517c0b975549a6d5a046681235af1",
+      "bytes": 262654
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/LoanSyndication.yaml",
+      "gitBlobSha1": "e697b1b01d2a4fdfa12fc8ef452243bd03ceaa1c",
+      "sha256": "52ccad641656d77bb31719a1e204f33a73d58f259f5f6281676be18b625d04ee",
+      "bytes": 52718
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/LocationDataManagement.yaml",
+      "gitBlobSha1": "65d7ac82cf8cd01f26e3f20d25d411c56004aebf",
+      "sha256": "d3ea08295ae7dda5a30579432ce84d817430385485fb4fa16ebfb103efbef22f",
+      "bytes": 34310
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ManagementManual.yaml",
+      "gitBlobSha1": "c85a299c11f6a2e0480bce725797a82b22a32897",
+      "sha256": "88945f8ff20b30c729d85e62a3971d196fc63ac8818416aacce37003655d45d2",
+      "bytes": 62516
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MarketAnalysis.yaml",
+      "gitBlobSha1": "d19ae5f6b8582ba4ba6ef73651851c5f41de2cbc",
+      "sha256": "836472e947e0266ff85e137004e7e2fc5dc42fd38287584c9450f37807a79c3c",
+      "bytes": 39391
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MarketDataSwitchOperation.yaml",
+      "gitBlobSha1": "9d63379c0d41b5f649a3d599f6be72b815940468",
+      "sha256": "3a76133d50d68237cd1bcca3d67d560527faaa0615e320b23fdc329de07d1e13",
+      "bytes": 45222
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MarketInformationManagement.yaml",
+      "gitBlobSha1": "0e1c4443b375963c2fe11179e7f1390e5e9d0e47",
+      "sha256": "e96e7e8e149126c49900caf929e247d36dcb124fcc3313299c80e149b8f4bd4f",
+      "bytes": 42233
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MarketMaking.yaml",
+      "gitBlobSha1": "bec641ce00b54694de101ce3825fbd0f55e6a2af",
+      "sha256": "7e629bcf45f656e04f043f773d621c9926f812f21579be3992805124494e34d4",
+      "bytes": 181650
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MarketOrder.yaml",
+      "gitBlobSha1": "d656c5bc2fe5b002e36ca2da525b8742771f6ff9",
+      "sha256": "35b9fa506738c61c4118b70ed0d84bf48acf5601c3d85397de7cc4acd34699fe",
+      "bytes": 41718
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MarketOrderExecution.yaml",
+      "gitBlobSha1": "ec5cce9b22e88ab46412cc5c92c8cc097ba6bea7",
+      "sha256": "c6f23d0dc547f0b74bd5e2fbb1c81ff246533b4d0385ac872e88d03c6d99494b",
+      "bytes": 57524
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MarketResearch.yaml",
+      "gitBlobSha1": "911fba8745630a6d1d54628d94a9c475a77e0992",
+      "sha256": "a9aeb91c71fb5a42a303ac034577fa6d789d0177232bb36c9f2a134260e8232a",
+      "bytes": 61510
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MerchandisingLoan.yaml",
+      "gitBlobSha1": "35c715605314e33e1e28199da3a127343305b98d",
+      "sha256": "4ec4c964d7896d8b6917f0d89627a38f476304932414b3fb8b729c3bfff2404b",
+      "bytes": 355531
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MerchantAcquiringFacility.yaml",
+      "gitBlobSha1": "039fca883e9ac3ee3a21f48e046bea8eac12b6b6",
+      "sha256": "2f21ef4bd832cdfa1e7c6806724a2081d53ca54e0dd08f82d7837d91f3886e6c",
+      "bytes": 250828
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MerchantRelations.yaml",
+      "gitBlobSha1": "0501a87191bed7e91de8ae71a7b0f76e15f7fbb2",
+      "sha256": "973b2cb3f997b72bff75dec573c2f10e5400cd04e8b09910461220f9d15d8b2a",
+      "bytes": 163818
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MergersandAcquisitionsAdvisory.yaml",
+      "gitBlobSha1": "5982d81829fb6ef3d8be96d4cdf99515c6fa5104",
+      "sha256": "b20c0a2001c07c1126236297686353e2301766421a47a0ec3455e9ee16ca6cfb",
+      "bytes": 47292
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MortgageLoan.yaml",
+      "gitBlobSha1": "a12bdff9135880d8bf4774cf387b393768e1af02",
+      "sha256": "7591a25f593a02c516bd14f13e26a13454a44f82e33cf54149b62fadbb0a775a",
+      "bytes": 353156
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/MutualFundAdministration.yaml",
+      "gitBlobSha1": "69b8ffae9915fd0cf526edc37869c18691c42bf8",
+      "sha256": "3014968a2d7ffe44d3ef8f1cb008a6ad2fe9a96121eeb63482781367c4f1acb3",
+      "bytes": 124266
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/NotionalPooling.yaml",
+      "gitBlobSha1": "aabd074fbccc93d134e5ccaf3869d4e0ca381651",
+      "sha256": "f6ec9f88903648c9440f25ed208255b7977258bd09188b316fbcd4c72ec76885",
+      "bytes": 158873
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/OpenItemManagement.yaml",
+      "gitBlobSha1": "8c493f578213067d9b48513c5b0d7d64c00f3145",
+      "sha256": "0c7a035f44b45f52d651420581c0985ffb6726c0b346aa86d66a8af4491ad07a",
+      "bytes": 46847
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/OperationalGateway.yaml",
+      "gitBlobSha1": "bfb2bce834a9a278565c17cc5ffe4145916aeb65",
+      "sha256": "e997bc841d763f3f992ee17b6a6fd967ad7e7a0631bac116cea005aba6a2e33e",
+      "bytes": 56273
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/OperationsLog.yaml",
+      "gitBlobSha1": "96aea5d7ae5a65dad5bb5608f0dd645baa2ce707",
+      "sha256": "ba2b3d5298a52c3547b9b6912412c74f07159c0e38f4a5b5499b55b2391b12b0",
+      "bytes": 4304
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/OrderAllocation.yaml",
+      "gitBlobSha1": "9c134598d510b543c08985439df82bec64e026df",
+      "sha256": "f46a130c3a1ecf93e63da227cf0d262061aa9f64c9b707297978fb92d457833e",
+      "bytes": 81625
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PartnerAdministration.yaml",
+      "gitBlobSha1": "34462d416752fcb8cd91cf179f74899e05d1e88d",
+      "sha256": "ddfd1221f6f07c9be5fe277c9fcb5ddf17c2d14645ebf0d2f73f6e66f4adac91",
+      "bytes": 3767
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PartnerAgreement.yaml",
+      "gitBlobSha1": "6a281b323a25284eafba89659e567c51402e061c",
+      "sha256": "647a206f0a48aae7990f3a26fc99d84d7ef13d3346aa2180e61ea48ca148a0de",
+      "bytes": 35185
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PartnerManagement.yaml",
+      "gitBlobSha1": "74cd7c4fddee3d1d00149f6654618b172d8d7b8c",
+      "sha256": "489b4d3c298199a4205c273f115b314455b4e8bd0286f71f90c6522c4a23f7ce",
+      "bytes": 3996
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PartyAssetDirectory.yaml",
+      "gitBlobSha1": "a836e91ba3842b61b05cf1dc04e4012aeb7e369e",
+      "sha256": "83067035a7468c1d92bbc8f83db521a2e27e45ba9a50d0d2cbdaf6ec8eaa6edb",
+      "bytes": 59764
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PartyAuthentication.yaml",
+      "gitBlobSha1": "c25eb538949fe82038fb892cdd9d49a57d3af9d9",
+      "sha256": "49e65556d7af06074fbd22bed2161eb20dd617a7cef47d14249f3d4b17e624dd",
+      "bytes": 74809
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PartyLifecycleManagement.yaml",
+      "gitBlobSha1": "a55ddf36b3f88cb47e50fa06df72a257d6c46a65",
+      "sha256": "7f4c9b36e0702f3e5f85a3da713ea6d9add55dac591e2d9a691d07224a8a8f3e",
+      "bytes": 67762
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PartyReferenceDataDirectory.yaml",
+      "gitBlobSha1": "cb5f84f677210a639c85ad58df08a5f06fd11874",
+      "sha256": "fa00cf777731bb1bde3e809563df14caa37896a9e4ac34560ffaf184f8fdda79",
+      "bytes": 72526
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PartyRoutingProfile.yaml",
+      "gitBlobSha1": "f30c8b84b9a32b697a6f0039c440ee7cccbb0d0f",
+      "sha256": "4c3829463abb11e016550cb5500ad63496212adacfd61b9429c29a09ba45054e",
+      "bytes": 31300
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PaymentOrderInitiation.yaml",
+      "gitBlobSha1": "0756ba24b0bd0c76797b73d80339b1b4debe9077",
+      "sha256": "d0003b3681ae0db650b08b9b672896ccd78b56306d777b0a6e112337cc8451cb",
+      "bytes": 176542
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PaymentRail.yaml",
+      "gitBlobSha1": "3235961c0d087c44200a59abdb64ae7043b3e72e",
+      "sha256": "b135161a99ec517543c2d90baabb07fbe9cec3c9beb89d32879003c9db103a6f",
+      "bytes": 65256
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PointofService.yaml",
+      "gitBlobSha1": "7ae3cd718f432e996b9c6fc8bc39b1412993e79a",
+      "sha256": "fc5535950e9afdfbab7714dbcc99d4505495dbe143316245d5060f45d984401d",
+      "bytes": 70319
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PositionKeeping.yaml",
+      "gitBlobSha1": "f2c8084a2d9351bd94f88a28d50f005327800402",
+      "sha256": "071148a0eb25743a9ec0e594d3659786883c810414ae9fdc453597bf779f4a9f",
+      "bytes": 110702
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PositionManagement.yaml",
+      "gitBlobSha1": "93146a41df610a25d156b77d2f622ceeb43c6e29",
+      "sha256": "10ab89cfaadee08632aa82afd1cb5aa4d26c1319e03cc149547b762af419cd8f",
+      "bytes": 62336
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PrivatePlacement.yaml",
+      "gitBlobSha1": "04fece3cac62564d5223562fb735f64a8719a12e",
+      "sha256": "5287d725e788335719ab1e52b72676809a902d01eeea08faff7f6af353281554",
+      "bytes": 175398
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProcessingOrder.yaml",
+      "gitBlobSha1": "6be07079e3e048e31b9c163b2e0f5db5875a3314",
+      "sha256": "8c864037c3e3f468a3ff3fa3d31e1514164297e2a7dcb2b09bc7c4364e690bb1",
+      "bytes": 56888
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductCombination.yaml",
+      "gitBlobSha1": "669b0314d4ee76dd7b6f4ad7a52409efcf1d3494",
+      "sha256": "5c2c3c06353b91393c7b8b326f4361a52fd31fb66e84676d7e26f3683dc775ed",
+      "bytes": 66460
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductDeployment.yaml",
+      "gitBlobSha1": "7dcb9bc72130f28fdc8b4c0170ef4c6feeba311f",
+      "sha256": "bbf1a8be301f4facb2338fa90c0f6fcc7e8c30fd9160a27e112a8116d9d007e8",
+      "bytes": 88101
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductDesign.yaml",
+      "gitBlobSha1": "47b9c1f9775bfe0d1279623e2bc119889acadb7c",
+      "sha256": "feafdb1c21edeed2a075a68cd1596737242bafbfa65039b3c2e4504152f88318",
+      "bytes": 46877
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductDirectory.yaml",
+      "gitBlobSha1": "5e0f76bca8967e2941545873cd88846f7c5b1dbe",
+      "sha256": "a20f2b60af76d8fe389cf3d5c87a003765121402f5127ea0f3a3bc687c6692e4",
+      "bytes": 76357
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductExpertSalesSupport.yaml",
+      "gitBlobSha1": "a1c8d28e9be9a92aafddbe9398e7d3bd11c345c7",
+      "sha256": "2de14fe4fe824daea2bd6e7efe38a77b109b9b1c6b8633391cf550f74a12361b",
+      "bytes": 129940
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductInventoryDistribution.yaml",
+      "gitBlobSha1": "8a78a96830a6b4f7b4fd889f449ed7d8c797e515",
+      "sha256": "ba529890a7c392db11e2b242910e311a0a1d67025307a3ffb755326a9b3f24b1",
+      "bytes": 84041
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductInventoryItemManagement.yaml",
+      "gitBlobSha1": "26de6fda16c3a950f9ccb9edd7a8e456b30f49fb",
+      "sha256": "068df0e011fc1b5696754e3f69ff4e8f6f156a2f883a4d076678eca9546e6af9",
+      "bytes": 122370
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductMatching.yaml",
+      "gitBlobSha1": "d66050797e3e8e6a0dd35bf2ca5bbee14c1f1d49",
+      "sha256": "29f50698741098c02b30fce917d9d87ce004d00fc36c114a57c32ea64df55db1",
+      "bytes": 61276
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductPortfolio.yaml",
+      "gitBlobSha1": "a76a58c82038d8491c5da889790a791d8aed082c",
+      "sha256": "48ff5449ea1b1f1060fb68955a7526711e0355db5f2479c537036059b2903f69",
+      "bytes": 27513
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductQualityAssurance.yaml",
+      "gitBlobSha1": "00bd2f9056a156ef2be055ac3299c345b741aefa",
+      "sha256": "6f8d2679955b099572bbdf1a73a2575ebb921545d7416b824635e88ab5967ffa",
+      "bytes": 62476
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductSalesSupport.yaml",
+      "gitBlobSha1": "afed52065cec7212574bccd7d83709247532f9d6",
+      "sha256": "7864a9473d890777be6f6db69047bbd8a740af8bc75bf2496983b265b4d2c75b",
+      "bytes": 77300
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductServiceAgency.yaml",
+      "gitBlobSha1": "e52452c739cfb35d34a3466684c63c8ab0bba78b",
+      "sha256": "2d9f2f43cbf07473a58668aa8ae3ec2aad9fa2f7c6d878535392a1216c395b97",
+      "bytes": 100651
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductTraining.yaml",
+      "gitBlobSha1": "2cd7e7efc54d089612eadd6cd78a9f72a6c05f1e",
+      "sha256": "f78b0eb682dc051ea2cc968a7ce1e64dfb54d8b9460e78178ad2f3d26924c02b",
+      "bytes": 80502
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProductionRelease.yaml",
+      "gitBlobSha1": "de9adfda29e24cc1ffbe5bce9f774f77e921d898",
+      "sha256": "7d1bd97b285c5c72a1eec5bea30dccb7a54dd2b37e06f455dc8f2dbd2e9007be",
+      "bytes": 29995
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProgramTrading.yaml",
+      "gitBlobSha1": "020e10b29597a38403435fbd048b8e99ce67437a",
+      "sha256": "6492ce4838bb79029f475bc6853bc794e885d9f880f838d1856de3d8d434129a",
+      "bytes": 58259
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProjectFinance.yaml",
+      "gitBlobSha1": "5db3cbe750ab3dcc52f90c1212ee441589250775",
+      "sha256": "868e51df9a9097ff70015c86e611f95ce6d93dbe95ac8408b2a79972af327e5f",
+      "bytes": 183220
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PromotionalEvents.yaml",
+      "gitBlobSha1": "086404098acc1a943872c9e8142badfb230eac49",
+      "sha256": "34a0387575b44d0151de4111fc2b051edd7c14b1fe023c165140de4e77594754",
+      "bytes": 50605
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProspectCampaignDesign.yaml",
+      "gitBlobSha1": "cfa546da15225c24e0540bce67855ed16bb0bdc3",
+      "sha256": "adc7eea11ec5fdcae79f4afb50e8c453e8593f1e23020ad5e3ef1e43a6ed3d37",
+      "bytes": 51584
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProspectCampaignExecution.yaml",
+      "gitBlobSha1": "846093afa37982600a3315ee9fa9ab206bc49a70",
+      "sha256": "4a0093297aa885e748eb7081ece86e58e0872ee73b69fd42d56fed2f18d60ed2",
+      "bytes": 42508
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ProspectCampaignManagement.yaml",
+      "gitBlobSha1": "3994cfa620d7f204c643a3e9710f8fc6c534502e",
+      "sha256": "bef1da05f0f169ca87220853ff0f17aad1a422dc322e99b310d251394cc35df9",
+      "bytes": 68310
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PublicOffering.yaml",
+      "gitBlobSha1": "cda070100904e3742a8cd14480c6904b44ed8558",
+      "sha256": "d64e9e8d6e49d30dc75193d518fd1ddb2d20bf42e8b3b238e1473ebd62f5805f",
+      "bytes": 200172
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/PublicReferenceDataManagement.yaml",
+      "gitBlobSha1": "d1a503ce0130b5fd9fae898e1d0bc1a735033a6a",
+      "sha256": "ca08e744978261b60aec851bbc1045bf94f3e7851312cec660522ace9b0a5188",
+      "bytes": 26187
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/QuoteManagement.yaml",
+      "gitBlobSha1": "40737742b731f6821482f3fd8f88315068af78da",
+      "sha256": "df4c7fe9e89553e8009fbdcb515ee87bc6aa390d346bb7b6a0a29f0c609b32f0",
+      "bytes": 79034
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/RegulatoryAndLegalAuthority.yaml",
+      "gitBlobSha1": "f95e53bb6714d7143bad6d3ddcc5ddc4ea3f2b43",
+      "sha256": "ce8568784f8e6850993aa220aae3cd0ccaa5f33d50c76b9f760350b1ac131e35",
+      "bytes": 79275
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/RegulatoryCompliance.yaml",
+      "gitBlobSha1": "06f2fbeca4b2112481349cae3cb7dbe807c862b7",
+      "sha256": "457f650730334f1490c52263fddb4dc2d7a1dc034d11dcb0da12de4250573c7e",
+      "bytes": 43113
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/RegulatoryReporting.yaml",
+      "gitBlobSha1": "b5a4a8f078327244567da0b105430cb87778de1a",
+      "sha256": "ab66f9c905a6af6d3bfef63e5554301226d24ec2b5385e45adeabeaa9f8df7ed",
+      "bytes": 59716
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/RewardPointsAccount.yaml",
+      "gitBlobSha1": "f051ffbf203dd8ecd757a085b9550b7bdcd9394f",
+      "sha256": "a229aec2a66a4919ac2874219ae83d4d7411c3c755a75ead3d5174f5673d7963",
+      "bytes": 55133
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/RewardPointsAwardsAndRedemption.yaml",
+      "gitBlobSha1": "192a23eb3f7abcb2df81037c254c2d3577e1dba1",
+      "sha256": "894479ceb3264e26f21f243c8175e1ed073d72d5dcf5b10c58c942f5bec3c88d",
+      "bytes": 148943
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/RewardsDelivery.yaml",
+      "gitBlobSha1": "6f811510895ef186ec648dd55272bdde783a7dac",
+      "sha256": "6af0c70a2eb2bb91f942596583277c7a726febf0107c2c52d64c39afb7db908b",
+      "bytes": 6307
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/RewardsInventory.yaml",
+      "gitBlobSha1": "dc9d2358de3a46a3aa050f78eca2514597fb9a35",
+      "sha256": "a13f626f28a6ac53b271aaf2657c76144b4056be8465f8186797cffd88d7b9f7",
+      "bytes": 5384
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/RewardsMenu.yaml",
+      "gitBlobSha1": "938a419f042cd6457583e69d9c977da991f45e17",
+      "sha256": "09ba7625dbb4f28f203155d4a6389cb582942de2dc9e758c7d9a19a175c31af6",
+      "bytes": 3225
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SalesProduct.yaml",
+      "gitBlobSha1": "07db36e738824e094ce5600d58c6952304d0ccc6",
+      "sha256": "d96f813c01c65797ccaa00ce4f96a9889bb3d41ccea02859db2c949d196aa0cc",
+      "bytes": 104417
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SalesProductAgreement.yaml",
+      "gitBlobSha1": "74e32bc6c176640e1830184cf141a7e26c816e09",
+      "sha256": "b21600fde4ae1eb4607dc5e5d9094d087ce3a0ae5cd091fdce2aafdb808ef8ff",
+      "bytes": 55883
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SavingsAccount.yaml",
+      "gitBlobSha1": "455ce3f924e2148e77a80b01d2b55e8d23ce9afe",
+      "sha256": "897c439dd0b44780e78a2abbe0a3586a805aa4fadeec3e60e5a38fa337535fc2",
+      "bytes": 358687
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SecuritiesFailsProcessing.yaml",
+      "gitBlobSha1": "729b125d5117f4d5eb75acb1c6b4a7ccf08e466b",
+      "sha256": "600d1ff5ae3cca5b09c898f88a1b0805c0c9f3dbc4a7ba941e83b8f3f6633344",
+      "bytes": 81476
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SecuritiesPositionKeeping.yaml",
+      "gitBlobSha1": "c881faced73401aec896e6015e4dce988f1cf7c4",
+      "sha256": "4a646189d98267f772f3a9776e9b20e1f56aae6350d34a61ac2e5fdbf86b1f0f",
+      "bytes": 35089
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SegmentDirection.yaml",
+      "gitBlobSha1": "73d17ff970fb7a4c8574e2bcbcaae5794fb16cbd",
+      "sha256": "8b2ffe17e789314da4b6521c783ce3a9877ab0160e995fa610e926fc980ca5a0",
+      "bytes": 51785
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ServiceDirectory.yaml",
+      "gitBlobSha1": "8b7defd554fa7d2539acc90477363e3e61776f40",
+      "sha256": "318b88050eabb26e7cc69e8c39efedbf579593bdd1664354a5bfabfac9fb2c40",
+      "bytes": 69679
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ServiceProviderOperations.yaml",
+      "gitBlobSha1": "e908c08795c89a35e883480efb0954834f3ea944",
+      "sha256": "895c5e4f150aad7a61206f083a827d4f51de3ca04cdeeb05be7eab9956787e26",
+      "bytes": 26676
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ServicingActivityAnalysis.yaml",
+      "gitBlobSha1": "64635ca009f0401ef2b33c64fde8b96408d9497e",
+      "sha256": "754d21a7078ea34be1555cfc745feab86cc0a2a08c1948e4071ab475cf24d1ca",
+      "bytes": 20853
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ServicingEventHistory.yaml",
+      "gitBlobSha1": "2568de1f915a369bb014669577f135fac646e15b",
+      "sha256": "0f84fa12e8478e24b6d5c462685e8e0c43435ddec63dca94d7d2238d3150baf3",
+      "bytes": 53599
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ServicingIssue.yaml",
+      "gitBlobSha1": "5ab1145c74a414002fb84844d24b923dff98dd05",
+      "sha256": "517905272ed542f7f79bcc76484b96c0153c36617613082e947efbee6cf5e2f9",
+      "bytes": 89196
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ServicingMandate.yaml",
+      "gitBlobSha1": "3582cec309c210909faf2943189ca9cd250954f9",
+      "sha256": "3e61d650ffacec2cdef7595373d1aa9c5c6dfc50e0efca3ca7ff290a02d5f690",
+      "bytes": 59310
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/ServicingOrder.yaml",
+      "gitBlobSha1": "f036dcbe35f7b7ed3a2fe418ce192496ddc34af6",
+      "sha256": "64173e3c1c823a0c19223d4e1cda54529b768a8955a81d97447ce8556312f75a",
+      "bytes": 26483
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SessionDialogue.yaml",
+      "gitBlobSha1": "9003ac28af222bcd3f65ffd0281e155166dd3e43",
+      "sha256": "e88c65cf7a3dc131e0fb7b827fbc0e32ee0de0bc73d952628bd40c5f5a7a34cb",
+      "bytes": 63860
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SpecialPricingConditions.yaml",
+      "gitBlobSha1": "f2108bbe6493d1dbe682a5eeb978910a30c95910",
+      "sha256": "7a36afe82dec44d3c72983ac19c7ab9394b6959d9f25a2f73fc2274ae7859606",
+      "bytes": 38427
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/StandingOrder.yaml",
+      "gitBlobSha1": "3d5853e2d2a2f083e8ceecd8e61dfee1d601a0e0",
+      "sha256": "76f6d54c24f6ea9a60cdae08e24d3f9bb7247b8f1e9500a1790433a9948c29ef",
+      "bytes": 152929
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/StockLendingandRepos.yaml",
+      "gitBlobSha1": "7f6b0b1be4cd8232a54b15db1a1eb78beceef3f9",
+      "sha256": "e6bfbf42634075c181145f64935f2c494d4a068a2ecb4a4e3ce1979965a87589",
+      "bytes": 101648
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SubCustodianAgreement.yaml",
+      "gitBlobSha1": "5b34d1f238821de4caeec9a48eca79faab7a36f2",
+      "sha256": "d4449c5d7729133ad601b9ab6cc0b10ec82c066d8b14f8724b680c780947ba0d",
+      "bytes": 100378
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SuitabilityChecking.yaml",
+      "gitBlobSha1": "d11f45673a3af247d24084847adf9981a32d8e1a",
+      "sha256": "db00864da72b5bf691cf1b77a1e25b911d4a9d71ed84dd92663e079c3348ee4d",
+      "bytes": 41875
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SyndicateManagement.yaml",
+      "gitBlobSha1": "51062501119bfcb1d0e11c1bd46f329f637e47c8",
+      "sha256": "b067f5baab393feff935efeffd6fba25e2b89b7c875e903a4bf83524baec6700",
+      "bytes": 57092
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SyndicatedLoan.yaml",
+      "gitBlobSha1": "85863ae120340626cfe43e280a549d61e149f4b5",
+      "sha256": "0009e8b699712dc0ab5c5592c41472d65e4d6bf4d2c2491020f9b5d83e4c25d3",
+      "bytes": 80752
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SystemDevelopment.yaml",
+      "gitBlobSha1": "f145940dc844080befd1ee4f471ffa7c7070088a",
+      "sha256": "9671dffd7422d53a55f5013f97a10f846ba1f9fcfdb2cccdcf49291a3af6772a",
+      "bytes": 49643
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/SystemsAdministration.yaml",
+      "gitBlobSha1": "95ee7cc4c0308ae496531325dc60f63c5c1038c2",
+      "sha256": "4d4de9ac5780b4adc36a435db035aaa2081f20c9dab3dd4c4dc33dc59bc108a7",
+      "bytes": 85097
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TermDeposit.yaml",
+      "gitBlobSha1": "5fd7d40e345910ba2e503c930f547eb70c98dc87",
+      "sha256": "404ef62b8c9002cb835f470d356a1c27aaaaa0846a21ff6ea04cf91383b03651",
+      "bytes": 361236
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TermDepositFrameworkAgreement.yaml",
+      "gitBlobSha1": "7341459c2bb3298f253c4861cdab4e5c679ee5ab",
+      "sha256": "89d42f602ad4a7c9524d34d55565ee90d7692426cc7664ee72b468a4d9f8d234",
+      "bytes": 140531
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TradeClearing.yaml",
+      "gitBlobSha1": "2e406117abbc2f62ec1f6830240a74c652b365af",
+      "sha256": "e564728937e044eb3a5a5c5b26a437b303c918716948e699239027209948d40d",
+      "bytes": 108499
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TradeConfirmationMatching.yaml",
+      "gitBlobSha1": "4742a5f645a4341e99ddd9a8c0a6ade68b1d8c84",
+      "sha256": "2e67320beafb205c848144a718f6da7b206ff8e0588221d675aed9416cb455a1",
+      "bytes": 59055
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TradeSettlement.yaml",
+      "gitBlobSha1": "9f86bc9648a178cd4980be7e0277f4b428d0b1c9",
+      "sha256": "f7a1e7e57f67ff290c632afcf8074aa6e195d42c1692726fb9163a4209891271",
+      "bytes": 90484
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TradeandPriceReporting.yaml",
+      "gitBlobSha1": "4f676390e8137b65577a101be6b8e89253784bef",
+      "sha256": "bb4649ceb964dfc1a521a8c6b5cf1bfe64e5874042a8886e1d7db9b679c2114b",
+      "bytes": 40449
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TraderPositionOperations.yaml",
+      "gitBlobSha1": "41d3b492338cdb6989805818b3d2987673042b27",
+      "sha256": "3f262dcccef13ab9ee8463ac09e03082a4bfccce0cdb51d342b424781d9010eb",
+      "bytes": 77264
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TradingBookOversight.yaml",
+      "gitBlobSha1": "ca962c1d6a26d67771bea33101d0d38bbca94d5f",
+      "sha256": "669cddc42eb8114b75fa3b7e47f2596eec7219f153fbcfe99d78413ec7e1ce47",
+      "bytes": 78699
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TransactionAuthorization.yaml",
+      "gitBlobSha1": "6c589ac921197d9f83f2e053199a597523b6c6c9",
+      "sha256": "45c8b370304a4d43cda6d2f96bee2bb79a9f01ed615728c966747e4b68ecdf3a",
+      "bytes": 58451
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TransactionEngine.yaml",
+      "gitBlobSha1": "6849b896bcac3d13d6a959db55c839b5b38b3025",
+      "sha256": "0be87f78ea673a5842d2da2b1a02968095e811882c1d5b7213fbc00454f497e8",
+      "bytes": 126239
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/TrustServices.yaml",
+      "gitBlobSha1": "a9682930a2c30a7c1e26f6e8c8f993bbc4b4833b",
+      "sha256": "0771881878343c1231dd38efd146b1dd6ee88bb6a4c650a4004588f00a21f312",
+      "bytes": 168180
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/Underwriting.yaml",
+      "gitBlobSha1": "6f2aaf558e2b8b50bc13762ffc2e209784a5bb15",
+      "sha256": "861885e7915277949f39c2977a583910f2dea16380ddadb365bfd1146a85b4b4",
+      "bytes": 83660
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/UnitTrustAdministration.yaml",
+      "gitBlobSha1": "4b51f835dc83abb60f2bec39dae3a2687e8557eb",
+      "sha256": "db2ddb27d4082241daf6290b3f339d8dda807c68620980cde9d62ad0f3e50114",
+      "bytes": 108221
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/VirtualAccount.yaml",
+      "gitBlobSha1": "0474a1809e65e9295d228d8f0727cc0bfa519ffe",
+      "sha256": "9d915aa96d83bef78837b7866d59317215be7c91406bbab6071071376fce044b",
+      "bytes": 287515
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/eBranchManagement.yaml",
+      "gitBlobSha1": "9e65da2a9b289a578c3f645dce653f9f0b98c301",
+      "sha256": "6029136c1dba7c8f5bc65f3992ac8a6b723c7dbbff0457092e33cca84fc07652",
+      "bytes": 42730
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/eBranchOperations.yaml",
+      "gitBlobSha1": "d4562edc10145de0665c9f4ee17efb95175524f2",
+      "sha256": "968473e9706b62ae9a3bfba4534aa5b7c1109b584c9dc5fcbca058bb46315de7",
+      "bytes": 53680
+    },
+    {
+      "path": "release14.0.0/semantic-apis/oas3 /yamls/eTradingWorkbench.yaml",
+      "gitBlobSha1": "10b89d9a9f4eb6b086f461de2420d9600ce39b18",
+      "sha256": "9ceae0c34d6f1453a93aaa917fdacce092b745dea6e4fe9cdf1fb6bedd133d12",
+      "bytes": 65793
+    }
+  ]
+}

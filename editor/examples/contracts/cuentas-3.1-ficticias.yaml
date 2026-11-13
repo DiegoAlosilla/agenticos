@@ -1,0 +1,31 @@
+openapi: 3.1.2
+info:
+  title: API de cuentas ficticias
+  version: 1.0.0
+paths:
+  /v1/cuentas/{id}:
+    get:
+      summary: Consultar una cuenta ficticia
+      operationId: consultarCuentaFicticia
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Identificador de demostración
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Consulta ficticia exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  saldo:
+                    type: number
+              example:
+                id: CUENTA-FICTICIA-001
+                saldo: 0

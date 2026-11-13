@@ -1,0 +1,10 @@
+node_modules/
+runs/
+target/
+editor/.runtime/
+editor/dist/
+editor/test-results/
+editor/test-results-*/
+editor/playwright-report/
+editor/work/
+*.local.json

@@ -1,0 +1,63 @@
+{
+  "repository": "https://github.com/postmanlabs/openapi-to-postman",
+  "commit": "6367b778d19bab24b2718b522539299504269f4c",
+  "results": [
+    {
+      "path": "examples/api-with-examples.yaml",
+      "status": "rejected",
+      "code": "INVALID_FILE"
+    },
+    {
+      "path": "examples/callback-example.yaml",
+      "status": "accepted",
+      "operations": 1,
+      "version": "3.0.0"
+    },
+    {
+      "path": "examples/link-example.yaml",
+      "status": "accepted",
+      "operations": 6,
+      "version": "3.0.0"
+    },
+    {
+      "path": "examples/petstore-expanded.yaml",
+      "status": "rejected",
+      "code": "INVALID_OPENAPI"
+    },
+    {
+      "path": "examples/petstore.yaml",
+      "status": "accepted",
+      "operations": 3,
+      "version": "3.0.0"
+    },
+    {
+      "path": "examples/recursive.json",
+      "status": "accepted",
+      "operations": 1,
+      "version": "2.0"
+    },
+    {
+      "path": "examples/sample-swagger.yaml",
+      "status": "accepted",
+      "operations": 39,
+      "version": "3.0.0"
+    },
+    {
+      "path": "examples/sampleswagger.yaml",
+      "status": "accepted",
+      "operations": 20,
+      "version": "3.0.0"
+    },
+    {
+      "path": "examples/uspto.yaml",
+      "status": "accepted",
+      "operations": 3,
+      "version": "3.0.0"
+    }
+  ],
+  "explicitIndentationRepair": {
+    "line": 43,
+    "operations": 2
+  },
+  "allExpectationsMet": true
+}

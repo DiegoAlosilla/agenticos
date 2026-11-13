@@ -1,0 +1,32 @@
+{
+  "platform": "win32",
+  "node": "v24.18.0",
+  "events": [
+    {
+      "check": "clon limpio",
+      "passed": true,
+      "elapsedMs": 50212
+    },
+    {
+      "check": "reutilización sin acceso externo",
+      "passed": true,
+      "elapsedMs": 2338
+    },
+    {
+      "check": "núcleo de tres versiones en clon limpio sin acceso externo y schema fijado",
+      "passed": true
+    },
+    {
+      "check": "puerto ocupado",
+      "passed": true
+    },
+    {
+      "check": "puerto inválido",
+      "passed": true
+    },
+    {
+      "check": "huella incorrecta rechazada",
+      "passed": true
+    }
+  ]
+}

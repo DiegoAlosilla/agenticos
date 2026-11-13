@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-18",
+  "referenceVersion": 1,
+  "domain": "ConsumerLoan",
+  "operation": "Initiate",
+  "sourceCommit": "b58bf4c2c300dd018afc084e9bb24b7adaaa3500",
+  "sourceSha256": "39bca23499aa596ff4e26add24fa0f54310b2097f3fab9c6906e0ebf733eb1f0",
+  "singleTransaction": true,
+  "scrollPreserved": true,
+  "copySameDocument": true,
+  "copyAcrossDocuments": true,
+  "pageDuplication": true,
+  "cleanReopen": true,
+  "nativeReserialization": true,
+  "futureVersionPreserved": true,
+  "mismatchedSnapshotPreserved": true,
+  "snapshotsDraftsPreserved": true,
+  "external": [],
+  "errors": []
+}

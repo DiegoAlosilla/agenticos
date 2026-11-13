@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-18",
+  "colors": {
+    "dark": true,
+    "native": {
+      "color": "rgb(192, 192, 192)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "rgb(51, 51, 51)"
+    },
+    "bian": {
+      "color": "rgb(192, 192, 192)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "rgb(51, 51, 51)"
+    }
+  },
+  "bounds": {
+    "scroll": 289,
+    "width": 289,
+    "detail": 438
+  },
+  "external": [],
+  "errors": [],
+  "keyboard": true
+}

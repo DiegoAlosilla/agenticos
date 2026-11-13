@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-18",
+  "sourceCommit": "b58bf4c2c300dd018afc084e9bb24b7adaaa3500",
+  "domains": 258,
+  "operations": 4580,
+  "purpose": "consultar saldo de una cuenta corriente",
+  "firstDomain": "Current Account",
+  "external": [],
+  "errors": [],
+  "preserved": [
+    "snapshots",
+    "drafts",
+    "page ids",
+    "cell values/styles/geometry/connections",
+    "undo index during consultation before native page navigation"
+  ],
+  "cleanReopen": true,
+  "nativeReserialization": true
+}
