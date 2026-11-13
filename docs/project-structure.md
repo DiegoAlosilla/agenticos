@@ -7,7 +7,7 @@ Agenticos usa el chat para entrevistar al desarrollador, un CLI de Node.js para 
 | Carpeta | Función |
 | --- | --- |
 | [`.agents/`](../.agents) | Contiene la skill `canal-diseno` que usa Codex para activar el flujo cuando el desarrollador describe un requerimiento de canal. |
-| [`agents/`](../agents) | Define el agente y su protocolo de entrevista, búsqueda en Git y BIAN, registro de pendientes y entrega del diseño. |
+| [`agents/`](../agents) | Define el orquestador `channel-design` y los agentes discovery, architect, contract y reviewer. `channel-handoff.md` fija los archivos de sesión y la sección de la spec que pertenece a cada agente. |
 | [`src/`](../src) | Implementa los comandos, la consulta de fuentes, la generación de OpenAPI y Draw.io, y la apertura del editor. |
 | [`editor/`](../editor) | Contiene el fork de Draw.io, su extensión y el servidor local que presenta **Contratos**, **BIAN** y **Recorrido**. |
 | [`docs/`](.) | Reúne las guías de uso y diseño, el diagrama de decisiones y el GIF de la demo en `media/`. |
@@ -32,7 +32,7 @@ En la raíz, [`AGENTS.md`](../AGENTS.md) indica cuándo activar el agente. [`pac
 
 ### De la spec al archivo editable
 
-1. El agente recoge las decisiones de negocio y guarda `spec.json` con los servicios UX, etapas, escenarios, referencias y pendientes.
+1. Discovery recoge las decisiones de negocio en `brief.json`, y architect y contract escriben `spec.json` con los servicios UX, etapas, escenarios, referencias y pendientes.
 2. `channel-cli.mjs` entrega la spec a `channel-design.mjs`. Este consulta el catálogo para resolver las referencias, valida los OpenAPI y prepara las páginas y los pasos del recorrido.
 3. `drawio.mjs` devuelve el XML. El generador guarda `spec.json`, `spec.md`, `contracts/*.openapi.yaml` y `channel.drawio` juntos bajo `runs/channel/`, o en la carpeta indicada con `--out`.
 4. Si se ejecuta con `--open`, `delivery.js` carga el resultado en el fork. La extensión lee los metadatos para mostrar Swagger, las referencias BIAN y la animación. [Formato de la spec y comandos](channel-design.md#formato-de-la-spec)
@@ -48,4 +48,4 @@ En la raíz, [`AGENTS.md`](../AGENTS.md) indica cuándo activar el agente. [`pac
 | [`editor/docs/`](../editor/docs) y [`editor/licenses/`](../editor/licenses) | Decisiones técnicas, compatibilidad, evidencias del fork y licencias de terceros. |
 | `editor/.runtime/`, `editor/dist/`, `editor/work/` y `editor/test-results*/` | Distribución local de Draw.io, compilación, temporales y resultados de pruebas. |
 
-Para cambiar las preguntas, empieza por el [protocolo del agente](../agents/channel-design-protocol.md). Para cambiar la generación o las franjas del diagrama, revisa [`channel-design.mjs`](../src/channel-design.mjs). Para ajustar las pestañas o el reproductor, entra en [`drawio-adapter/`](../editor/src/drawio-adapter).
+Para cambiar las preguntas, empieza por [discovery](../agents/channel-discovery.agent.md). Para cambiar el reparto entre agentes, revisa el [handoff](../agents/channel-handoff.md). Para cambiar la generación o las franjas del diagrama, revisa [`channel-design.mjs`](../src/channel-design.mjs). Para ajustar las pestañas o el reproductor, entra en [`drawio-adapter/`](../editor/src/drawio-adapter).
