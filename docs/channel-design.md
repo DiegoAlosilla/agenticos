@@ -2,6 +2,37 @@
 
 Abre este repositorio en Codex y describe el flujo que quieres diseñar. En Copilot, selecciona `channel-design` antes de enviar la descripción. [Protocolo del agente](../agents/channel-design-protocol.md)
 
+## Flujo y decisiones del agente
+
+```mermaid
+flowchart TD
+    solicitud([El desarrollador describe el flujo]) --> alcance[Identificar etapas, datos y responsables]
+    alcance --> preguntas{¿Faltan decisiones de negocio?}
+    preguntas -->|Sí| entrevista[Preguntar por rondas y registrar respuestas]
+    entrevista --> alcance
+    preguntas -->|Ya se puede proponer un diseño| fuentes[Consultar contratos en Git y referencias BIAN]
+    fuentes --> evidencia{¿Hay respaldo para cada vínculo?}
+    evidencia -->|Sí| vinculos[Fijar operaciones, revisiones y referencias BIAN]
+    evidencia -->|Hay ambigüedad| entrevista
+    evidencia -->|No hay coincidencia sustentada| pendientes[Marcar la operación o equivalencia como pendiente]
+    vinculos --> limites{¿Las etapas comparten dueño y ciclo de vida?}
+    pendientes --> limites
+    limites -->|Sí| uno[Proponer un servicio UX]
+    limites -->|Hay responsabilidades separadas| varios[Proponer servicios UX por responsabilidad]
+    uno --> revision[Presentar propuesta, escenarios y pendientes]
+    varios --> revision
+    revision --> acuerdo{¿Se puede cerrar el bosquejo?}
+    acuerdo -->|Faltan decisiones que cambian el diseño| entrevista
+    acuerdo -->|Hay acuerdos para generar| spec[Guardar spec.json con acuerdos y pendientes]
+    spec --> validacion{¿Son válidas la spec y sus referencias?}
+    validacion -->|No| correccion[Revisar el error y ajustar el diseño]
+    correccion --> revision
+    validacion -->|Sí| entrega[Generar spec.md, OpenAPI por UX y diagrama .drawio]
+    entrega --> editor([Abrir Draw.io con contratos y recorrido animado])
+```
+
+Un bosquejo puede incluir una dependencia sin resolver si queda identificada como pendiente. Si faltan datos que cambian el diseño, el agente vuelve a la entrevista. Por ejemplo, quién decide el rechazo crediticio afecta tanto el contrato UX como el punto donde termina ese recorrido.
+
 ## Ejemplo de entrevista
 
 Prompt para reproducir el requerimiento con el agente:
