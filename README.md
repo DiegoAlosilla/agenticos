@@ -27,6 +27,8 @@ Para diseñar un flujo nuevo, abre este proyecto en Codex y describe el requerim
 
 ## Editor y pruebas
 
+La [guía de estructura del proyecto](docs/project-structure.md) explica las carpetas principales, los módulos de `src/` y cómo pasan los datos del agente al editor.
+
 Agenticos reutiliza la extensión Draw.io de [Backend Java Hackathon](https://github.com/DiegoAlosilla/backend-java-hackathon/tree/3fc4a590a5344f777ea39e96229e4d2be94290c1). El arranque verifica y prepara la distribución de Draw.io. Consulta los [avisos de terceros](editor/THIRD_PARTY_NOTICES.md) y la [guía del editor](docs/editor.md).
 
 Para ejecutar las pruebas del fork, instala el navegador con `npm --prefix editor run test:browser-install` y ejecuta `npm test`. La prueba de integración del catálogo requiere `CHANNEL_CONTRACTS_DIR` apuntando al clon Business bajo `runs/business-contracts-demo`.
