@@ -1,14 +1,14 @@
 # Diseño de APIs de canal desde una conversación
 
-Abre este repositorio en Codex y pide `$canal-diseno`. En Copilot selecciona `channel-design`. En otro chat con acceso al workspace, pide que siga [el protocolo](../agents/channel-design-protocol.md).
+Abre este repositorio en Codex y describe el flujo que quieres diseñar. En Copilot, selecciona `channel-design` antes de enviar la descripción. [Protocolo del agente](../agents/channel-design-protocol.md)
 
 ## Ejemplo de entrevista
 
 Prompt para reproducir el requerimiento con el agente:
 
-> $canal-diseno. Quiero diseñar un flujo de préstamo de consumo. Comienza con el inicio de la solicitud, continúa con evaluación crediticia, simulación y confirmación de datos, y termina con el desembolso. Entrevístame por rondas. Usa el catálogo Business y BIAN para proponer las operaciones. Al cerrar el bosquejo, guarda la spec, genera los contratos UX y abre el Draw.io animado.
+> Quiero diseñar un flujo de préstamo de consumo. Comienza con el inicio de la solicitud, continúa con evaluación crediticia, simulación y confirmación de datos, y termina con el desembolso.
 
-Este guion reproduce las decisiones ficticias que ya vienen cargadas en la demo. La entrevista interactiva comienza al enviar el prompt. El comando `channel:demo` usa esas decisiones para generar el mismo ejemplo directamente.
+Al recibir la historia, el agente inicia la entrevista por rondas, consulta el catálogo Business y BIAN, y usa las respuestas para generar los entregables y abrir Draw.io. La tabla muestra las decisiones ficticias precargadas que `channel:demo` usa para reproducir el ejemplo.
 
 | Paso | Qué revisa el agente | Decisión de la demo |
 | --- | --- | --- |

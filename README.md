@@ -23,7 +23,7 @@ npm run channel:demo -- --open
 
 El fork presenta **Contratos**, **BIAN** y **Recorrido** en el panel derecho. Desde **Contratos → Repositorio Business** puedes buscar los [20 contratos ficticios](https://github.com/DiegoAlosilla/business-contracts-demo). La primera ejecución prepara el editor y clona el catálogo.
 
-Para diseñar un flujo nuevo, abre este proyecto en Codex, invoca `$canal-diseno` y describe el requerimiento. La [guía de diseño](docs/channel-design.md) incluye el formato de la spec, el uso de un catálogo propio y la configuración de Qwen local.
+Para diseñar un flujo nuevo, abre este proyecto en Codex y describe el requerimiento. El agente inicia la entrevista y se encarga de las consultas, la generación y la apertura de Draw.io. La [guía de diseño](docs/channel-design.md) incluye el formato de la spec, el uso de un catálogo propio y la configuración de Qwen local.
 
 ## Editor y pruebas
 
