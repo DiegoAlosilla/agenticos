@@ -2,7 +2,39 @@
 
 Abre este repositorio en Codex y pide `$canal-diseno`. En Copilot selecciona `channel-design`. En otro chat con acceso al workspace, pide que siga [el protocolo](../agents/channel-design-protocol.md).
 
-> Quiero diseñar un flujo de préstamo de consumo. Comienza con el inicio de la solicitud, continúa con evaluación crediticia, simulación y confirmación de datos, y termina con el desembolso. Entrevístame por rondas. Usa el catálogo Business y BIAN para proponer las operaciones. Al cerrar el bosquejo, guarda la spec, genera los contratos UX y abre el Draw.io animado.
+## Ejemplo de entrevista
+
+Prompt para reproducir el requerimiento con el agente:
+
+> $canal-diseno. Quiero diseñar un flujo de préstamo de consumo. Comienza con el inicio de la solicitud, continúa con evaluación crediticia, simulación y confirmación de datos, y termina con el desembolso. Entrevístame por rondas. Usa el catálogo Business y BIAN para proponer las operaciones. Al cerrar el bosquejo, guarda la spec, genera los contratos UX y abre el Draw.io animado.
+
+Este guion reproduce las decisiones ficticias que ya vienen cargadas en la demo. La entrevista interactiva comienza al enviar el prompt. El comando `channel:demo` usa esas decisiones para generar el mismo ejemplo directamente.
+
+| Paso | Qué revisa el agente | Decisión de la demo |
+| --- | --- | --- |
+| Iniciar solicitud | ¿Qué identifica al cliente y qué conecta las etapas? | La sesión autenticada aporta el CXI. `business-person-v5` recupera el perfil y `business-loan-application-v1` devuelve el identificador de solicitud. |
+| Evaluar crédito | ¿Quién decide y qué pasa si rechaza? | `business-credit-assessment-v1` evalúa al solicitante. El rechazo devuelve `422` desde UX y termina el recorrido. |
+| Simular | ¿Qué devuelve la simulación y cómo se elige? | `business-loan-simulation-v2` calcula cuota, tasa y plazo. El cliente puede simular varias veces y confirma la simulación elegida. |
+| Confirmar datos | ¿Qué se comprueba antes de aceptar? | `business-account-ownership-v1` verifica la cuenta de abono y `business-loan-confirmation-v1` registra la aceptación. |
+| Ejecutar desembolso | ¿Cómo se repite la operación y qué pasa si el resultado es incierto? | UX propaga `Idempotency-Key` a `business-loan-disbursement-v2`. La conciliación queda pendiente. |
+
+### Consultas que sustentan el diseño
+
+Estas consultas se ejecutaron contra el catálogo ficticio y la versión de BIAN incluida en Agenticos:
+
+```powershell
+npm run channel -- search --query 'riesgo crediticio'
+npm run channel -- operation --file contracts/business-credit-assessment-v1.openapi.json --method POST --path /credit-assessments
+npm run channel -- bian --query 'Customer Offer' --action Initiate
+```
+
+La primera encuentra `business-credit-assessment-v1`. La segunda permite revisar el contrato `POST /credit-assessments`, que recibe `applicationId`, `cxi` y `requestedAmount`. La tercera devuelve `CustomerOffer` y su operación BIAN `POST /CustomerOffer/Initiate`, usada como referencia para el inicio. Las equivalencias BIAN de evaluación y simulación quedan pendientes en el ejemplo.
+
+### De las respuestas al diagrama
+
+1. El agente agrupa las cinco operaciones en un solo UX porque comparten dueño y ciclo de vida. Registra acuerdos, operaciones reutilizadas, referencias BIAN y pendientes en `spec.json`.
+2. El generador valida los contratos vinculados y produce `spec.md`, el OpenAPI de UX y `channel.drawio`. La demo incluye una página de aprobación y otra de rechazo.
+3. En el fork, **Contratos** muestra Swagger, **BIAN** abre la referencia de la figura y **Recorrido** reproduce las llamadas. [GIF capturado en Draw.io](media/demo-prestamos-drawio.gif)
 
 ## Demo rápida
 

@@ -4,6 +4,10 @@ Diseña un flujo desde la historia del desarrollador. El agente entrevista por r
 
 ## Demo de préstamos
 
+![Captura del fork de Draw.io con el contrato UX en Swagger, su referencia BIAN y la animación del recorrido de préstamos](docs/media/demo-prestamos-drawio.gif)
+
+El GIF muestra el diagrama generado y un tramo del escenario **Solicitud aprobada**. [Prompt, consultas y flujo del agente](docs/channel-design.md#ejemplo-de-entrevista)
+
 Con Node.js 24.18.x, npm y Git, abre una terminal en el repositorio:
 
 ```powershell
