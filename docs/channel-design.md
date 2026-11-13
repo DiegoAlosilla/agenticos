@@ -1,32 +1,37 @@
 # Diseño de APIs de canal desde una conversación
 
-Abre este repositorio en Codex y describe el flujo que quieres diseñar. En Copilot, selecciona `channel-design` antes de enviar la descripción. [Agentes y handoff](../agents/channel-handoff.md)
+Abre este repositorio en Codex y describe el flujo que quieres diseñar. En Copilot, selecciona `channel-design` antes de enviar la descripción. [Protocolo del agente](../agents/channel-design-protocol.md)
+
+Los flujos nuevos utilizan [cuatro roles y un coordinador versionado](orchestration.md): Discovery, Architecture, Contract y Reviewer. El CLI de canal descrito aquí mantiene las consultas, la spec y el generador; `orchestrate submit --role contract` integra esa generación con trazabilidad, revisión y límites de iteración. `channel build` y `channel:demo` siguen disponibles como herramientas directas sin revisión orquestada.
 
 ## Flujo y decisiones del agente
 
 ```mermaid
 flowchart TD
-    solicitud([El desarrollador describe el flujo]) --> sesion[Orquestador: abrir sesión en runs/channel]
-    sesion --> discovery[Discovery: entrevistar por rondas y escribir brief.json]
-    discovery --> listo{¿Brief listo?}
-    listo -->|No| discovery
-    listo -->|Sí| architect[Architect: servicios UX, etapas, BIAN, consumos y escenarios]
-    architect -->|Falta una decisión de negocio| discovery
-    architect --> checkpoint{Checkpoint: ¿el desarrollador aprueba la forma UX?}
-    checkpoint -->|Cambia la forma| architect
-    checkpoint -->|Sí| contract[Contract: catálogo Git, mapeos y OpenAPI UX]
-    contract -->|Falta una decisión de negocio| discovery
-    contract --> build[Architect: build y apertura en Draw.io]
-    build --> reviewer[Reviewer: comparar brief con spec, OpenAPI y diagrama]
-    reviewer --> tecnico{¿Hallazgos técnicos bloqueantes y menos de 2 correcciones?}
-    tecnico -->|Sí, del architect| architect
-    tecnico -->|Sí, de contract| contract
-    tecnico -->|No| cierre{¿El desarrollador confirma que es lo esperado?}
-    cierre -->|No: nuevo ciclo| discovery
-    cierre -->|Sí| editor([Entrega: spec, OpenAPI y recorrido animado])
+    solicitud([El desarrollador describe el flujo]) --> alcance[Identificar etapas, datos y responsables]
+    alcance --> preguntas{¿Faltan decisiones de negocio?}
+    preguntas -->|Sí| entrevista[Preguntar por rondas y registrar respuestas]
+    entrevista --> alcance
+    preguntas -->|Ya se puede proponer un diseño| fuentes[Consultar contratos en Git y referencias BIAN]
+    fuentes --> evidencia{¿Hay respaldo para cada vínculo?}
+    evidencia -->|Sí| vinculos[Fijar operaciones, revisiones y referencias BIAN]
+    evidencia -->|Hay ambigüedad| entrevista
+    evidencia -->|No hay coincidencia sustentada| pendientes[Marcar la operación o equivalencia como pendiente]
+    vinculos --> limites{¿Las etapas comparten dueño y ciclo de vida?}
+    pendientes --> limites
+    limites -->|Sí| uno[Proponer un servicio UX]
+    limites -->|Hay responsabilidades separadas| varios[Proponer servicios UX por responsabilidad]
+    uno --> revision[Presentar propuesta, escenarios y pendientes]
+    varios --> revision
+    revision --> acuerdo{¿Se puede cerrar el bosquejo?}
+    acuerdo -->|Faltan decisiones que cambian el diseño| entrevista
+    acuerdo -->|Hay acuerdos para generar| spec[Guardar spec.json con acuerdos y pendientes]
+    spec --> validacion{¿Son válidas la spec y sus referencias?}
+    validacion -->|No| correccion[Revisar el error y ajustar el diseño]
+    correccion --> revision
+    validacion -->|Sí| entrega[Generar spec.md, OpenAPI por UX y diagrama .drawio]
+    entrega --> editor([Abrir Draw.io con contratos y recorrido animado])
 ```
-
-Cinco agentes se reparten el trabajo y se pasan el control mediante archivos en `runs/channel/<sesión>/`. El orquestador [`channel-design`](../agents/channel-design.agent.md) coordina las transiciones. [Discovery](../agents/channel-discovery.agent.md) entrevista. [Architect](../agents/channel-architect.agent.md) decide la forma UX y BIAN y genera el diagrama. [Contract](../agents/channel-contract.agent.md) vincula el catálogo y define los OpenAPI. [Reviewer](../agents/channel-reviewer.agent.md) cierra con el desarrollador. Los archivos y las secciones de la spec que le corresponden a cada uno están en el [handoff](../agents/channel-handoff.md).
 
 Un bosquejo puede incluir una dependencia sin resolver si queda identificada como pendiente. Si faltan datos que cambian el diseño, el agente vuelve a la entrevista. Por ejemplo, quién decide el rechazo crediticio afecta tanto el contrato UX como el punto donde termina ese recorrido.
 

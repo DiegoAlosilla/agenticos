@@ -61,7 +61,7 @@ export function renderDrawio(audit, {layout, type = 'components'} = {}) {
       const response = step.direction === 'response';
       const [exitX, exitY, entryX, entryY] = portsByStep[i];
       const ports = `exitX=${exitX};exitY=${exitY};entryX=${entryX};entryY=${entryY};`;
-      const label = `${i + 1}. ${step.label}`;
+      const label = step.displayLabel ?? `${i + 1}. ${step.label}`;
       const labelOffset = pageLayout?.labelOffsets?.[i] ?? layout?.labelOffsets?.[i];
       const offset = labelOffset ? `<mxPoint x="${labelOffset[0]}" y="${labelOffset[1]}" as="offset"/>` : '';
       const routing = sequence ? 'exitPerimeter=0;entryPerimeter=0;' : 'edgeStyle=orthogonalEdgeStyle;rounded=1;';

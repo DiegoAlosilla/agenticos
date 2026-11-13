@@ -7,7 +7,7 @@ Agenticos usa el chat para entrevistar al desarrollador, un CLI de Node.js para 
 | Carpeta | Función |
 | --- | --- |
 | [`.agents/`](../.agents) | Contiene la skill `canal-diseno` que usa Codex para activar el flujo cuando el desarrollador describe un requerimiento de canal. |
-| [`agents/`](../agents) | Define el orquestador `channel-design` y los agentes discovery, architect, contract y reviewer. `channel-handoff.md` fija los archivos de sesión y la sección de la spec que pertenece a cada agente. |
+| [`agents/`](../agents) | Define el agente y su protocolo de entrevista, búsqueda en Git y BIAN, registro de pendientes y entrega del diseño. |
 | [`src/`](../src) | Implementa los comandos, la consulta de fuentes, la generación de OpenAPI y Draw.io, y la apertura del editor. |
 | [`editor/`](../editor) | Contiene el fork de Draw.io, su extensión y el servidor local que presenta **Contratos**, **BIAN** y **Recorrido**. |
 | [`docs/`](.) | Reúne las guías de uso y diseño, el diagrama de decisiones y el GIF de la demo en `media/`. |
@@ -21,9 +21,13 @@ En la raíz, [`AGENTS.md`](../AGENTS.md) indica cuándo activar el agente. [`pac
 
 | Módulo | Responsabilidad |
 | --- | --- |
+| [`orchestration-cli.mjs`](../src/orchestration-cli.mjs) | Expone `init`, `next`, `status`, `submit`, `answer` y `diagram`. El host ejecuta los roles asignados. |
+| [`orchestration.mjs`](../src/orchestration.mjs) | Coordina Discovery, Architecture, Contract y Reviewer; versiona línea base y entregas, comprueba trazabilidad, genera artefactos, valida huellas y limita iteraciones. [Guía](orchestration.md) |
+| [`orchestration-diagram.mjs`](../src/orchestration-diagram.mjs) | Genera el recorrido de la propia orquestación como HTML animado, Draw.io con cuatro escenarios y modelo ArquiFlow. |
 | [`channel-cli.mjs`](../src/channel-cli.mjs) | Punto de entrada. Despacha `editor`, `search`, `operation`, `bian`, `guide`, `build` y `demo`. Prepara el clon ficticio cuando corresponde, lee el JSON de entrada y llama al módulo que ejecuta la operación. Con `--open`, entrega el diagrama al editor después de guardar la propuesta. |
 | [`channel-catalog.mjs`](../src/channel-catalog.mjs) | Lee contratos JSON o YAML desde un commit de Git y los interpreta con el núcleo OpenAPI del editor. `search` devuelve candidatos e identifica archivos omitidos. `operation` recupera una operación por archivo, método y ruta. La consulta BIAN comprueba la huella del catálogo local y permite buscar por propósito y acción semántica. El servidor del editor reutiliza el mismo catálogo Git. |
 | [`channel-design.mjs`](../src/channel-design.mjs) | `buildChannel()` valida servicios UX, etapas, escenarios y referencias de la spec. Contrasta método, ruta y SHA-256 de los consumos confirmados contra el commit elegido. Genera un OpenAPI por servicio UX, arma el recorrido de cada escenario y calcula la distribución del lienzo. `writeChannel()` guarda el conjunto de entregables en un directorio nuevo. |
+| [`change-design.mjs`](../src/change-design.mjs) | Genera propuestas para microservicios existentes. Verifica la huella del contrato base, añade o sustituye una operación en la copia OpenAPI y crea una página animada por escenario. [Guía de cambios](service-change.md) |
 | [`drawio.mjs`](../src/drawio.mjs) | Serializa las figuras, conexiones y páginas en XML editable de Draw.io. Incluye el registro de contratos, los vínculos de cada figura y el orden de los pasos que consume la pestaña **Recorrido**. |
 | [`channel-demo.mjs`](../src/channel-demo.mjs) | Construye la spec ficticia de préstamos con decisiones precargadas y referencias al catálogo de demo. Define cinco etapas, siete consumos Business y dos escenarios de ejemplo. |
 | [`channel-guide.mjs`](../src/channel-guide.mjs) | Envía el contexto de la entrevista al servidor local del modelo y valida que devuelva hasta cuatro preguntas en JSON. La guía es opcional y el agente usa las preguntas como sugerencias. |
@@ -32,7 +36,7 @@ En la raíz, [`AGENTS.md`](../AGENTS.md) indica cuándo activar el agente. [`pac
 
 ### De la spec al archivo editable
 
-1. Discovery recoge las decisiones de negocio en `brief.json`, y architect y contract escriben `spec.json` con los servicios UX, etapas, escenarios, referencias y pendientes.
+1. El agente recoge las decisiones de negocio y guarda `spec.json` con los servicios UX, etapas, escenarios, referencias y pendientes.
 2. `channel-cli.mjs` entrega la spec a `channel-design.mjs`. Este consulta el catálogo para resolver las referencias, valida los OpenAPI y prepara las páginas y los pasos del recorrido.
 3. `drawio.mjs` devuelve el XML. El generador guarda `spec.json`, `spec.md`, `contracts/*.openapi.yaml` y `channel.drawio` juntos bajo `runs/channel/`, o en la carpeta indicada con `--out`.
 4. Si se ejecuta con `--open`, `delivery.js` carga el resultado en el fork. La extensión lee los metadatos para mostrar Swagger, las referencias BIAN y la animación. [Formato de la spec y comandos](channel-design.md#formato-de-la-spec)
@@ -48,4 +52,4 @@ En la raíz, [`AGENTS.md`](../AGENTS.md) indica cuándo activar el agente. [`pac
 | [`editor/docs/`](../editor/docs) y [`editor/licenses/`](../editor/licenses) | Decisiones técnicas, compatibilidad, evidencias del fork y licencias de terceros. |
 | `editor/.runtime/`, `editor/dist/`, `editor/work/` y `editor/test-results*/` | Distribución local de Draw.io, compilación, temporales y resultados de pruebas. |
 
-Para cambiar las preguntas, empieza por [discovery](../agents/channel-discovery.agent.md). Para cambiar el reparto entre agentes, revisa el [handoff](../agents/channel-handoff.md). Para cambiar la generación o las franjas del diagrama, revisa [`channel-design.mjs`](../src/channel-design.mjs). Para ajustar las pestañas o el reproductor, entra en [`drawio-adapter/`](../editor/src/drawio-adapter).
+Para cambiar las preguntas, empieza por el [protocolo del agente](../agents/channel-design-protocol.md). Para cambiar la generación o las franjas del diagrama, revisa [`channel-design.mjs`](../src/channel-design.mjs). Para ajustar las pestañas o el reproductor, entra en [`drawio-adapter/`](../editor/src/drawio-adapter).

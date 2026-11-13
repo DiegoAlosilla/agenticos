@@ -6,6 +6,7 @@ import {channelBian, channelCatalog, defaultCatalogPath} from './channel-catalog
 import {writeChannel} from './channel-design.mjs';
 import {loanDemo} from './channel-demo.mjs';
 import {channelGuide} from './channel-guide.mjs';
+import {writeChange} from './change-design.mjs';
 import {openLocal} from './delivery.js';
 import {projectRoot, readJson} from './io.js';
 
@@ -33,7 +34,7 @@ function startEditor(repo) {
 async function main() {
   const {positionals: [command, ...extra], values} = parseArgs({allowPositionals: true, options: {repo: {type: 'string'}, ref: {type: 'string'},
     query: {type: 'string'}, action: {type: 'string'}, file: {type: 'string'}, method: {type: 'string'}, path: {type: 'string'},
-    input: {type: 'string'}, out: {type: 'string'}, open: {type: 'boolean'}, 'editor-url': {type: 'string'}}});
+    input: {type: 'string'}, contract: {type: 'string'}, out: {type: 'string'}, open: {type: 'boolean'}, 'editor-url': {type: 'string'}}});
   if (extra.length) throw new Error('Usa un solo comando.');
   const print = value => console.log(JSON.stringify(value, null, 2));
   const input = () => {
@@ -57,6 +58,11 @@ async function main() {
     print((await channelBian()).search(values.query ?? '', values.action));
   } else if (command === 'guide') {
     print(await channelGuide(await input()));
+  } else if (command === 'change') {
+    if (!values.contract) throw new Error('Indica --contract <OpenAPI base>.');
+    const {content, output} = await writeChange(values.contract, await input(), values.out || path.join(projectRoot, 'runs', 'service-change'));
+    print({output});
+    if (values.open) await openLocal(content, {url: values['editor-url'], log: console.error});
   } else if (command === 'build' || command === 'demo') {
     const selectedRepo = command === 'demo' ? await ensureDemo() : repo;
     const spec = command === 'demo' ? await loanDemo(selectedRepo) : await input();
@@ -64,7 +70,7 @@ async function main() {
     print({output, pending});
     if (values.open) await openLocal(content, {url: values['editor-url'], log: console.error});
   } else {
-    throw new Error('Usa node src/channel-cli.mjs editor|search|operation|bian|guide|build|demo. Ver docs/channel-design.md.');
+    throw new Error('Usa node src/channel-cli.mjs editor|search|operation|bian|guide|build|demo|change. Ver docs/channel-design.md y docs/service-change.md.');
   }
 }
 
